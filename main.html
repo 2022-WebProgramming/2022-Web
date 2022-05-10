@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>자취생 레시피</title>
     <style>
@@ -15,18 +14,22 @@
             height: 100px;
             background-color: red;
         }
-
-        #nav {
-            width: 1000px;
-            height: 100px;
-            background-color: blue;
+        #header h1{
+            float:left;
+        }
+        
+        nav ul li
+        {
+            display: inline-block;     
+            padding-right:30px;     
+            padding-left: 30px;
+            padding-top: 25px;
+            /*vertical-align:middle;*/
         }
 
-        #side {
-            float: left;
-            width: 200px;
-            height: 600px;
-            background-color: green;
+        nav ul
+        {
+            float: right;
         }
 
         #content {
@@ -35,6 +38,15 @@
             height: 600px;
             background-color: aqua;
         }
+
+        #side {
+            float: left;
+            width: 190px;
+            height: 600px;
+            background-color: green;
+            border:5px black solid;
+        }
+
 
         #footer {
             float: left;
@@ -48,16 +60,21 @@
 <body>
     <div id="all">
         <div id="header">
-            <h1>제목</h1>
-        </div>
-        <div id="nav">
-            <h1>네비게이션 바</h1>
-        </div>
-        <div id="side">
-            사이드바 -> 뭐넣을지를 모르겠어서 걍 없애고싶기도함 이걸 네비바로 써도 되고
+            <div class="title"><h1>제목</h1></div>
+            
+            <nav>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </nav>
         </div>
         <div id="content">
             <h1>content</h1>
+        </div>
+        <div id="side">
+            사이드바 -> 뭐넣을지를 모르겠어서 걍 없애고싶기도함 이걸 네비바로 써도 되고
         </div>
         <div id="footer">
             <h2>footer</h2>
