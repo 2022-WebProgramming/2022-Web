@@ -18,14 +18,13 @@
       }
 
       ul li {
+         font-size: 40px;
          display: inline-block;
          margin-right: 50px;
-         color: lightpink;
          font-weight: bold;
       }
 
       ul li:hover {
-         background-color: lightpink;
          color: white;
       }
 
@@ -33,7 +32,7 @@
          text-align: center;
       }
       
-      #foodlist {
+      #foodlist, #result {
          margin: auto;
          text-align: center;
          width: 70%;
@@ -42,7 +41,7 @@
        
       }
 
-      #foodlist td {
+      #foodlist td , #result td{
          border: 1px solid #dddddd;
          text-align: center;
          font-weight: bold;
@@ -64,7 +63,7 @@
          margin-right:0px;
          display:flex;  
       }
-      #foodlist p{
+      #foodlist p, #result p{
          font-size:50px;
          margin:0px;
       }
@@ -76,8 +75,8 @@
 
    <div id="content2">
       <div id="foodlist">
-         <h1 style="color:RED; font-size:100px; margin-bottom:0px;">"FOOD"</h1>
-         <table style="margin:auto; border-spacing: 80px 4rem;;">
+         <h1 style="color:RED; font-size:50px; margin-bottom:0px;">"FOOD"</h1>
+         <table style="margin:auto; border-spacing: 80px 4rem;">
             <tr>
                <td id="pork">
                   <div style="color:black;">
@@ -203,7 +202,41 @@
 
       </div>
       <div id="result">
-         <h1>ddd</h1>
+         <h1 style="color:RED; font-size:50px; margin-bottom:0px; text-align:center;">"Result"</h1>
+
+         <table style="margin:auto; border-spacing: 30px 4rem;">
+            <tr>
+               <td id="pork">
+                  <div style="color:black;">
+                     <img class="food" src="./image/pork.jpg" alt="돼지고기" onclick="(this);">
+                     <p>돼지고기</p>
+
+                  </div>
+               </td>
+               <td id="chicken">
+                  <div style="color:black;">
+                     <img class="food" src="./image/chicken.jfif" alt="닭고기" onclick="(this);">
+                     <p>닭고기</p>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td id="pork">
+                  <div style="color:black;">
+                     <img class="food" src="./image/pork.jpg" alt="돼지고기" onclick="(this);">
+                     <p>돼지고기</p>
+
+                  </div>
+               </td>
+               <td id="chicken">
+                  <div style="color:black;">
+                     <img class="food" src="./image/chicken.jfif" alt="닭고기" onclick="(this);">
+                     <p>닭고기</p>
+                  </div>
+               </td>
+            </tr>
+         </table>
+
       </div>
    </div>
 
