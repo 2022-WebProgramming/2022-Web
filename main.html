@@ -13,7 +13,7 @@
 
         @font-face {
 
-            src: url("./font/BMYEONSUNG_ttf.ttf");
+            src: url("BMYEONSUNG_ttf.ttf");
             font-family: "jua"
         }
 
@@ -64,13 +64,13 @@
             width: 60%;
             height: 1070px;
             margin-left: 10%;
-            
+            overflow: scroll;
             background-color: aqua;
         }
 
         #side {
             margin: 0;
-            
+            overflow:scroll;
             width: 20%;
             margin-right: 10%;
             height: 1070px;
@@ -146,10 +146,10 @@
     </header>
     <section>
         <div id="content">
-            <h1>content</h1>
+          <div data-include-path="test.html"></div>
         </div>
         <div id="side">
-            사이드바 -> 뭐넣을지를 모르겠어서 걍 없애고싶기도함 이걸 네비바로 써도 되고
+            <div data-include-path="test.html"></div>
         </div>
     </section>
     <div id="footer">
@@ -160,7 +160,26 @@
             <p>대충 저작권은 TAG팀에 있음 어쩌구 저쩌구</p>
         </div>
     </div>
+    <script>
+ 
+      window.addEventListener('load', function() {
+          var allElements = document.getElementsByTagName('*');
+          Array.prototype.forEach.call(allElements, function(el) {
+              var includePath = el.dataset.includePath;
+              if (includePath) {
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function () {
+                      if (this.readyState == 4 && this.status == 200) {
+                          el.outerHTML = this.responseText;
+                      }
+                  };
+                  xhttp.open('GET', includePath, true);
+                  xhttp.send();
+              }
+          });
+      });
 
+  </script>
 </body>
 
 </html>
