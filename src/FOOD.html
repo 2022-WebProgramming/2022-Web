@@ -1,0 +1,212 @@
+<!--2020039048 kang min, Kim (김 강 민)-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Home</title>
+   <script src="function.js"></script>
+   <style>
+      #image_area {
+         width: 100%;
+         height: 100%;
+      }
+
+      #image_area img {
+         width: 100%;
+         height: 100%;
+      }
+
+      ul li {
+         display: inline-block;
+         margin-right: 50px;
+         color: lightpink;
+         font-weight: bold;
+      }
+
+      ul li:hover {
+         background-color: lightpink;
+         color: white;
+      }
+
+      ul {
+         text-align: center;
+      }
+      
+      #foodlist {
+         margin: auto;
+         text-align: center;
+         width: 70%;
+         overflow: hidden scroll;
+         height:1414px;
+       
+      }
+
+      #foodlist td {
+         border: 1px solid #dddddd;
+         text-align: center;
+         font-weight: bold;
+         
+      }
+
+      .food {
+         height: 360px;
+         width: 240px;
+      }
+
+      #result {
+         width: 30%;
+         overflow :scroll;
+         height:1414px;
+      }
+      #content2{
+         margin-left:0px;
+         margin-right:0px;
+         display:flex;  
+      }
+      #foodlist p{
+         font-size:50px;
+         margin:0px;
+      }
+     
+   </style>
+</head>
+
+<body>
+
+   <div id="content2">
+      <div id="foodlist">
+         <h1 style="color:RED; font-size:100px; margin-bottom:0px;">"FOOD"</h1>
+         <table style="margin:auto; border-spacing: 80px 4rem;;">
+            <tr>
+               <td id="pork">
+                  <div style="color:black;">
+                     <img class="food" src="./image/pork.jpg" alt="돼지고기" onclick="(this);">
+                     <p>돼지고기</p>
+
+                  </div>
+               </td>
+               <td id="chicken">
+                  <div style="color:black;">
+                     <img class="food" src="./image/chicken.jfif" alt="닭고기" onclick="(this);">
+                     <p>닭고기</p>
+
+                  </div>
+               </td>
+               <td id="beef">
+                  <div style="color:black;">
+                     <img class="food" src="./image/beef.jfif" alt="소고기" onclick="(this);">
+                     <p>소고기</p>
+
+                  </div>
+               </td>
+               <td id="greenOnion">
+                  <div style="color:blackred">
+                     <img class="food" src="./image/greenOnion.jfif" alt="대파" onclick="(this);">
+                     <p>대파</p>
+
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td id="onion">
+                  <div style="color:black;">
+                     <img class="food" src="./image/onion.jfif" alt="양파" onclick="(this);">
+                     <p>양파</p>
+
+                  </div>
+               </td>
+               <td id="garlic">
+                  <div style="color:black;">
+                     <img class="food" src="./image/garlic.jpg" alt="마늘" onclick="(this);">
+                     <p>마늘</p>
+
+                  </div>
+               </td>
+               <td id="carrot">
+                  <div style="color:black;">
+                     <img class="food" src="./image/carrot.jpg" alt="당근" onclick="(this);">
+                     <p>당근</p>
+
+                  </div>
+               </td>
+               <td id="potato">
+                  <div style="color:black;">
+                     <img class="food" src="./image/potato.jpg" alt="감자" onclick="(this);">
+                     <p>감자</p>
+
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td id="cabbage">
+                  <div style="color:black;">
+                     <img class="food" src="./image/cabbage.jpg" alt="배추" onclick="(this);">
+                     <p>배추</p>
+
+                  </div>
+               </td>
+               <td id="lettuce">
+                  <div style="color:black;">
+                     <img class="food" src="./image/lettuce.jpg" alt="양상추" onclick="(this);">
+                     <p>상추</p>
+
+                  </div>
+               </td>
+               <td id="cabbage2">
+                  <div style="color:black;">
+                     <img class="food" src="./image/cabbage2.jpg" alt="양배추" onclick="(this);">
+                     <p>양배추</p>
+
+                  </div>
+               </td>
+               <td id="mushroom">
+                  <div style="color:black;">
+                     <img class="food" src="./image/mushroom.jpg" alt="버섯" onclick="(this);">
+                     <p>버섯</p>
+
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td id="egg">
+                  <div style="color:black;">
+                     <img class="food" src="./image/egg.jpg" alt="달걀" onclick="(this);">
+                     <p>달걀</p>
+
+                  </div>
+               </td>
+               <td id="cheese">
+                  <div style="color:black">
+                     <img class="food" src="./image/cheese.jpg" alt="치즈" onclick="(this);">
+                     <p>치즈</p>
+
+                  </div>
+               </td>
+               <td id="tofu">
+                  <div style="color:black;">
+                     <img class="food" src="./image/tofu.jpg" alt="두부" onclick="(this);">
+                     <p>두부</p>
+
+                  </div>
+               </td>
+               <td id="shrimp">
+                  <div style="color:black;">
+                     <img class="food" src="./image/shrimp.jpg" alt="새우" onclick="(this);">
+                     <p>새우</p>
+                  </div>
+                  <!-- 생각날때마다 재료 추가-->
+
+               </td>
+            </tr>
+         </table>
+
+      </div>
+      <div id="result">
+         <h1>ddd</h1>
+      </div>
+   </div>
+
+</body>
+
+</html>
