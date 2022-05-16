@@ -12,32 +12,32 @@
 
    <div id="content2">
       <div id="foodlist">
-         <h1 style="color:RED; font-size:50px; margin-bottom:0px;">"FOOD"</h1>
+         <h1>"FOOD"</h1>
          <table style="margin:auto; border-spacing: 80px 4rem;">
             <tr>
                <td id="pork">
-                  <div style="color:black;">
+                  <div>
                      <img class="food" src="./img/food/pork.jpg" alt="돼지고기" onclick="(this);">
                      <p>돼지고기</p>
 
                   </div>
                </td>
                <td id="chicken">
-                  <div style="color:black;">
+                  <div>
                      <img class="food" src="./img/food/chicken.jfif" alt="닭고기" onclick="(this);">
                      <p>닭고기</p>
 
                   </div>
                </td>
                <td id="beef">
-                  <div style="color:black;">
+                  <div>
                      <img class="food" src="./img/food/beef.jfif" alt="소고기" onclick="(this);">
                      <p>소고기</p>
 
                   </div>
                </td>
                <td id="greenOnion">
-                  <div style="color:blackred">
+                  <div>
                      <img class="food" src="./img/food/greenOnion.jfif" alt="대파" onclick="(this);">
                      <p>대파</p>
 
@@ -46,29 +46,29 @@
             </tr>
             <tr>
                <td id="onion">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/onion.jfif" alt="양파" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/onion.jfif" alt="양파" onclick="select(this);">
                      <p>양파</p>
 
                   </div>
                </td>
                <td id="garlic">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/garlic.jpg" alt="마늘" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/garlic.jpg" alt="마늘" onclick="select(this);">
                      <p>마늘</p>
 
                   </div>
                </td>
                <td id="carrot">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/carrot.jpg" alt="당근" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/carrot.jpg" alt="당근" onclick="select(this);">
                      <p>당근</p>
 
                   </div>
                </td>
                <td id="potato">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/potato.jpg" alt="감자" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/potato.jpg" alt="감자" onclick="select(this);">
                      <p>감자</p>
 
                   </div>
@@ -76,29 +76,29 @@
             </tr>
             <tr>
                <td id="cabbage">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/cabbage.jpg" alt="배추" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/cabbage.jpg" alt="배추" onclick="select(this);">
                      <p>배추</p>
 
                   </div>
                </td>
                <td id="lettuce">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/lettuce.jpg" alt="양상추" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/lettuce.jpg" alt="양상추" onclick="select(this);">
                      <p>상추</p>
 
                   </div>
                </td>
                <td id="cabbage2">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/cabbage2.jpg" alt="양배추" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/cabbage2.jpg" alt="양배추" onclick="select(this);">
                      <p>양배추</p>
 
                   </div>
                </td>
                <td id="mushroom">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/mushroom.jpg" alt="버섯" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/mushroom.jpg" alt="버섯" onclick="select(this);">
                      <p>버섯</p>
 
                   </div>
@@ -106,29 +106,29 @@
             </tr>
             <tr>
                <td id="egg">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/egg.jpg" alt="달걀" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/egg.jpg" alt="달걀" onclick="select(this);">
                      <p>달걀</p>
 
                   </div>
                </td>
                <td id="cheese">
-                  <div style="color:black">
-                     <img class="food" src="./img/food/cheese.jpg" alt="치즈" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/cheese.jpg" alt="치즈" onclick="select(this);">
                      <p>치즈</p>
 
                   </div>
                </td>
                <td id="tofu">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/tofu.jpg" alt="두부" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/tofu.jpg" alt="두부" onclick="select(this);">
                      <p>두부</p>
 
                   </div>
                </td>
                <td id="shrimp">
-                  <div style="color:black;">
-                     <img class="food" src="./img/food/shrimp.jpg" alt="새우" onclick="(this);">
+                  <div>
+                     <img class="food" src="./img/food/shrimp.jpg" alt="새우" onclick="select(this);">
                      <p>새우</p>
                   </div>
                   <!-- 생각날때마다 재료 추가-->
@@ -141,7 +141,16 @@
       <div id="result">
          <h1>"Result"</h1>
 
-         <table style="margin:auto; border-spacing: 30px 4rem;">
+         <table id="resultTable" style="margin:auto; border-spacing: 30px 4rem;">
+            <tr>
+               <td id="salt">
+                  <div>
+                     <img class="food" src="./image2/salt.jpg" alt="소금" onclick="(this);">
+                     <p>소금</p>
+                  </div>
+               </td>
+            </tr>
+
          </table>
 
       </div>
