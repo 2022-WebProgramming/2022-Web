@@ -1,0 +1,72 @@
+h1 {
+    color: RED;
+    font-size: 50px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#image_area {
+    width: 100%;
+    height: 100%;
+}
+
+#image_area img {
+    width: 100%;
+    height: 100%;
+}
+
+ul li {
+    font-size: 40px;
+    display: inline-block;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+ul li:hover {
+    color: white;
+}
+
+ul {
+    text-align: center;
+}
+
+#foodlist,
+#result {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    overflow: hidden scroll;
+    height: 1414px;
+
+}
+
+#foodlist td,
+#result td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.food {
+    height: 360px;
+    width: 240px;
+}
+
+#result {
+    width: 30%;
+    overflow: scroll;
+    height: 1414px;
+}
+
+#content2 {
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+}
+
+#foodlist p,
+#result p {
+    font-size: 50px;
+    margin: 0px;
+}
