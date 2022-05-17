@@ -17,28 +17,28 @@
             <tr>
                <td id="pork">
                   <div>
-                     <img class="food" src="./img/food/pork.jpg" alt="돼지고기" onclick="(this);">
+                     <img class="food" src="./img/food/pork.jpg" alt="돼지고기" onclick="select(this);">
                      <p>돼지고기</p>
 
                   </div>
                </td>
                <td id="chicken">
                   <div>
-                     <img class="food" src="./img/food/chicken.jfif" alt="닭고기" onclick="(this);">
+                     <img class="food" src="./img/food/chicken.jfif" alt="닭고기" onclick="select(this);">
                      <p>닭고기</p>
 
                   </div>
                </td>
                <td id="beef">
                   <div>
-                     <img class="food" src="./img/food/beef.jfif" alt="소고기" onclick="(this);">
+                     <img class="food" src="./img/food/beef.jfif" alt="소고기" onclick="select(this);">
                      <p>소고기</p>
 
                   </div>
                </td>
                <td id="greenOnion">
                   <div>
-                     <img class="food" src="./img/food/greenOnion.jfif" alt="대파" onclick="(this);">
+                     <img class="food" src="./img/food/greenOnion.jfif" alt="대파" onclick="select(this);">
                      <p>대파</p>
 
                   </div>
@@ -126,11 +126,12 @@
 
                   </div>
                </td>
-               <td id="shrimp">
+               <td>
                   <div>
                      <img class="food" src="./img/food/shrimp.jpg" alt="새우" onclick="select(this);">
                      <p>새우</p>
                   </div>
+
                   <!-- 생각날때마다 재료 추가-->
 
                </td>
@@ -140,16 +141,11 @@
       </div>
       <div id="result">
          <h1>"Result"</h1>
-
+         <button onclick="remove();">reset</button>
          <table id="resultTable" style="margin:auto; border-spacing: 30px 4rem;">
-            <tr>
-               <td id="salt">
-                  <div>
-                     <img class="food" src="./image2/salt.jpg" alt="소금" onclick="(this);">
-                     <p>소금</p>
-                  </div>
-               </td>
-            </tr>
+            <tbody>
+
+            </tbody>
 
          </table>
 
