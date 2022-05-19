@@ -1,0 +1,271 @@
+body {
+    margin: 0px;
+    width: 100%;
+    font-family: "jua";
+}
+
+
+@font-face {
+
+    src: url("./font/BMYEONSUNG_ttf.ttf");
+    font-family: "jua"
+}
+
+/*header css*/
+#header {
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 3px black;
+    border-top: solid 3px black;
+    font-family: "jua";
+    background-color: #171515;
+    color: white;
+}
+
+#header h1 {
+    float: left;
+    margin-left: 10%;
+    line-height: normal;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+nav {
+    margin-right: 10%;
+}
+
+nav ul li {
+    display: inline-block;
+    padding-right: 30px;
+    padding-top: 25px;
+    line-height: normal;
+    text-decoration: none;
+}
+
+nav ul {
+    float: right;
+}
+
+li {
+
+    font-size: 20px;
+}
+
+
+
+/*content css*/
+#content {
+    width: 100%;
+    height: 1414px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 3px solid black;
+    overflow: scroll;
+}
+
+#content::-webkit-scrollbar {
+    width: 10px;
+    background-color: white;
+}
+
+#content::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+}
+
+#content::-webkit-scrollbar-track {
+    background-color: lightgrey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+
+
+section {
+    display: flex;
+    flex-direction: row;
+    margin-top: 6px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+#recipeList td {
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#recipeList {
+    margin-left: 10%;
+    margin-left: 10%;
+}
+
+td img {
+    width: 360px;
+    height: 240px;
+}
+
+/*footer css*/
+#footer {
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    clear: both;
+    border-top: solid 3px black;
+    border-bottom: solid 3px black;
+    background-color: #171515;
+    color: white;
+}
+
+#footer h2 {
+    margin-bottom: 0px;
+    margin-right: 50px;
+    float: left;
+    font-family: "jua";
+    display: inline-block;
+    font-size: 70px;
+    padding-left: 10%;
+    margin-top: 5px;
+}
+
+#footer #team {
+    padding-left: 10%;
+    font-size: 35px;
+}
+
+#footer p {
+    margin: auto;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer a:hover {
+    color: lightpink;
+}
+
+.recipe {
+    padding: 30px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.recipe img {
+    border: 3px solid black;
+}
+
+.recipeInfo {
+    margin-left: 30px;
+    width: 70%;
+    height: 240px;
+    border: 3px solid black;
+    overflow: scroll;
+    box-shadow: 0px 0px 3px #171515;
+}
+
+.recipeInfo::-webkit-scrollbar {
+    width: 10px;
+    background-color: white;
+}
+
+.recipeInfo::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+}
+
+.recipeInfo::-webkit-scrollbar-track {
+    background-color: lightgrey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+
+.recipeTitle {
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    color: black;
+    margin-top: 0px;
+}
+
+.recipeInfo ol li {
+    font-size: 25px;
+}
+
+.recipeInfo p {
+    font-size: 20px;
+}
+
+.recipeInfo h2 {
+    color: white;
+    background-color: #171515;
+    font-weight: 100;
+}
+
+.foodText {
+    display: none;
+    width: 366px;
+    position: absolute;
+    top: 0px;
+    background-color: black;
+    color: white;
+    opacity: 0.7;
+    text-align: center;
+}
+
+.foodImageFrame {
+    float: left;
+    position: relative;
+    padding: 0;
+}
+
+#foodSearchText {
+    margin-left: 5px;
+    border: 2px solid #171515;
+    box-shadow: 0px 0px 3px #171515;
+    font-size: 15px;
+    padding: 5px;
+    width: 140px;
+}
+
+
+
+#foodSearchButton {
+    font-family: inherit;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: #171515;
+    box-shadow: 0px 0px 3px #171515;
+    color: white;
+    font-size: 20px;
+}
+
+#searchSection {
+    position: fixed;
+    top: 150px;
+}
+
+#searchButton {
+    display: inline-block;
+    font-size: 30px;
+    background-color: #171515;
+    margin-left: 35px;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px;
+    color: white;
+}
+
+#searchButton:link {
+    color: white;
+}
+
+#searchButton:active {
+    color: white;
+}

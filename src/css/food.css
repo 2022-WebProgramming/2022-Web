@@ -1,5 +1,5 @@
 h1 {
-    color: RED;
+    color: black;
     font-size: 50px;
     margin-bottom: 0px;
     text-align: center;
@@ -40,12 +40,49 @@ ul {
 
 }
 
+#foodlist::-webkit-scrollbar {
+    width: 10px;
+    background-color: white;
+}
+
+#foodlist::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+}
+
+#foodlist::-webkit-scrollbar-track {
+    background-color: lightgrey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+#result::-webkit-scrollbar {
+    width: 10px;
+    background-color: white;
+}
+
+#result::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+}
+
+#result::-webkit-scrollbar-track {
+    background-color: lightgrey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
 #foodlist td,
 #result td {
-    border: 1px solid #dddddd;
+    border: 5px solid black;
     text-align: center;
     font-weight: bold;
 
+}
+
+#foodlist td:hover{
+    border: 5px solid red;
+    background-color: yellow;
 }
 
 .food {

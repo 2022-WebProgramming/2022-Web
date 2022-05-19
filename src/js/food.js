@@ -1,6 +1,11 @@
 
 function select(element){
     
+    function changeCondiment(){
+        alert("hi");
+        document.getElementById("htmlSrc").setAttribute("data-include-path")="./CONDIMENT.html"
+    }
+
     classN=element.className; 
     src = element.src;
     alt = element.alt;

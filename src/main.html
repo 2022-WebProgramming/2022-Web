@@ -19,7 +19,7 @@
             <nav>
                 <ul>
                     <li>FOOD</li>
-                    <li>Condiment</li>
+                    <li onclick="changeCondiment()">Condiment</li>
                     <li>RECIPE</li>
                 </ul>
             </nav>
@@ -27,7 +27,7 @@
     </header>
     <section>
         <div id="content">
-          <div data-include-path="./FOOD.html"></div>           
+          <div id="htmlSrc" data-include-path="./FOOD.html"></div>           
         </div>
     </section>
     <div id="footer">
@@ -38,7 +38,8 @@
         </div>
     </div>
     <script>
- 
+
+
       window.addEventListener('load', function() {
           var allElements = document.getElementsByTagName('*');
           Array.prototype.forEach.call(allElements, function(el) {
