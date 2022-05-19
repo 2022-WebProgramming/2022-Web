@@ -4,7 +4,8 @@
 <head>
     <title>자취생 레시피</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="js/food.js"></script>
+    <script src="js/food.js" defer></script>
+    <script src="js/recipeJs.js"></script>
    
 </head>
 
@@ -20,9 +21,39 @@
                 <ul>
                     <li id="gotoFood">FOOD</li>
                     <li id="gotoCondiment">Condiment</li>
-                    <li onclick="moveRecipe();">RECIPE</li>
+                    <li id="gotoRecipe">RECIPE</li>
                 </ul>
             </nav>
+        </div>
+
+        <div id="content">
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#content").load("./FOOD.html");
+                    });
+
+                $(document).ready(function(){
+                    $("#gotoFood").click(function(){
+                        $("#content").load("./Food.html")
+                    });
+                });
+
+                $(document).ready(function(){
+                    $("#gotoCondiment").click(function(){
+                        $("#content").load("./CONDIMENT.html")
+                    });
+                });
+
+                $(document).ready(function(){
+                    $("#gotoRecipe").click(function(){
+                        $("#content").load("./Recipe.html")
+                    });
+                });
+
+            </script>
+       
         </div>
     </header>
     <section>

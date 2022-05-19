@@ -17,7 +17,8 @@ body {
     border-bottom: solid 3px black;
     border-top: solid 3px black;
     font-family: "jua";
-    background-color: #ffdd9e;
+    background-color: black;
+    color:white;
 }
 
 #header h1 {
@@ -25,6 +26,7 @@ body {
     margin-left: 10%;
     line-height: normal;
     font-size: 50px;
+    color:white;
 }
 
 nav {
@@ -48,7 +50,7 @@ li {
 }
 
 li:hover {
-    color: red;
+    color: yellow;
 }
 
 
@@ -58,7 +60,7 @@ li:hover {
     height: 1414px;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: beige;
+    background-color: white;
 }
 
 
@@ -82,7 +84,8 @@ header {
     clear: both;
     border-top: solid 3px black;
     border-bottom: solid 3px black;
-    background-color: #ffdd9e;
+    background-color: black;
+    color:white;
 }
 
 #footer h2 {
@@ -107,9 +110,9 @@ header {
 
 #footer a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #footer a:hover {
-    color: red;
+    color:yellow;
 }
