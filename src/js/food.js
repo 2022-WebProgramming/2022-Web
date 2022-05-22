@@ -1,15 +1,18 @@
-
 function select(element){
-    
-    function changeCondiment(){
-        alert("hi");
-        document.getElementById("htmlSrc").setAttribute("data-include-path")="./CONDIMENT.html"
-    }
-
     classN=element.className; 
     src = element.src;
     alt = element.alt;
 
+    var search=false;
+    var ptable= new Array();
+    ptable =document.getElementById("resultTable").getElementsByTagName("p")    
+    for(var i=0;i<ptable.length;i++){
+        if(document.getElementById("resultTable").getElementsByTagName("p")[i].innerHTML==alt){
+
+            search=true;
+        }       
+    }
+    if(!search){
     var table = document.getElementById("resultTable");
     var row = table.insertRow();
     var cell = row.insertCell();
@@ -29,9 +32,8 @@ function select(element){
         var row=document.getElementById("resultTable").getElementsByTagName('tr');
         var table=document.getElementById("resultTable");
         console.log(row);
-        //for(var i=0;i<row.length;i++){
-          //생각중  
-        //}
+        
+        //생각중
     }
 
     div.appendChild(img);
@@ -39,6 +41,7 @@ function select(element){
     div.appendChild(btn);
 
     cell.appendChild(div);
+    }
 }
 
 function remove(){
