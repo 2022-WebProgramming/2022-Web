@@ -1,8 +1,14 @@
+
+var base=new Array();
+
 function select(element){
+
     classN=element.className; 
     src = element.src;
     alt = element.alt;
+    id=element.id;
 
+    //중복제거
     var search=false;
     var ptable= new Array();
     ptable =document.getElementById("resultTable").getElementsByTagName("p")    
@@ -12,10 +18,14 @@ function select(element){
             search=true;
         }       
     }
+    //중복이 없다면
     if(!search){
     var table = document.getElementById("resultTable");
     var row = table.insertRow();
     var cell = row.insertCell();
+    row.id=id;
+
+    base.push(alt);
 
     var div = document.createElement('div');
     var img = document.createElement('img');
@@ -29,11 +39,14 @@ function select(element){
     var btn=document.createElement('button');
     btn.innerHTML="Remove";
     btn.onclick=function(){
-        var row=document.getElementById("resultTable").getElementsByTagName('tr');
-        var table=document.getElementById("resultTable");
-        console.log(row);
+        row.parentNode.removeChild(row);
+        for(let i = 0; i < base.length; i++) {
+            if(base[i] === alt)  {
+              base.splice(i-1, 1);
+              i--;
+            }
+        }
         
-        //생각중
     }
 
     div.appendChild(img);
@@ -42,13 +55,11 @@ function select(element){
 
     cell.appendChild(div);
     }
+    
 }
 
-function remove(){
-    var table=document.getElementById("resultTable");
-    var row=document.getElementById("resultTable").getElementsByTagName('tr');
-    for(var i=0;i<row.length;i++){
-        table.deleteRow(0);
+function result(){
+    for(var i=0;i<base.length;i++){
+
     }
-    table.deleteRow(0);
 }
