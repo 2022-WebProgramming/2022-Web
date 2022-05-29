@@ -1,157 +1,230 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
    <meta charset="UTF-8">
    <title>Home</title>
    <script src="js/food.js"></script>
-   <link rel="stylesheet" type="text/css" href="css/food.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style>
+      @font-face {
+
+         src: url("./font/SangSangFlowerRoad.otf");
+         font-family: "flower"
+      }
+      @font-face {
+
+         src: url("./font/BMYEONSUNG_ttf.ttf");
+            font-family: "jua"
+      }
+
+      .foodcontent {
+         padding-left: 70px;
+         padding-right: 70px;
+      }
+
+      .card {
+         margin-top: 10px;
+         margin-bottom: 30px;
+      }
+
+      .btn-group {
+         margin-top: 70px;
+      }
+
+      #result {
+         margin-top: 50px;
+      }
+
+      p
+       {
+         font-family: flower;
+         font-size: 30px;
+      }
+      .card:hover{
+         box-shadow: 0px 0px 5px black;
+      }
+      li{
+         font-family: jua;
+      }
+   </style>
 </head>
 
+
 <body>
+   <div class="container-fluid foodcontent">
+      <div class="row">
+         <div class="col-sm-8">
+            <div id="foodlist">
+               <div id="start">
+                  <div class="row">
+                     <div class="col-sm-3 card">
+                        <img class="img-circle" id="pork" src="./img/food/pork.jpg" width="100" height="100" alt="돼지고기"
+                           onclick="select(this);">
+                        <div class="text-center">
+                           <p>돼지고기</p>
+                        </div>
 
-   <div id="content2">
-      <div id="foodlist">
-         <h1>"FOOD"</h1>
-         <table style="margin:auto; border-spacing: 80px 4rem;">
-            <tr>
-               <td>
-                  <div>
-                     <img  id="pork" class="food" src="./img/food/pork.jpg" alt="돼지고기" onclick="select(this);">
-                     <p>돼지고기</p>
-
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img class="card-img-top" id="chicken" src="./img/food/chicken.jfif" width="100" height="100"
+                              alt="닭고기" onclick="select(this);">
+                           <div class="text-center">
+                              <p>닭고기</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="beef" class="card-img-top" src="./img/food/beef.jfif" width="100" height="100"
+                              alt="소고기" onclick="select(this);">
+                           <div class="text-center">
+                              <p>소고기</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="greenOnion" class="card-img-top" width="100" height="100"
+                              src="./img/food/greenOnion.jfif" alt="대파" onclick="select(this);">
+                           <div class="text-center">
+                              <p>대파</p>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="chicken" class="food" src="./img/food/chicken.jfif" alt="닭고기" onclick="select(this);">
-                     <p>닭고기</p>
+                  <div class="row">
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="onion" class="card-img-top" src="./img/food/onion.jfif" width="100" height="100"
+                              alt="양파" onclick="select(this);">
+                           <div class="text-center">
+                              <p>양파</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="garlic" class="card-img-top" src="./img/food/garlic.jpg" width="100" height="100"
+                              alt="마늘" onclick="select(this);">
+                           <div class="text-center">
+                              <p>마늘</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="carrot" class="card-img-top" src="./img/food/carrot.jpg" width="100" height="100"
+                              alt="당근" onclick="select(this);">
+                           <div class="text-center">
+                              <p>당근</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card ">
+                        <div>
 
+                           <img id="potato" class="card-img-top" src="./img/food/potato.jpg" width="100" height="100"
+                              alt="감자" onclick="select(this);">
+                           <div class="text-center">
+                              <p>감자</p>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="beef" class="food" src="./img/food/beef.jfif" alt="소고기" onclick="select(this);">
-                     <p>소고기</p>
+                  <div class="row">
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="cabbage" class="card-img-top" src="./img/food/cabbage.jpg" width="100" height="100"
+                              alt="배추" onclick="select(this);">
+                           <div class="text-center">
+                              <p>배추</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
 
+                           <img id="lettuce" class="card-img-top" src="./img/food/lettuce.jpg" width="100" height="100"
+                              alt="양상추" onclick="select(this);">
+                           <div class="text-center">
+                              <p>상추</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="cabbage2" class="card-img-top" src="./img/food/cabbage2.jpg" width="100"
+                              height="100" alt="양배추" onclick="select(this);">
+                           <div class="text-center">
+                              <p>양배추</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="mushroom" class="card-img-top" src="./img/food/mushroom.jpg" width="100"
+                              height="100" alt="버섯" onclick="select(this);">
+                           <div class="text-center">
+                              <p>버섯</p>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="greenOnion" class="food" src="./img/food/greenOnion.jfif" alt="대파" onclick="select(this);">
-                     <p>대파</p>
+                  <div class="row">
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="egg" class="card-img-top" src="./img/food/egg.jpg" width="100" height="100" alt="달걀"
+                              onclick="select(this);">
+                           <div class="text-center">
+                              <p>달걀</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="cheese" class="card-img-top" src="./img/food/cheese.jpg" width="100" height="100"
+                              alt="치즈" onclick="select(this);">
+                           <div class="text-center">
+                              <p>치즈</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img id="tofu" class="card-img-top" src="./img/food/tofu.jpg" width="100" height="100"
+                              alt="두부" onclick="select(this);">
+                           <div class="text-center">
+                              <p>두부</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-3 card">
+                        <div>
+                           <img class="card-img-top" id="shrimp" src="./img/food/shrimp.jpg" width="100" height="100"
+                              alt="새우" onclick="select(this);">
+                           <div class="text-center">
+                              <p>새우</p>
+                           </div>
+                        </div>
 
+                        <!-- 생각날때마다 재료 추가-->
+
+                     </div>
                   </div>
-               </td>
-            </tr>
-            <tr>
-               <td >
-                  <div>
-                     <img id="onion" class="food" src="./img/food/onion.jfif" alt="양파" onclick="select(this);">
-                     <p>양파</p>
+               </div>
 
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="garlic" class="food" src="./img/food/garlic.jpg" alt="마늘" onclick="select(this);">
-                     <p>마늘</p>
-
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="carrot" class="food" src="./img/food/carrot.jpg" alt="당근" onclick="select(this);">
-                     <p>당근</p>
-
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="potato" class="food" src="./img/food/potato.jpg" alt="감자" onclick="select(this);">
-                     <p>감자</p>
-
-                  </div>
-               </td>
-            </tr>
-            <tr>
-               <td >
-                  <div>
-                     <img id="cabbage" class="food" src="./img/food/cabbage.jpg" alt="배추" onclick="select(this);">
-                     <p>배추</p>
-
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="lettuce" class="food" src="./img/food/lettuce.jpg" alt="양상추" onclick="select(this);">
-                     <p>상추</p>
-
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="cabbage2" class="food" src="./img/food/cabbage2.jpg" alt="양배추" onclick="select(this);">
-                     <p>양배추</p>
-
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="mushroom" class="food" src="./img/food/mushroom.jpg" alt="버섯" onclick="select(this);">
-                     <p>버섯</p>
-
-                  </div>
-               </td>
-            </tr>
-            <tr>
-               <td >
-                  <div>
-                     <img id="egg" class="food" src="./img/food/egg.jpg" alt="달걀" onclick="select(this);">
-                     <p>달걀</p>
-
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="cheese" class="food" src="./img/food/cheese.jpg" alt="치즈" onclick="select(this);">
-                     <p>치즈</p>
-
-                  </div>
-               </td>
-               <td >
-                  <div>
-                     <img id="tofu" class="food" src="./img/food/tofu.jpg" alt="두부" onclick="select(this);">
-                     <p>두부</p>
-
-                  </div>
-               </td>
-               <td>
-                  <div>
-                     <img class="food" id="shrimp" src="./img/food/shrimp.jpg" alt="새우" onclick="select(this);">
-                     <p>새우</p>
-                  </div>
-
-                  <!-- 생각날때마다 재료 추가-->
-
-               </td>
-            </tr>
-         </table>
-
-      </div>
-      <div id="result">
-         <h1>"Result"</h1>
-         <button onclick="result();">결과보기</button>
-         <table id="resultTable" style="margin:auto; border-spacing: 30px 4rem;">
-            <tbody>
-
-            </tbody>
-
-         </table>
+            </div>
+         </div>
 
       </div>
    </div>
-
 </body>
 
 </html>
+

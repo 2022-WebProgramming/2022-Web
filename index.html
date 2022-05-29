@@ -1,33 +1,159 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Start</title>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="./src/js/jquery.cycle2.min.js"></script>
     <style>
-        body {
-            margin: 0;
-        }
-        /*버튼 디자인 해야함*/
-       #start {
-            display: block;
-            position: absolute;
-            top: 75%;
-            right: 40%;
-            width: 20%;
-            height: 150px;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            text-decoration: none;
-            font-size: 100px;
-        }
-        
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200&family=Open+Sans&display=swap');
+      *
+      {
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+      }
+      @font-face {
+
+        src: url("./font/SangSangFlowerRoad.otf");
+        font-family: "flower"
+     }
+
+     @font-face {
+
+      src: url("./src/font/BMYEONSUNG_ttf.ttf");
+         font-family: "jua"
+   }
+      img[src="member1.jpg"]:hover
+      {
+        box-shadow: 0px 0px 10px #1d202d;
+      }
+
+      img[src="member2.jpg"]:hover
+      {
+        box-shadow: 0px 0px 10px #1d202d;
+      }
+
+      img[src="member3.jpg"]:hover
+      {
+        box-shadow: 0px 0px 10px #1d202d;
+      }
+
+      .nav-link
+      {
+        color:white !important
+      }
+      #Contact{
+        font-family: flower;
+      }
+      li a{
+        font-family: jua;
+      }
+      #Contact{
+        padding-left:70px;
+    }
     </style>
-</head>
-
-<body>
-    <img style="width: 100%; height: 50vw; "
-        src="https://cdn.pixabay.com/photo/2018/11/08/11/13/grocery-3802358_1280.jpg" />
-    <a id="start" href="./src/main.html">Start</a>
-</body>
-
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-custom" style="margin-bottom:0px; background-color: #1d202d; padding: 15px; font-size: 20px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavBar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#Introduction" style="color:white;">Introduction</a></li>
+            <li><a href="#Functionalities" style="color:white;">Functionalities</a></li>
+            <li><a href="#Team" style="color:white;">Team</a></li>
+            <li><a href="#Contact" style="color:white;">Contact</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 style="font-size:50px; margin-left: 3vw;">Recipe for Students</h1>
+    <div id="image-container" class="container-fluid text-center" style="padding:50px;">
+      <div class="row">
+        <div class="col-sm-7 cycle-slideshow" style="box-shadow: 0px 0px 30px #1d202d;">
+          <img src ="image1.jpg" class="img-responsive">
+          <img src ="image2.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-5" style="margin-top:20vh;">
+          <h2>Select food and Condiment</h2>
+          <h2>And Find your Recipe</h2>
+          <br>
+          <button class="btn btn-default btn-lg" onclick="location.href='./src/main.html';" style="padding-left: 10vw; padding-right: 10vw; font-size: 30px; font-weight: bold; background-color: #1d202d; color:white; margin-bottom: 3vh;">Start</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div id="Introduction" class="container-fluid text-center" style="margin-top:100px;">
+      <h1>Web Site Introduction</h1>
+      <h3>우리는 독거하는 자취생을 위해 제작했따</div></h3>
+    </div>
+    <hr>
+    <div id="Functionalities" class="container-fluid text-center" style="margin-top:100px;">
+      <h1>Functionalities</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-cutlery" style="font-size: 60px;"></span>
+          <h4>만들 수 있는 음식 검색</h4> 
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-search" style="font-size: 60px;"></span>
+          <h4>레시피 찾기</h4> 
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-map-marker" style="font-size: 60px;"></span>
+          <h4>지도</h4> 
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div id="Team" class="container-fluid text-center" style="margin-top:100px;">
+      <h1>Our Team Members</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>이 인 규</h3>
+          <h4>(2018038083)</h4>
+          <img src = "member1.jpg" class = "img-rounded" data-toggle="collapse" data-target="#member1">
+          <div id="member1" class="collapse">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h3>노 민 성</h3>
+          <h4>(2018038076)</h4>
+          <img src = "member2.jpg" class = "img-rounded" data-toggle="collapse" data-target="#member2">
+          <div id="member2" class="collapse">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h3>김 강 민</h3>
+          <h4>(2020039048)</h4>
+          <img src = "member3.jpg" class = "img-rounded" data-toggle="collapse" data-target="#member3">
+          <div id="member3" class="collapse">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Contact" class="container-fluid" style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
+      <h1>Team TAG</h1>
+      <br>
+      <h4>이인규</h4>
+      <h4>노민성</h4>
+      <h4>김강민</h4>
+    
+    </div>
+  </body>
 </html>
