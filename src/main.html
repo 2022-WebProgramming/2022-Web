@@ -35,6 +35,20 @@
             padding-left:70px;
         }
     </style>
+    <script>
+
+     //선택목록에 선택된 재료 나오나 확인하는 함수
+     function check(){
+               var keys = Object.keys(localStorage);
+               keys.forEach(key=>{
+                  var temp =localStorage.getItem(key);
+                  var showSelected = JSON.parse(temp);
+                        if(showSelected.selected=="true"){
+                           console.log(showSelected.name);
+                        } 
+                  })
+            }
+    </script>
 
 
 </head>
@@ -80,9 +94,8 @@
                 <div class="col-sm-1"></div>
                 <div class="col-sm-4 " id="result">
                     <h1 class="title">선택 목록</h1>
-                    
-                    
 
+                   <button onclick="check();">선택목록 체크용</button>
                         
                     </script>
                 </div>

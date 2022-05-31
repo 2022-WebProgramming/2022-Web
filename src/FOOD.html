@@ -185,79 +185,247 @@
             "alt":"새우",
             "selected":"false"
         }
-        
+
+        //선택목록에 선택된 재료 나오나 확인하는 함수
+        function check(){
+               var keys = Object.keys(localStorage);
+               keys.forEach(key=>{
+                  var temp =localStorage.getItem(key);
+                  var showSelected = JSON.parse(temp);
+                        if(showSelected.selected=="true"){
+                           console.log(showSelected.name);
+                        } 
+                  })
+            }
 
             //json은 객체를 문자열로 표현한 방식
             localStorage.setItem('pork',JSON.stringify(pork));
             localStorage.setItem('chicken',JSON.stringify(chicken));
+            localStorage.setItem('beef',JSON.stringify(beef));
+            localStorage.setItem('greenOnion',JSON.stringify(greenOnion));
+            localStorage.setItem('onion',JSON.stringify(onion));
+            localStorage.setItem('garlic',JSON.stringify(garlic));
+            localStorage.setItem('carrot',JSON.stringify(carrot));
+            localStorage.setItem('potato',JSON.stringify(potato));
+            localStorage.setItem('cabbage',JSON.stringify(cabbage));
+            localStorage.setItem('lettuce',JSON.stringify(lettuce));
+            localStorage.setItem('cabbage2',JSON.stringify(cabbage2));
+            localStorage.setItem('mushroom',JSON.stringify(mushroom));
+            localStorage.setItem('egg',JSON.stringify(egg));
+            localStorage.setItem('cheese',JSON.stringify(cheese));
+            localStorage.setItem('tofu',JSON.stringify(tofu));
+            localStorage.setItem('shrimp',JSON.stringify(shrimp));
 
 
-            function select1(){
-               const getData = JSON.parse(localStorage.getItem('pork'));
+            function selectFood1(){
+               var getData = JSON.parse(localStorage.getItem('pork'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("pork", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("pork", JSON.stringify(getData));
+               }
                console.log(getData);
-
-               getData.name = "돼지고기2";
-               console.log('after', getData);
-               localStorage.setItem("pork", JSON.stringify(getData));
-            }
-
-         /*
-            function show(){
-               for (var i in data){
-                  if(data[i].selected=="true"){
-                     console.log(data[i]);
-                  }
-               }
-            }
-            function select1(){
-               if(data["1"].selected=="false"){
-                  data["1"].selected="true";
-                  JSON.stringify(data);
-                  console.log(data["1"].selected);
-               }
-               else if(data["1"].selected=="true"){
-                  data["1"].selected="false";
-                  JSON.stringify(data);
-                  console.log(data["1"].selected);
-               }
-               show();
             }
             
-            function select2(){
-               if(data["2"].selected=="false"){
-                  data["2"].selected="true";
-                  console.log(data["2"].selected);
+            function selectFood2(){
+               var getData = JSON.parse(localStorage.getItem('chicken'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("chicken", JSON.stringify(getData));
                }
-               else if(data["2"].selected=="true"){
-                  data["2"].selected="false";
-                  console.log(data["2"].selected);
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("chicken", JSON.stringify(getData));
                }
-               show();
-            }
-            function select3(){
-               if(data["3"].selected=="false"){
-                  data["3"].selected="true";
-                  console.log(data["3"].selected);
-               }
-               else if(data["3"].selected=="true"){
-                  data["3"].selected="false";
-                  console.log(data["3"].selected);
-               }
-               show();
-            }
-            function select4(){
-               if(data["4"].selected=="false"){
-                  data["4"].selected="true";
-                  console.log(data["4"].selected);
-               }
-               else if(data["4"].selected=="true"){
-                  data["4"].selected="false";
-                  console.log(data["4"].selected);
-               }
-               show();
+               console.log(getData);
             }
 
-         */
+            function selectFood3(){
+               var getData = JSON.parse(localStorage.getItem('beef'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("beef", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("beef", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood4(){
+               var getData = JSON.parse(localStorage.getItem('greenOnion'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("greenOnion", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("greenOnion", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood5(){
+               var getData = JSON.parse(localStorage.getItem('onion'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("onion", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("onion", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood6(){
+               var getData = JSON.parse(localStorage.getItem('garlic'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("garlic", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("garlic", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood7(){
+               var getData = JSON.parse(localStorage.getItem('carrot'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("carrot", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("carrot", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood8(){
+               var getData = JSON.parse(localStorage.getItem('potato'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("potato", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("potato", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood9(){
+               var getData = JSON.parse(localStorage.getItem('cabbage'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("cabbage", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("cabbage", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood10(){
+               var getData = JSON.parse(localStorage.getItem('lettuce'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("lettuce", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("lettuce", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood11(){
+               var getData = JSON.parse(localStorage.getItem('cabbage2'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("cabbage2", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("cabbage2", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood12(){
+               var getData = JSON.parse(localStorage.getItem('mushroom'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("mushroom", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("mushroom", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood13(){
+               var getData = JSON.parse(localStorage.getItem('egg'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("egg", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("egg", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood14(){
+               var getData = JSON.parse(localStorage.getItem('cheese'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("cheese", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("cheese", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood15(){
+               var getData = JSON.parse(localStorage.getItem('tofu'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("tofu", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("tofu", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+            function selectFood16(){
+               var getData = JSON.parse(localStorage.getItem('shrimp'));
+               if(getData.selected == "false"){
+                  getData.selected = "true";
+                  localStorage.setItem("shrimp", JSON.stringify(getData));
+               }
+               else if(getData.selected == "true"){
+                  getData.selected="false";
+                  localStorage.setItem("shrimp", JSON.stringify(getData));
+               }
+               console.log(getData);
+            }
+
+    
          </script>
            
       
@@ -273,7 +441,7 @@
                   <div class="row">
                      <div class="col-sm-3 card">
                         <img class="img-circle" id="pork" src="./img/food/pork.jpg" width="100" height="100" alt="돼지고기"
-                           onclick="select1();">
+                           onclick="selectFood1();">
                         <div class="text-center">
                            <p>돼지고기</p>
                         </div>
@@ -282,7 +450,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img class="card-img-top" id="chicken" src="./img/food/chicken.jfif" width="100" height="100"
-                              alt="닭고기" onclick="select2();">
+                              alt="닭고기" onclick="selectFood2();">
                            <div class="text-center">
                               <p>닭고기</p>
                            </div>
@@ -291,7 +459,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="beef" class="card-img-top" src="./img/food/beef.jfif" width="100" height="100"
-                              alt="소고기" onclick="select3();">
+                              alt="소고기" onclick="selectFood3();">
                            <div class="text-center">
                               <p>소고기</p>
                            </div>
@@ -300,7 +468,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="greenOnion" class="card-img-top" width="100" height="100"
-                              src="./img/food/greenOnion.jfif" alt="대파" onclick="select4();">
+                              src="./img/food/greenOnion.jfif" alt="대파" onclick="selectFood4();">
                            <div class="text-center">
                               <p>대파</p>
                            </div>
@@ -311,7 +479,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="onion" class="card-img-top" src="./img/food/onion.jfif" width="100" height="100"
-                              alt="양파" onclick="select5();">
+                              alt="양파" onclick="selectFood5();">
                            <div class="text-center">
                               <p>양파</p>
                            </div>
@@ -320,7 +488,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="garlic" class="card-img-top" src="./img/food/garlic.jpg" width="100" height="100"
-                              alt="마늘" onclick="select(this);">
+                              alt="마늘" onclick="selectFood6();">
                            <div class="text-center">
                               <p>마늘</p>
                            </div>
@@ -329,7 +497,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="carrot" class="card-img-top" src="./img/food/carrot.jpg" width="100" height="100"
-                              alt="당근" onclick="select(this);">
+                              alt="당근" onclick="selectFood7();">
                            <div class="text-center">
                               <p>당근</p>
                            </div>
@@ -339,7 +507,7 @@
                         <div>
 
                            <img id="potato" class="card-img-top" src="./img/food/potato.jpg" width="100" height="100"
-                              alt="감자" onclick="select(this);">
+                              alt="감자" onclick="selectFood8();">
                            <div class="text-center">
                               <p>감자</p>
                            </div>
@@ -350,7 +518,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="cabbage" class="card-img-top" src="./img/food/cabbage.jpg" width="100" height="100"
-                              alt="배추" onclick="select(this);">
+                              alt="배추" onclick="selectFood9();">
                            <div class="text-center">
                               <p>배추</p>
                            </div>
@@ -360,7 +528,7 @@
                         <div>
 
                            <img id="lettuce" class="card-img-top" src="./img/food/lettuce.jpg" width="100" height="100"
-                              alt="상추" onclick="select(this);">
+                              alt="상추" onclick="selectFood10();">
                            <div class="text-center">
                               <p>상추</p>
                            </div>
@@ -369,7 +537,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="cabbage2" class="card-img-top" src="./img/food/cabbage2.jpg" width="100"
-                              height="100" alt="양배추" onclick="select(this);">
+                              height="100" alt="양배추" onclick="selectFood11()">
                            <div class="text-center">
                               <p>양배추</p>
                            </div>
@@ -378,7 +546,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="mushroom" class="card-img-top" src="./img/food/mushroom.jpg" width="100"
-                              height="100" alt="버섯" onclick="select(this);">
+                              height="100" alt="버섯" onclick="selectFood12();">
                            <div class="text-center">
                               <p>버섯</p>
                            </div>
@@ -389,7 +557,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="egg" class="card-img-top" src="./img/food/egg.jpg" width="100" height="100" alt="달걀"
-                              onclick="select(this);">
+                              onclick="selectFood13();">
                            <div class="text-center">
                               <p>달걀</p>
                            </div>
@@ -398,7 +566,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="cheese" class="card-img-top" src="./img/food/cheese.jpg" width="100" height="100"
-                              alt="치즈" onclick="select(this);">
+                              alt="치즈" onclick="selectFood14();">
                            <div class="text-center">
                               <p>치즈</p>
                            </div>
@@ -407,7 +575,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="tofu" class="card-img-top" src="./img/food/tofu.jpg" width="100" height="100"
-                              alt="두부" onclick="select(this);">
+                              alt="두부" onclick="selectFood15();">
                            <div class="text-center">
                               <p>두부</p>
                            </div>
@@ -416,7 +584,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img class="card-img-top" id="shrimp" src="./img/food/shrimp.jpg" width="100" height="100"
-                              alt="새우" onclick="select(this);">
+                              alt="새우" onclick="selectFood16();">
                            <div class="text-center">
                               <p>새우</p>
                            </div>
