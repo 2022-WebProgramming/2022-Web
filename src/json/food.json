@@ -33,6 +33,14 @@ Foodyo = {
             "src":"./img/food/greenOnion.jfif",
             "alt":"대파",
             "selected":"false"
+        },
+
+        "5":
+        {
+            "name":"소금",
+            "id":"salt",
+            "src":"./img/condiment/salt.jpg",
+            "alt":"소금",
+            "selected":"false"
         }
 }
-

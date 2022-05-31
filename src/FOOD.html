@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<>
 
    <meta charset="UTF-8">
    <title>Home</title>
@@ -51,10 +51,44 @@
          font-family: jua;
       }
    </style>
-         <script type="text/javascript" src="./json/food.json"></script>
-         <script>
-           var data = JSON.parse(JSON.stringify(Foodyo));
 
+         <!--<script type="text/javascript" src="./json/food.json"></script>    -->
+         <script> 
+           // var data = JSON.parse(JSON.stringify(Foodyo));
+
+            const pork = 
+         {
+            "name": "돼지고기",
+            "id": "pork",
+            "src": "./img/food/pork.jpg",
+            "alt": "돼지고기",
+            "selected": "false"
+         }
+    
+         var chicken = 
+         {
+            "name":"닭고기",
+            "id":"chicken",
+            "src":"./img/food/chicken.jfif",
+            "alt":"닭고기",
+            "selected":"false"
+         }
+         
+            //json은 객체를 문자열로 표현한 방식
+            localStorage.setItem('pork',JSON.stringify(pork));
+            localStorage.setItem('chicken',JSON.stringify(chicken));
+
+
+            function select1(){
+               const getData = JSON.parse(localStorage.getItem('pork'));
+               console.log(getData);
+
+               getData.name = "돼지고기2";
+               console.log('after', getData);
+               localStorage.setItem("pork", JSON.stringify(getData));
+            }
+
+         /*
             function show(){
                for (var i in data){
                   if(data[i].selected=="true"){
@@ -65,10 +99,12 @@
             function select1(){
                if(data["1"].selected=="false"){
                   data["1"].selected="true";
+                  JSON.stringify(data);
                   console.log(data["1"].selected);
                }
                else if(data["1"].selected=="true"){
                   data["1"].selected="false";
+                  JSON.stringify(data);
                   console.log(data["1"].selected);
                }
                show();
@@ -107,8 +143,10 @@
                }
                show();
             }
-         </script>
 
+         */
+         </script>
+           
       
 </head>
 

@@ -43,6 +43,15 @@
        font-family:jua;  
       }
 </style>
+<script type="text/javascript" src="./json/food.json"></script>
+         <script>
+      
+            function select7(){
+               const getData = JSON.parse(localStorage.getItem('pork'));
+               console.log(getData);
+            }
+ 
+         </script>
 </head>
 
 
@@ -55,7 +64,7 @@
                   <div class="row">
                      <div class="col-sm-3 card">
                         <img id="pork" src="./img/condiment/salt.jpg" width="100" height="100" alt="소금"
-                           onclick="select(this);">
+                           onclick="select7();">
                         <div  class="text-center">
                            <p>소금</p>
                         </div>
