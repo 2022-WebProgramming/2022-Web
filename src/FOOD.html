@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<head>
    <meta charset="UTF-8">
    <title>Home</title>
    <script src="js/food.js"></script>
@@ -52,6 +51,56 @@
          font-family: jua;
       }
    </style>
+         <script type="text/javascript" src="./json/food.json">
+           var data = JSON.parse(JSON.stringify(Foodyo));
+         </script>
+
+
+         <script>
+            function select1(){
+               var data = JSON.parse(JSON.stringify(Foodyo));
+               if(data["돼지고기"].selected=="false"){
+                  data["돼지고기"].selected="true";
+               }
+               else if(data["돼지고기"].selected=="true"){
+                  data["돼지고기"].selected="false";
+               }
+               console.log(data["돼지고기"]);
+            }
+
+            function select2(){
+               if(json.닭고기[0].selected =="false"){
+                  json.닭고기[0].selected ="true";
+               }
+               else if(json.닭고기[0].selected == "true"){
+                  json.닭고기[0].selected ="false";
+               }
+               console.log(json.닭고기[0]);
+            }
+            function select3(){
+               if(json.소고기[0].selected =="false"){
+                  json.소고기[0].selected ="true";
+               }
+               else if(json.소고기[0].selected == "true"){
+                  json.소고기[0].selected ="false";
+               }
+               console.log(json.소고기[0]);
+            }
+            function select4(){
+               if(json.대파[0].selected =="false"){
+                  json.대파[0].selected ="true";
+               }
+               else if(json.대파[0].selected == "true"){
+                  json.대파[0].selected ="false";
+               }
+               console.log(json.대파[0]);
+            }
+         </script>
+
+         
+
+</script>
+
 </head>
 
 
@@ -64,7 +113,7 @@
                   <div class="row">
                      <div class="col-sm-3 card">
                         <img class="img-circle" id="pork" src="./img/food/pork.jpg" width="100" height="100" alt="돼지고기"
-                           onclick="select(this);">
+                           onclick="select1();">
                         <div class="text-center">
                            <p>돼지고기</p>
                         </div>
@@ -73,7 +122,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img class="card-img-top" id="chicken" src="./img/food/chicken.jfif" width="100" height="100"
-                              alt="닭고기" onclick="select(this);">
+                              alt="닭고기" onclick="select2();">
                            <div class="text-center">
                               <p>닭고기</p>
                            </div>
@@ -82,7 +131,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="beef" class="card-img-top" src="./img/food/beef.jfif" width="100" height="100"
-                              alt="소고기" onclick="select(this);">
+                              alt="소고기" onclick="select3();">
                            <div class="text-center">
                               <p>소고기</p>
                            </div>
@@ -91,7 +140,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="greenOnion" class="card-img-top" width="100" height="100"
-                              src="./img/food/greenOnion.jfif" alt="대파" onclick="select(this);">
+                              src="./img/food/greenOnion.jfif" alt="대파" onclick="select4();">
                            <div class="text-center">
                               <p>대파</p>
                            </div>
@@ -102,7 +151,7 @@
                      <div class="col-sm-3 card">
                         <div>
                            <img id="onion" class="card-img-top" src="./img/food/onion.jfif" width="100" height="100"
-                              alt="양파" onclick="select(this);">
+                              alt="양파" onclick="select5();">
                            <div class="text-center">
                               <p>양파</p>
                            </div>
@@ -151,7 +200,7 @@
                         <div>
 
                            <img id="lettuce" class="card-img-top" src="./img/food/lettuce.jpg" width="100" height="100"
-                              alt="양상추" onclick="select(this);">
+                              alt="상추" onclick="select(this);">
                            <div class="text-center">
                               <p>상추</p>
                            </div>
