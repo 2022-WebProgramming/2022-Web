@@ -13,12 +13,6 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="./src/js/jquery.cycle2.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200&family=Open+Sans&display=swap');
-
-    * {
-      font-family: 'Montserrat', sans-serif;
-      font-family: 'Open Sans', sans-serif;
-    }
 
     @font-face {
 
@@ -56,21 +50,8 @@
       box-shadow: 0px 0px 10px #1d202d;
     }
 
-    .nav-link {
-      color: white !important
-    }
-
     #Contact {
       font-family: flower;
-    }
-
-    #Contact a{
-      display:inline;
-      font-family: jua;
-    }
-
-    li a {
-      font-family: suseong;
     }
 
     #Contact {
@@ -87,22 +68,49 @@
       font-family: suseongB;
     }
 
-    .member {
+    .members {
       font-family: jua;
       font-size: 30px;
+      margin-left:20px; 
+      text-decoration:none; 
+      color:white;
     }
 
     .contactTitle {
       font-family: jua;
       font-weight: 500;
-
     }
+    a:hover{
+      color:yellow;
+      text-decoration: none;
+    }
+    .navLayout{
+      margin-bottom:0px; 
+      background-color: 
+      #1d202d; 
+      padding: 15px; 
+      font-size: 20px;
+    }
+    #Rfs{
+      font-size:50px; 
+      margin-left: 3vw;
+    }
+   .navBar-custom{
+    color:white !important;
+    font-family: suseong;
+   }
+   .navBar-custom:hover{
+    color:yellow !important;
+   }
+  .btn-custom:hover{
+    box-shadow: 0px 0px 10px #1d202d;
+  }    
+
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-custom"
-    style="margin-bottom:0px; background-color: #1d202d; padding: 15px; font-size: 20px;">
+  <nav class="navLayout navbar navbar-default navBar-custom">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
@@ -113,15 +121,15 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavBar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#Introduction" style="color:white;">Introduction</a></li>
-          <li><a href="#Functionalities" style="color:white;">Functionalities</a></li>
-          <li><a href="#Team" style="color:white;">Team</a></li>
-          <li><a href="#Contact" style="color:white;">Contact</a></li>
+          <li><a class="navBar-custom" href="#Introduction">Introduction</a></li>
+          <li><a class="navBar-custom" href="#Functionalities">Functionalities</a></li>
+          <li><a class="navBar-custom" href="#Team" >Team</a></li>
+          <li><a class="navBar-custom" href="#Contact" >Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <h1 class="title" style="font-size:50px; margin-left: 3vw;">Recipe for Students</h1>
+  <h1 class="title" id="Rfs">Recipe for Students</h1>
   <div id="image-container" class="container-fluid text-center" style="padding:50px;">
     <div class="row">
       <div class="col-sm-7 cycle-slideshow" style="box-shadow: 0px 0px 30px #1d202d;">
@@ -132,7 +140,7 @@
         <h2 class="paragraph">Select food and Condiment</h2>
         <h2 class="paragraph">And Find your Recipe</h2>
         <br>
-        <button class="btn btn-default btn-lg" onclick="location.href='./src/main.html';"
+        <button class="btn btn-default btn-lg btn-custom" onclick="location.href='./src/main.html';"
           style="padding-left: 10vw; padding-right: 10vw; font-size: 30px; font-weight: bold; background-color: #1d202d; color:white; margin-bottom: 3vh;">Start</button>
       </div>
     </div>
@@ -140,9 +148,9 @@
   <hr>
   <div id="Introduction" class="container-fluid text-center" style="margin-top:50px; margin-bottom:50px;">
     <h1 class="title">Web Site Introduction</h1>
-    <h3 class="paragraph">우리는 자취하는 사람들의 가장 큰 고민 중 하나는 먹는 것이라고 생각했고</h3>
-    <h3 class="paragraph">주 이용자를 아직 수입이 마땅치 않은 주변 대학생들을 주 타겟으로 생각했다.</h3>
-    <h3 class="paragraph">그래서 우리는 집에 있는 재료와 조미료들을 선택하면 가지고 만들 수 있는 요리들의 레시피를 보여주고 싶었다.</h3>
+    <h3 class="paragraph">우리는 자취하는 사람들의 가장 큰 고민 중 하나는 먹는 것이라고 생각했습니다.</h3>
+    <h3 class="paragraph">또 주 이용자를 아직 수입이 마땅치 않은 주변 대학생들을 주 타겟으로 생각했습니다.</h3>
+    <h3 class="paragraph">그래서 우리는 집에 있는 재료와 조미료들을 선택하면 가지고 만들 수 있는 요리들의 레시피를 보여주고 싶었습니다.</h3>
   </div>
   </div>
   <hr>
@@ -201,13 +209,13 @@
     <h1 class="contactTitle">Team TAG</h1>
     <br>
     <div>
-      <span class="member">이인규</span> <a href="a" style="margin-left:20px; text-decoration:none; font-size:30px; color:white;">Github</a>
+      <span class="members">이인규</span> <a class="members" href="a">Github</a>
     </div>
     <div>
-      <span class="member">노민성</span> <a href="a" style="margin-left:20px; text-decoration:none; font-size:30px; color:white;">Github</a>
+      <span class="members">노민성</span> <a class="members" href="a">Github</a>
     </div>
     <div>
-      <span class="member">김강민</span> <a href="a" style="margin-left:20px; text-decoration:none; font-size:30px; color:white;">Github</a>
+      <span class="members">김강민</span> <a class="members" href="a">Github</a>
     </div>
   </div>
 </body>
