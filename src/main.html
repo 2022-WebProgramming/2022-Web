@@ -10,13 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200&family=Open+Sans&display=swap');
-
-        * {
-            font-family: 'Montserrat', sans-serif;
-            font-family: 'Open Sans', sans-serif;
-        }
-
         @font-face {
 
             src: url("./font/BMYEONSUNG_ttf.ttf");
@@ -25,7 +18,7 @@
 
         @font-face {
 
-            src: url("./src/font/SuseongBatang.ttf");
+            src: url("./font/SuseongBatang.ttf");
             font-family: "suseongB"
         }
 
@@ -35,40 +28,73 @@
             font-family: "suseongD"
         }
 
-        .buttong {
-            margin-bottom: 40px;
+        #Contact {
+            font-family: flower;
+            padding-left: 70px;
         }
 
         .title {
-            padding-left: 90px;
-            font-family: flower;
+            font-family: jua;
+            margin-bottom: 30px;
+            margin-left: 140px;
         }
 
-        a:hover{
-            color:yellow;
-            text-decoration: none;
-          }
-          .navBar-custom{
-            color:white !important;
+        .paragraph {
             font-family: suseongB;
-           }
-           .navBar-custom:hover{
-            color:yellow !important;
-           }
-          .btn-custom:hover{
+        }
+
+        .members {
+            font-family: jua;
+            font-size: 30px;
+            margin-left: 20px;
+            margin-right:20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .contactTitle {
+            font-family: jua;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: yellow !important;
+            text-decoration: none !important;
+        }
+
+        .navLayout {
+            margin-bottom: 0px;
+            background-color: #1d202d !important;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        #Rfs {
+            font-size: 50px;
+            margin-left: 3vw;
+        }
+
+        .navBar-custom {
+            color: white !important;
+            font-family: suseongB;
+        }
+
+        .btn-custom:hover {
             box-shadow: 0px 0px 10px #1d202d;
-          }    
-        #Contact {
-            padding-left: 70px;
+        }
+        .Email{
+            font-size: 30px;
+        }
+        #top{
+            display:scroll;
+            position:fixed;
+            bottom:150px;left:80%;
         }
     </style>
 </head>
 
 <body>
-
-
-    <nav class="navbar navbar-default navbar-custom"
-        style="margin-bottom:0px; background-color: #1d202d; padding: 15px; font-size: 20px;">
+    <nav class="navLayout navbar navbar-default ">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
@@ -79,10 +105,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavBar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="navbBar-custom" href="../index.html">Home</a></li>
-                    <li><a class="navbBar-custom" href="./Recipe.html">Recipes</a></li>
-                    <li><a class="navbBar-custom" href="./Map.html">Map</a></li>
-                    <li><a class="navbBar-custom" href="#Contact">Contact</a></li>
+                    <li><a class="navBar-custom" href="../index.html">Home</a></li>
+                    <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
+                    <li><a class="navBar-custom" href="./Map.html">Map</a></li>
+                    <li><a class="navBar-custom" href="#Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -143,15 +169,20 @@
             </script>
 
         </div>
-
     </section>
     <div id="Contact" class="container-fluid"
         style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
-        <h1>Team TAG</h1>
+        <h1 class="contactTitle">Team TAG</h1>
         <br>
-        <h4>이인규</h4>
-        <h4>노민성</h4>
-        <h4>김강민</h4>
+        <div>
+            <span class="members">이인규</span> <span class="members">|</span> <a class="members" href="https://github.com/Evergyu">Github</a>  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
+        </div>
+        <div>
+            <span class="members">노민성</span>  <span class="members">|</span><a class="members" href="https://github.com/maatanyy">Github</a>  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
+        </div>
+        <div>
+            <span class="members">김강민</span>  <span class="members">|</span><a class="members" href="https://github.com/KkangKkang1202">Github</a class="Email">  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
+        </div>
     </div>
 
 </body>
