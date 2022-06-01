@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>레시피</title>
+    <title>자취생 레시피</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,10 +17,24 @@
             src: url("./font/BMYEONSUNG_ttf.ttf");
             font-family: "jua"
         }
-        @font-face{
-            src:url("font/SangSangFlowerRoad.otf");
-            font-family:"flower";
+
+        @font-face {
+            src: url("font/SangSangFlowerRoad.otf");
+            font-family: "flower";
         }
+
+        @font-face {
+
+            src: url("./font/SuseongBatang.ttf");
+            font-family: "suseongB"
+        }
+
+        @font-face {
+
+            src: url("./src/font/SuseongDotum.ttf");
+            font-family: "suseongD"
+        }
+
 
         .box {
             margin-top: 50px;
@@ -76,41 +90,77 @@
             padding-bottom: 1px;
         }
 
-        .btn:hover {
-            color: yellow;
-        }  
-        #Contact{
-            padding-left:70px;
+
+        #Contact {
+            font-family: flower;
+            padding-left: 70px;
+        }
+
+        .title {
+            font-family: jua;
+            margin-bottom: 30px;
+            margin-left: 140px;
+        }
+
+        .members {
+            font-family: jua;
+            font-size: 30px;
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .contactTitle {
+            font-family: jua;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: yellow !important;
+            text-decoration: none !important;
+        }
+
+        .navLayout {
+            margin-bottom: 0px;
+            background-color: #1d202d !important;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .navBar-custom {
+            color: white !important;
+            font-family: suseongB;
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-custom" style="margin-bottom:0px; background-color: #1d202d; padding: 15px; font-size: 20px;">
+    <nav class="navLayout navbar navbar-default ">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavBar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="../index.html" style="color:white;">Home</a></li>
-              <li><a href="./main.html" style="color:white;">Food</a></li>
-              <li><a href="./Map.html" style="color:white;">Map</a></li>
-              <li><a href="#Contact" style="color:white;">Contact</a></li>
-              </ul>
-          </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavBar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="navBar-custom" href="../index.html">Home</a></li>
+                    <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
+                    <li><a class="navBar-custom" href="./Map.html">Map</a></li>
+                    <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
     <form class="form-inline search-bar">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="예시 : 떡볶이" required>
         </div>
         <button type="button" class="btn search">검색하기</button>
     </form>
+    <section>
     <div class="row box">
         <div class="col-sm-7 imgbox">
             <div class="col-sm-5">
@@ -148,19 +198,98 @@
         </div>
     </div>
 
+    <div class="row box">
+        <div class="col-sm-7 imgbox">
+            <div class="col-sm-5">
+                <img src="./img/recipe/test1.jpg" width="300" height="300">
+            </div>
 
+            <div class="col-sm-2">
+
+            </div>
+
+            <div class="col-sm-5">
+                <img src="./img/recipe/test1.jpg" width="300" height="300">
+
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="textbox">
+                <div class="foodText">
+                    <h3 class="title" id="닭볶음탕">닭볶음탕2</h3>
+                </div>
+                <div class="recipeInfo">
+                    <h2 class="subtitle">재료(Ingredients)</h2>
+                    <p>돼지고기 600g, 양파 1개, 청양고추 2개, 대파 1뿌리, 설탕 2스푼, 고추장 2스푼, 간장 2스푼, 고춧가루 2스푼, 다진마늘 1스푼, 굴소스 1스푼, 올리고당 1스푼
+                    </p>
+                    <h2 class="subtitle">조리순서(Steps)</h2>
+                    <ol>
+                        <li>재료는 먹기 좋은 크기로 썰어서 준비하기</li>
+                        <li>고추장 2스푼, 간장 2스푼, 고춧가루 2스푼, 다진마늘 1스푼, 굴소스 1스푼, 올리고당 1스푼 넣어 양념장 만들기</li>
+                        <li>고기가 익어갈 때 설탕을 넣고 더 구워주기</li>
+                        <li>손질해둔 야채와 양념장을 넣고 볶기</li>
+                        <li>모든 재료가 다 익으면 제육볶음 완성</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row box">
+        <div class="col-sm-7 imgbox">
+            <div class="col-sm-5">
+                <img src="./img/recipe/test1.jpg" width="300" height="300">
+            </div>
+
+            <div class="col-sm-2">
+
+            </div>
+
+            <div class="col-sm-5">
+                <img src="./img/recipe/test1.jpg" width="300" height="300">
+
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="textbox">
+                <div class="foodText">
+                    <h3 class="title" id="닭볶음탕">닭볶음탕3</h3>
+                </div>
+                <div class="recipeInfo">
+                    <h2 class="subtitle">재료(Ingredients)</h2>
+                    <p>돼지고기 600g, 양파 1개, 청양고추 2개, 대파 1뿌리, 설탕 2스푼, 고추장 2스푼, 간장 2스푼, 고춧가루 2스푼, 다진마늘 1스푼, 굴소스 1스푼, 올리고당 1스푼
+                    </p>
+                    <h2 class="subtitle">조리순서(Steps)</h2>
+                    <ol>
+                        <li>재료는 먹기 좋은 크기로 썰어서 준비하기</li>
+                        <li>고추장 2스푼, 간장 2스푼, 고춧가루 2스푼, 다진마늘 1스푼, 굴소스 1스푼, 올리고당 1스푼 넣어 양념장 만들기</li>
+                        <li>고기가 익어갈 때 설탕을 넣고 더 구워주기</li>
+                        <li>손질해둔 야채와 양념장을 넣고 볶기</li>
+                        <li>모든 재료가 다 익으면 제육볶음 완성</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
     <script>
        // inputData();
     </script>
-    <div id="Contact" class="container-fluid" style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
-        <h1>Team TAG</h1>
+    <div id="Contact" class="container-fluid"
+        style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
+        <h1 class="contactTitle">Team TAG</h1>
         <br>
-        <h4>이인규</h4>
-        <h4>노민성</h4>
-        <h4>김강민</h4>
-      
-      </div>
-    
+        <div>
+            <span class="members">이인규</span> <span class="members">|</span> <a class="members" href="https://github.com/Evergyu">Github</a>  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
+        </div>
+        <div>
+            <span class="members">노민성</span>  <span class="members">|</span><a class="members" href="https://github.com/maatanyy">Github</a>  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
+        </div>
+        <div>
+            <span class="members">김강민</span>  <span class="members">|</span><a class="members" href="https://github.com/KkangKkang1202">Github</a class="Email">  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
+        </div>
+    </div>
 </body>
 
 </html>

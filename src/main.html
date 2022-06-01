@@ -3,146 +3,220 @@
 
 <head>
     <title>자취생 레시피</title>
-    <script src="js/food.js" defer></script> 
+    <script src="js/food.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200&family=Open+Sans&display=swap');
-        *
-        {
-          font-family: 'Montserrat', sans-serif;
-          font-family: 'Open Sans', sans-serif;
-        }
         @font-face {
 
             src: url("./font/BMYEONSUNG_ttf.ttf");
-               font-family: "jua"
-         }
-        .buttong{
-            margin-bottom: 40px;
+            font-family: "jua"
         }
-        .title{
-            padding-left:90px;
+
+        @font-face {
+
+            src: url("./font/SuseongBatang.ttf");
+            font-family: "suseongB"
+        }
+
+        @font-face {
+
+            src: url("./src/font/SuseongDotum.ttf");
+            font-family: "suseongD"
+        }
+
+        #Contact {
             font-family: flower;
+            padding-left: 70px;
         }
-        li a{
+
+        .title {
             font-family: jua;
+            margin-bottom: 30px;
+            margin-left: 140px;
         }
-        #Contact{
-            padding-left:70px;
+
+        .paragraph {
+            font-family: suseongB;
+        }
+
+        .members {
+            font-family: jua;
+            font-size: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .contactTitle {
+            font-family: jua;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: yellow !important;
+            text-decoration: none !important;
+        }
+
+        .navLayout {
+            margin-bottom: 0px;
+            background-color: #1d202d !important;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        #Rfs {
+            font-size: 50px;
+            margin-left: 3vw;
+        }
+
+        .navBar-custom {
+            color: white !important;
+            font-family: suseongB;
+        }
+
+        .btn-custom:hover {
+            box-shadow: 0px 0px 10px #1d202d;
+        }
+
+        .Email {
+            font-size: 30px;
+        }
+
+        #top {
+            display: scroll;
+            position: fixed;
+            bottom: 150px;
+            left: 80%;
         }
     </style>
     <script>
 
-     //선택목록에 선택된 재료 나오나 확인하는 함수
-     function check(){
-               var keys = Object.keys(localStorage);
-               keys.forEach(key=>{
-                  var temp =localStorage.getItem(key);
-                  var showSelected = JSON.parse(temp);
-                        if(showSelected.selected=="true"){
-                           console.log(showSelected.name);
-                        } 
-                  })
-            }
+        //선택목록에 선택된 재료 나오나 확인하는 함수
+        function check() {
+            var keys = Object.keys(localStorage);
+            keys.forEach(key => {
+                var temp = localStorage.getItem(key);
+                var showSelected = JSON.parse(temp);
+                if (showSelected.selected == "true") {
+                    console.log(showSelected.name);
+                }
+            })
+        }
     </script>
 
 
 </head>
 
 <body>
-
-   
-            <nav class="navbar navbar-default navbar-custom" style="margin-bottom:0px; background-color: #1d202d; padding: 15px; font-size: 20px;">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                  </div>
-                  <div class="collapse navbar-collapse" id="myNavBar">
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="../index.html" style="color:white;">Home</a></li>
-                      <li><a href="./Recipe.html" style="color:white;">Recipes</a></li>
-                      <li><a href="./Map.html" style="color:white;">Map</a></li>
-                      <li><a href="#Contact" style="color:white;">Contact</a></li>
-                      </ul>
-                  </div>
+    <nav class="navLayout navbar navbar-default ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavBar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="navBar-custom" href="../index.html">Home</a></li>
+                    <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
+                    <li><a class="navBar-custom" href="./Map.html">Map</a></li>
+                    <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row buttong">
+        <div class="col-sm-7">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+                <div class="btn-group">
+                    <button type="button" id="gotoFood" class="btn btn-danger  btn-outline-light">Food</button>
+                    <button type="button" id="gotoCondiment"
+                        class="btn btn-success btn-outline-light">Condiment</button>
                 </div>
-              </nav>
-              <div class="row buttong">
-                <div class="col-sm-7">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-4">
-                        <div class="btn-group">
-                           <button type="button" id="gotoFood" class="btn btn-danger  btn-outline-light">Food</button>
-                           <button type="button" id="gotoCondiment"
-                              class="btn btn-success btn-outline-light">Condiment</button>
-                        </div>
 
-                     </div>
-                     <div class="col-sm-6"></div>
-                     <div class="col-sm-1 btn-group">
-                        <button type="button" class="btn btn-success  btn-outline-light">결과보기</button>
-                     </div>
-                </div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-4 " id="result">
-                    <h1 class="title">선택 목록</h1>
+            </div>
+            <div class="col-sm-6"></div>
+            <div class="col-sm-1 btn-group">
+                <button type="button" class="btn btn-success  btn-outline-light">결과보기</button>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4 " id="result">
+            <button onclick="check();">선택목록 체크용</button>
+            <h1 class="title">선택 목록</h1>
+        </div>
 
-                   <button onclick="check();">선택목록 체크용</button>
-                        
-                    </script>
-                </div>
-                
-             </div>
+        
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
     <section>
         <div id="content">
-            
+
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-                
+
             </script>
             <script>
-                $(document).ready(function(){
+                $(document).ready(function () {
                     $("#content").load("./FOOD.html");
-                    });
+                });
 
-                $(document).ready(function(){
-                    $("#gotoFood").click(function(){
+                $(document).ready(function () {
+                    $("#gotoFood").click(function () {
                         $("#content").load("./Food.html")
                     });
                 });
 
-                $(document).ready(function(){
-                    $("#gotoCondiment").click(function(){
+                $(document).ready(function () {
+                    $("#gotoCondiment").click(function () {
                         $("#content").load("./CONDIMENT.html")
                     });
                 });
 
-                $(document).ready(function(){
-                    $("#gotoRecipe").click(function(){
+                $(document).ready(function () {
+                    $("#gotoRecipe").click(function () {
                         $("#content").load("./Recipe.html")
                     });
                 });
 
             </script>
-       
+
         </div>
-        
     </section>
-    <div id="Contact" class="container-fluid" style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
-      <h1>Team TAG</h1>
-      <br>
-      <h4>이인규</h4>
-      <h4>노민성</h4>
-      <h4>김강민</h4>
+    <div id="Contact" class="container-fluid"
+        style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
+        <h1 class="contactTitle">Team TAG</h1>
+        <br>
+        <div>
+            <span class="members">이인규</span> <span class="members">|</span> <a class="members"
+                href="https://github.com/Evergyu">Github</a> <span class="members">|</span><span class="members"
+                target="_blank">Email : iingy123@naver.com</span>
+        </div>
+        <div>
+            <span class="members">노민성</span> <span class="members">|</span><a class="members"
+                href="https://github.com/maatanyy">Github</a> <span class="members">|</span><span class="members"
+                target="_blank">Email : iingy123@naver.com</span>
+        </div>
+        <div>
+            <span class="members">김강민</span> <span class="members">|</span><a class="members"
+                href="https://github.com/KkangKkang1202">Github</a class="Email"> <span class="members">|</span><span
+                class="members" target="_blank">Email : iingy123@naver.com</span>
+        </div>
     </div>
-    
+
 </body>
 
 </html>

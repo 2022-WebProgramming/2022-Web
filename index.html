@@ -1,159 +1,220 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script src="./src/js/jquery.cycle2.min.js"></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200&family=Open+Sans&display=swap');
-      *
-      {
-        font-family: 'Montserrat', sans-serif;
-        font-family: 'Open Sans', sans-serif;
-      }
-      @font-face {
 
-        src: url("./font/SangSangFlowerRoad.otf");
-        font-family: "flower"
-     }
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자취생 레시피</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="./src/js/jquery.cycle2.min.js"></script>
+  <style>
 
-     @font-face {
+    @font-face {
+
+      src: url("./font/SangSangFlowerRoad.otf");
+      font-family: "flower"
+    }
+
+    @font-face {
 
       src: url("./src/font/BMYEONSUNG_ttf.ttf");
-         font-family: "jua"
-   }
-      img[src="member1.jpg"]:hover
-      {
-        box-shadow: 0px 0px 10px #1d202d;
-      }
-
-      img[src="member2.jpg"]:hover
-      {
-        box-shadow: 0px 0px 10px #1d202d;
-      }
-
-      img[src="member3.jpg"]:hover
-      {
-        box-shadow: 0px 0px 10px #1d202d;
-      }
-
-      .nav-link
-      {
-        color:white !important
-      }
-      #Contact{
-        font-family: flower;
-      }
-      li a{
-        font-family: jua;
-      }
-      #Contact{
-        padding-left:70px;
+      font-family: "jua"
     }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-custom" style="margin-bottom:0px; background-color: #1d202d; padding: 15px; font-size: 20px;">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavBar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#Introduction" style="color:white;">Introduction</a></li>
-            <li><a href="#Functionalities" style="color:white;">Functionalities</a></li>
-            <li><a href="#Team" style="color:white;">Team</a></li>
-            <li><a href="#Contact" style="color:white;">Contact</a></li>
-            </ul>
+
+    @font-face {
+
+      src: url("./src/font/SuseongBatang.ttf");
+      font-family: "suseongB"
+    }
+
+    @font-face {
+
+      src: url("./src/font/SuseongDotum.ttf");
+      font-family: "suseongD"
+    }
+
+    img[src="member1.jpg"]:hover {
+      box-shadow: 0px 0px 10px #1d202d;
+    }
+
+    img[src="member2.jpg"]:hover {
+      box-shadow: 0px 0px 10px #1d202d;
+    }
+
+    img[src="member3.jpg"]:hover {
+      box-shadow: 0px 0px 10px #1d202d;
+    }
+
+    #Contact {
+      font-family: flower;
+    }
+
+    #Contact {
+
+      padding-left: 70px;
+    }
+
+    .title {
+      font-family: suseongD;
+      margin-bottom: 30px;
+    }
+
+    .paragraph {
+      font-family: suseongB;
+    }
+
+    .members {
+      font-family: jua;
+      font-size: 30px;
+      margin-left:20px; 
+      text-decoration:none; 
+      color:white;
+    }
+
+    .contactTitle {
+      font-family: jua;
+      font-weight: 500;
+    }
+    a:hover{
+      color:yellow;
+      text-decoration: none;
+    }
+    .navLayout{
+      margin-bottom:0px; 
+      background-color: 
+      #1d202d; 
+      padding: 15px; 
+      font-size: 20px;
+    }
+    #Rfs{
+      font-size:50px; 
+      margin-left: 3vw;
+    }
+   .navBar-custom{
+    color:white !important;
+    font-family: suseongB;
+   }
+   .navBar-custom:hover{
+    color:yellow !important;
+   }
+  .btn-custom:hover{
+    box-shadow: 0px 0px 10px #1d202d;
+  }    
+
+  </style>
+</head>
+
+<body>
+  <nav class="navLayout navbar navbar-default navBar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavBar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="navBar-custom" href="#Introduction">Introduction</a></li>
+          <li><a class="navBar-custom" href="#Functionalities">Functionalities</a></li>
+          <li><a class="navBar-custom" href="#Team" >Team</a></li>
+          <li><a class="navBar-custom" href="#Contact" >Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h1 class="title" id="Rfs">Recipe for Students</h1>
+  <div id="image-container" class="container-fluid text-center" style="padding:50px;">
+    <div class="row">
+      <div class="col-sm-7 cycle-slideshow" style="box-shadow: 0px 0px 30px #1d202d;">
+        <img src="image1.jpg" class="img-responsive">
+        <img src="image2.jpg" class="img-responsive">
+      </div>
+      <div class="col-sm-5" style="margin-top:20vh;">
+        <h2 class="paragraph">Select food and Condiment</h2>
+        <h2 class="paragraph">And Find your Recipe</h2>
+        <br>
+        <button class="btn btn-default btn-lg btn-custom" onclick="location.href='./src/main.html';"
+          style="padding-left: 10vw; padding-right: 10vw; font-size: 30px; font-weight: bold; background-color: #1d202d; color:white; margin-bottom: 3vh;">Start</button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div id="Introduction" class="container-fluid text-center" style="margin-top:50px; margin-bottom:50px;">
+    <h1 class="title">Web Site Introduction</h1>
+    <h3 class="paragraph">우리는 자취하는 사람들의 가장 큰 고민 중 하나는 먹는 것이라고 생각했습니다.</h3>
+    <h3 class="paragraph">또 주 이용자를 아직 수입이 마땅치 않은 주변 대학생들을 주 타겟으로 생각했습니다.</h3>
+    <h3 class="paragraph">그래서 우리는 집에 있는 재료와 조미료들을 선택하면 가지고 만들 수 있는 요리들의 레시피를 보여주고 싶었습니다.</h3>
+  </div>
+  </div>
+  <hr>
+  <div id="Functionalities" class="container-fluid text-center" style="margin-top:50px; margin-bottom:50px;">
+    <h1 class="title">Functionalities</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-cutlery" style="font-size: 60px;"></span>
+        <h4 class="paragraph">만들 수 있는 음식 찾기</h4>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-search" style="font-size: 60px;"></span>
+        <h4 class="paragraph">원하는 요리의 레시피 찾기</h4>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-map-marker" style="font-size: 60px;"></span>
+        <h4 class="paragraph">충북대학교 주변 마트 지도</h4>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div id="Team" class="container-fluid text-center" style="margin-top:100px;">
+    <h1 class="title">Our Team Members</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3 class="paragraph">이 인 규</h3>
+        <h4 class="paragraph">(2018038083)</h4>
+        <img src="member1.jpg" class="img-rounded" data-toggle="collapse" data-target="#member1">
+        <div id="member1" class="collapse">
+          <h4  class="paragraph">팀장</h4> <h4 class="paragraph">지도 페이지 구현</h4>
         </div>
       </div>
-    </nav>
-    <h1 style="font-size:50px; margin-left: 3vw;">Recipe for Students</h1>
-    <div id="image-container" class="container-fluid text-center" style="padding:50px;">
-      <div class="row">
-        <div class="col-sm-7 cycle-slideshow" style="box-shadow: 0px 0px 30px #1d202d;">
-          <img src ="image1.jpg" class="img-responsive">
-          <img src ="image2.jpg" class="img-responsive">
+      <div class="col-sm-4">
+        <h3 class="paragraph">노 민 성</h3>
+        <h4 class="paragraph">(2018038076)</h4>
+        <img src="member2.jpg" class="img-rounded" data-toggle="collapse" data-target="#member2">
+        <div id="member2" class="collapse">
+          <h4 class="paragraph">만들 수 있는 음식 조회 기능 구현</h4>
         </div>
-        <div class="col-sm-5" style="margin-top:20vh;">
-          <h2>Select food and Condiment</h2>
-          <h2>And Find your Recipe</h2>
-          <br>
-          <button class="btn btn-default btn-lg" onclick="location.href='./src/main.html';" style="padding-left: 10vw; padding-right: 10vw; font-size: 30px; font-weight: bold; background-color: #1d202d; color:white; margin-bottom: 3vh;">Start</button>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="paragraph">김 강 민</h3>
+        <h4 class="paragraph">(2020039048)</h4>
+        <img src="member3.jpg" class="img-rounded" data-toggle="collapse" data-target="#member3">
+        <div id="member3" class="collapse">
+          <h4 class="paragraph">레시피 페이지 구현</h4>
         </div>
       </div>
     </div>
-    <hr>
-    <div id="Introduction" class="container-fluid text-center" style="margin-top:100px;">
-      <h1>Web Site Introduction</h1>
-      <h3>우리는 독거하는 자취생을 위해 제작했따</div></h3>
+  </div>
+  <div id="Contact" class="container-fluid"
+    style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
+    <h1 class="contactTitle">Team TAG</h1>
+    <br>
+    <div>
+        <span class="members">이인규</span> <span class="members">|</span> <a class="members" href="https://github.com/Evergyu">Github</a>  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
     </div>
-    <hr>
-    <div id="Functionalities" class="container-fluid text-center" style="margin-top:100px;">
-      <h1>Functionalities</h1>
-      <div class="row">
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-cutlery" style="font-size: 60px;"></span>
-          <h4>만들 수 있는 음식 검색</h4> 
-        </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-search" style="font-size: 60px;"></span>
-          <h4>레시피 찾기</h4> 
-        </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-map-marker" style="font-size: 60px;"></span>
-          <h4>지도</h4> 
-        </div>
-      </div>
+    <div>
+        <span class="members">노민성</span>  <span class="members">|</span><a class="members" href="https://github.com/maatanyy">Github</a>  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
     </div>
-    <hr>
-    <div id="Team" class="container-fluid text-center" style="margin-top:100px;">
-      <h1>Our Team Members</h1>
-      <div class="row">
-        <div class="col-sm-4">
-          <h3>이 인 규</h3>
-          <h4>(2018038083)</h4>
-          <img src = "member1.jpg" class = "img-rounded" data-toggle="collapse" data-target="#member1">
-          <div id="member1" class="collapse">
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4> 
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <h3>노 민 성</h3>
-          <h4>(2018038076)</h4>
-          <img src = "member2.jpg" class = "img-rounded" data-toggle="collapse" data-target="#member2">
-          <div id="member2" class="collapse">
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4> 
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <h3>김 강 민</h3>
-          <h4>(2020039048)</h4>
-          <img src = "member3.jpg" class = "img-rounded" data-toggle="collapse" data-target="#member3">
-          <div id="member3" class="collapse">
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4> 
-          </div>
-        </div>
-      </div>
+    <div>
+        <span class="members">김강민</span>  <span class="members">|</span><a class="members" href="https://github.com/KkangKkang1202">Github</a class="Email">  <span class="members">|</span><span class="members"  target="_blank">Email : iingy123@naver.com</span>
     </div>
-    <div id="Contact" class="container-fluid" style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
-      <h1>Team TAG</h1>
-      <br>
-      <h4>이인규</h4>
-      <h4>노민성</h4>
-      <h4>김강민</h4>
-    
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>
