@@ -48,6 +48,10 @@ function resultCard(element) {
          btn.innerHTML = "Remove";
          btn.onclick = function () {
             card.parentNode.removeChild(card);
+            var id = element.id;
+            var getData = JSON.parse(localStorage.getItem(id));
+            getData.selected = "false";
+            localStorage.setItem(id, JSON.stringify(getData));
          }
 
          innerdiv.appendChild(p);
@@ -61,6 +65,7 @@ function resultCard(element) {
 
       }
       else {
+
          console.log("selected is false");
       }
    }
