@@ -58,6 +58,7 @@ function resultCard(element) {
    }
 }
 
+
 //Food
 function selectFood1() {
    var getData = JSON.parse(localStorage.getItem('pork'));
