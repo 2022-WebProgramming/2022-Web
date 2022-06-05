@@ -62,7 +62,7 @@
     }
 
     .title {
-      font-family: suseongD;
+      font-family: suseongB;
       margin-bottom: 30px;
     }
 
@@ -88,18 +88,29 @@
     }
     .navLayout{
       margin-bottom:0px; 
-      background-color: 
-      #1d202d; 
+      background-color: #FFE361; 
       padding: 15px; 
       font-size: 20px;
     }
     #Rfs{
       font-size:50px; 
       margin-left: 3vw;
+      background-image: linear-gradient(to right, #FFE361, #FFE361);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-weight: 600;
     }
+
+    #Rfs::first-letter
+    {
+      font-size: 10rem;
+    }
+
    .navBar-custom{
     color:white !important;
     font-family: suseongB;
+    font-weight: bold;
    }
    .navBar-custom:hover{
     color:yellow !important;
@@ -131,19 +142,32 @@
       </div>
     </div>
   </nav>
-  <h1 class="title" id="Rfs">Recipe for Students</h1>
+  <h1 class="title" id="Rfs">Recipes for Students</h1>
   <div id="image-container" class="container-fluid text-center" style="padding:50px;">
     <div class="row">
       <div class="col-sm-7 cycle-slideshow" style="box-shadow: 0px 0px 30px #1d202d;">
         <img src="image1.jpg" class="img-responsive">
         <img src="image2.jpg" class="img-responsive">
       </div>
-      <div class="col-sm-5" style="margin-top:20vh;">
-        <h2 class="paragraph">Select food and Condiment</h2>
-        <h2 class="paragraph">And Find your Recipe</h2>
-        <br>
-        <button class="btn btn-default btn-lg btn-custom" onclick="location.href='./src/main.html';"
+      <div class="col-sm-5">
+        <div class="col-sm-12">
+          <h2 class="paragraph">
+            Select food and Condiment <br><br> And Find your Recipe
+          </h2>
+        </div>
+        <div class="col-sm-12">
+          <button class="btn btn-default btn-lg btn-custom" onclick="location.href='./src/main.html';"
           style="padding-left: 10vw; padding-right: 10vw; font-size: 30px; font-weight: bold; background-color: #1d202d; color:white; margin-bottom: 3vh;">Start</button>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-6" style="background-color: #d2d2d3;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2413/2413004.png" class="img-responsive">
+          </div>
+          <div class="col-sm-6" style="background-color: #fff59d;">
+            <img src="https://findicons.com/files/icons/2770/ios_7_icons/512/cook.png" class="img-responsive">
+          </div>
+        </div>
+        <br>
       </div>
     </div>
   </div>
