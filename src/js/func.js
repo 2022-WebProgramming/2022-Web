@@ -1,14 +1,3 @@
-//선택목록에 선택된 재료 나오나 확인하는 함수
-function check() {
-   var keys = Object.keys(localStorage);
-   keys.forEach(key => {
-      var temp = localStorage.getItem(key);
-      var showSelected = JSON.parse(temp);
-      if (showSelected.selected == "true") {
-         console.log(showSelected.name);
-      }
-   })
-}
 function resultCard(element) {
    //중복이 있는지 확인
    var search = false;
@@ -60,8 +49,6 @@ function resultCard(element) {
          card.appendChild(btn);
 
          table.appendChild(card);
-
-         console.log(card);
 
       }
       else {

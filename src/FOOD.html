@@ -2,7 +2,6 @@
 <meta charset="UTF-8">
 <title>자취생 레시피</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/func.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -56,14 +55,24 @@
    }
 </style>
 
-
+<script>
+   window.onload = function () {
+      var keys = Object.keys(localStorage);
+      keys.forEach(key => {
+         var temp = localStorage.getItem(key);
+         var showSelected = JSON.parse(temp);
+         if (showSelected.selected == "true") {
+            resultCard(showSelected);
+         }
+      })
+   }
+</script>
 </head>
 
 
 <body>
    <div class="container-fluid foodcontent">
       <div class="row">
-         <div class="col-sm-8">
             <div id="foodlist">
                <div id="start">
                   <div class="row">
@@ -225,10 +234,9 @@
                </div>
 
             </div>
-         </div>
-         <div id="resultTable" class="col-sm-4">
-     
-         </div>
+      
+         
+         
       </div>
    </div>
 </body>
