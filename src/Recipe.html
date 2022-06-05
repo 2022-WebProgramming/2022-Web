@@ -2,582 +2,598 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./json/recipe.json"></script>
-  <script>
-    $(document).ready(function () {
-      $('.trigger').on('click', function () {
-        $('.modal-wrapper').toggleClass('open');
-        $('.page-wrapper').toggleClass('blur-it');
-        return false;
-      });
-    });
-  </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;1,200&family=Noto+Sans+KR:wght@100;300;500&display=swap');
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./json/recipe.json"></script>
+    <script>
+        $(document).ready(function () {
+            $('.trigger').on('click', function () {
+                $('.modal-wrapper').toggleClass('open');
+                $('.page-wrapper').toggleClass('blur-it');
+                return false;
+            });
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;1,200&family=Noto+Sans+KR:wght@100;300;500&display=swap');
 
-    @font-face {
+        @font-face {
 
-      src: url("./font/BMYEONSUNG_ttf.ttf");
-      font-family: "jua"
-    }
+            src: url("./font/BMYEONSUNG_ttf.ttf");
+            font-family: "jua"
+        }
 
-    @font-face {
-      src: url("font/SangSangFlowerRoad.otf");
-      font-family: "flower";
-    }
+        @font-face {
+            src: url("font/SangSangFlowerRoad.otf");
+            font-family: "flower";
+        }
 
-    @font-face {
+        @font-face {
 
-      src: url("./font/SuseongBatang.ttf");
-      font-family: "suseongB"
-    }
+            src: url("./font/SuseongBatang.ttf");
+            font-family: "suseongB"
+        }
 
-    @font-face {
+        @font-face {
 
-      src: url("./src/font/SuseongDotum.ttf");
-      font-family: "suseongD"
-    }
+            src: url("./src/font/SuseongDotum.ttf");
+            font-family: "suseongD"
+        }
 
-    * {
-      font-family: "suseongB"
-    }
+        * {
+            font-family: "suseongB"
+        }
 
 
-    .button-52 {
-      font-size: 16px;
-      font-weight: 200;
-      letter-spacing: 1px;
-      padding: 13px 20px 13px;
-      outline: 0;
-      border: 1px solid black;
-      cursor: pointer;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0);
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
+        .button-52 {
+            font-size: 16px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            padding: 13px 20px 13px;
+            outline: 0;
+            border: 1px solid black;
+            cursor: pointer;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
 
-    .button-52:after {
-      content: "";
-      background-color: #ffe54c !important;
-      width: 100%;
-      z-index: -1;
-      position: absolute;
-      height: 100%;
-      top: 7px;
-      left: 7px;
-      transition: 0.2s;
-    }
+        .button-52:after {
+            content: "";
+            background-color: #ffe54c !important;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            top: 7px;
+            left: 7px;
+            transition: 0.2s;
+        }
 
-    .button-52:hover:after {
-      top: 0px;
-      left: 0px;
-    }
+        .button-52:hover:after {
+            top: 0px;
+            left: 0px;
+        }
 
-    .navLayout {
-      margin-bottom: 0px;
-      background-color: #FFE361 !important;
-      padding: 15px;
-      font-size: 20px;
-    }
+        .navLayout {
+            margin-bottom: 0px;
+            background-color: #FFE361 !important;
+            padding: 15px;
+            font-size: 20px;
+        }
 
-    .navBar-custom {
-      color: white !important;
-      font-weight: bold;
-    }
+        .navBar-custom {
+            color: white !important;
+            font-weight: bold;
+        }
 
-    .recipe-area img {
-      border: 7px solid #ffffff;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    }
+        .recipe-area img {
+            border: 7px solid #ffffff;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
 
-    .recipe-area {
-      border: 7px solid #ffffff;
-      margin-top: 6vh;
-    }
+        .recipe-area {
+            border: 7px solid #ffffff;
+            margin-top: 6vh;
+        }
 
-    .box-wrap {
-      align-items: center;
-      justify-content: center;
-    }
+        .box-wrap {
+            align-items: center;
+            justify-content: center;
+        }
 
-    .box {
-      position: relative;
-      background: #000;
-      cursor: pointer;
-      overflow: hidden;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    }
+        .box {
+            position: relative;
+            background: #000;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
 
-    .box img {
-      transition: all 0.3s ease-in-out;
-    }
+        .box img {
+            transition: all 0.3s ease-in-out;
+        }
 
-    .box:before {
-      content: '';
-      background: #fff;
-      width: 0px;
-      height: 1px;
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      transition: all 0.35s ease;
-    }
+        .box:before {
+            content: '';
+            background: #fff;
+            width: 0px;
+            height: 1px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            transition: all 0.35s ease;
+        }
 
-    .box:after {
-      content: '';
-      background: #fff;
-      width: 1px;
-      height: 0px;
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      transition: all 0.35s ease;
-    }
+        .box:after {
+            content: '';
+            background: #fff;
+            width: 1px;
+            height: 0px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            transition: all 0.35s ease;
+        }
 
-    .box .info {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      color: #fff;
-      width: 100%;
-      padding: 15px;
-      box-sizing: border-box;
-      opacity: 0;
-      transition: all 0.3s ease-in-out;
-    }
+        .box .info {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
 
-    .box .info h3 {
-      font-size: 2vw;
-      line-height: 40px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      padding-bottom: 3px;
-    }
+        .box .info h3 {
+            font-size: 2vw;
+            line-height: 40px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-bottom: 3px;
+        }
 
-    .box .info p {
-      font-size: 16px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+        .box .info p {
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
 
-    .box:hover .info {
-      opacity: 1;
-    }
+        .box:hover .info {
+            opacity: 1;
+        }
 
-    .box:hover img {
-      opacity: 0.2;
-    }
+        .box:hover img {
+            opacity: 0.2;
+        }
 
-    .box:hover:before {
-      width: 5vw;
-    }
+        .box:hover:before {
+            width: 5vw;
+        }
 
-    .box:hover:after {
-      height: 5vh;
-    }
+        .box:hover:after {
+            height: 5vh;
+        }
 
-    .search-bar {
-      border-radius: 50px;
-      box-shadow: 0px 0px 6px #FFE361;
-      font-family: suseongB;
-    }
+        .search-bar {
+            border-radius: 50px;
+            box-shadow: 0px 0px 6px #FFE361;
+            font-family: suseongB;
+        }
 
-    .search_recipe {
-      color: white;
-      font-size: 2vh;
-      width: 3vw;
-      background: #BE93C5;
-      /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #7BC6CC, #BE93C5);
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        .search_recipe {
+            color: white;
+            font-size: 2vh;
+            width: 3vw;
+            background: #BE93C5;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #7BC6CC, #BE93C5);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    }
+        }
 
-    .blur-it {
-      filter: blur(4px);
-    }
+        .blur-it {
+            filter: blur(4px);
+        }
 
-    .modal-wrapper {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(53, 56, 56, 0.8);
-      visibility: hidden;
-      opacity: 0;
-      transition: all 0.25s ease-in-out;
-    }
+        .modal-wrapper {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(53, 56, 56, 0.8);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.25s ease-in-out;
+        }
 
-    .modal-wrapper.open {
-      opacity: 1;
-      visibility: visible;
-    }
+        .modal-wrapper.open {
+            opacity: 1;
+            visibility: visible;
+        }
 
-    .modal {
-      display: block;
-      overflow: scroll;
-      position: relative;
-      height: 40vh;
-      border-radius: 10px;
-      margin: 15% auto;
-      background: #fff;
-      opacity: 0;
-      transition: all 0.5s ease-in-out;
-    }
+        .modal {
+            display: block;
+            overflow: scroll;
+            position: relative;
+            height: 40vh;
+            border-radius: 10px;
+            margin: 15% auto;
+            background: #fff;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
 
-    .modal::-webkit-scrollbar {
-      width: 10px;
-    }
+        .modal::-webkit-scrollbar {
+            width: 10px;
+        }
 
-    .modal::-webkit-scrollbar-thumb {
-      background-color: #1d202d;
-      border-radius: 10px;
-    }
+        .modal::-webkit-scrollbar-thumb {
+            background-color: #1d202d;
+            border-radius: 10px;
+        }
 
-    .modal::-webkit-scrollbar-track {
-      background-color: lightgrey;
-      border-radius: 10px;
-      box-shadow: inset 0px 0px 5px white;
-    }
+        .modal::-webkit-scrollbar-track {
+            background-color: lightgrey;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 5px white;
+        }
 
-    .modal-wrapper.open .modal {
+        .modal-wrapper.open .modal {
 
-      opacity: 1;
-    }
+            opacity: 1;
+        }
 
-    .head {
-      overflow: hidden;
-    }
+        .head {
+            overflow: hidden;
+        }
 
-    .btn-close {
-      font-size: 28px;
-      display: block;
-      float: right;
-      color: #1d202d;
-    }
+        .btn-close {
+            font-size: 28px;
+            display: block;
+            float: right;
+            color: #1d202d;
+        }
 
-    #recipeTitle {
-      font-size: 6em;
-      font-weight: 600;
-      background-image: linear-gradient(to right, #FFE361, #FFE361);
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+        #recipeTitle {
+            font-size: 6em;
+            font-weight: 600;
+            background-image: linear-gradient(to right, #FFE361, #FFE361);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
 
-    #recipeTitle::first-letter {
-      font-size: 1.6em;
-    }
+        #recipeTitle::first-letter {
+            font-size: 1.6em;
+        }
 
-    #gotoFood1 {
-      background-color: #d2d2d3;
-      color: white;
-    }
+        #gotoFood1 {
+            background-color: #d2d2d3;
+            color: white;
+        }
 
-    #gotoFood2 {
-      background-color: #fff59d;
-      color: #fdd835;
-    }
+        #gotoFood2 {
+            background-color: #fff59d;
+            color: #fdd835;
+        }
 
-    #gotoFood1 {
-      background-color: #dddddd;
-    }
-  </style>
-  <title>Document</title>
+        #gotoFood1 {
+            background-color: #dddddd;
+        }
+
+        i {
+            text-decoration: none;
+        }
+        #recipesteps{
+            padding-left:20px;
+        }
+    </style>
+    <title>Document</title>
 </head>
 
 <body>
-  <script>
-    function recipeClick(element) {
-      var id = element.id.trim();
-      var data = JSON.parse(JSON.stringify(Recipeyo));
-      var num;
-      
-      //name==id인 레시피 찾기
-      //처음 찾는게 그게 아니면 
-      for (var i = 1; i < 4; i++) {
-        var recipename=data[i].name.trim();
-        console.log(recipename);
-        console.log(id);
-        if (id == recipename)
-          num = i;
+    <script>
+        function recipeClick(element) {
+            document.getElementById("recipetitle").innerHTML = "";
+            document.getElementById("recipesubtitle").innerHTML = "";
+            document.getElementById("recipesteps").innerHTML = "";
 
-        break;
-      }
-      
-    
-      console.log(data[num].name);
-      
-      //recipe 재료 찾기
-      var recipesubtitle = "";
-      //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
-      for (var i = 0; i < data[num].base.length; i++) {
-        recipesubtitle = recipesubtitle + ' ' + data[num].base[i];
-      }
 
-      document.getElementById("recipetitle").innerHTML = id;
-      document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
+            var id = element.id.trim();
+            var data = JSON.parse(JSON.stringify(Recipeyo));
+            var num;
 
-      var lilist = new Array;
-      for (var i = 0; i < data[num].recipe.length; i++) {
-        lilist[i] = document.createElement("li");
-        lilist[i].innerHTML = data[num].recipe[i];
-        document.getElementById("recipesteps").appendChild(lilist[i]);
+            //name==id인 레시피 찾기
+            //처음 찾는게 그게 아니면 
+            for (var i = 0; i < 4; i++) {
+                var recipename = data[i].name.trim();
+                console.log(recipename);
+                console.log(id);
+                if (id == recipename) {
+                    num = i;
+                }
+            }
 
-      }
-      
 
-      //모두 0으로만들기
-      function reset(){
-        document.getElementById("recipetitle").innerHTML = id;
-      document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
-      document.getElementById("recipesteps").appendChild(lilist[i]);
+            console.log(data[num].name);
 
-      }
-    }
-  </script>
+            //recipe 재료 찾기
+            var recipesubtitle = "";
+            //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
+            for (var i = 0; i < data[num].base.length; i++) {
+                recipesubtitle = recipesubtitle + ' ' + data[num].base[i];
+            }
 
+            document.getElementById("recipetitle").innerHTML = id;
+            document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
+
+            var lilist = new Array;
+            for (var i = 0; i < data[num].recipe.length; i++) {
+                lilist[i] = document.createElement("li");
+                lilist[i].innerHTML = data[num].recipe[i];
+                document.getElementById("recipesteps").appendChild(lilist[i]);
+
+            }
+
+            document.getElementById("recipeimg").src=data[num].src;
+
+
+        }
+    </script>
 
 
 
-  <div class="page-wraaper">
-    <nav class="navLayout navbar navbar-default ">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavBar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a class="navBar-custom" href="../index.html">Home</a></li>
-            <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
-            <li><a class="navBar-custom" href="./Map.html">Map</a></li>
-            <li><a class="navBar-custom" href="#Contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="container-fluid text-center">
-      <div class="row">
-        <div class="col-sm-6 col-md-6">
-          <h1 id="recipeTitle">Recipes</h1>
-        </div>
-        <div class="col-sm-6 col-md-6">
-          <div class="row">
-            <div class="col-sm-4 col-md-4" id="gotoFood1">
-              <h1>Food1</h1>
-              <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-              </p>
-            </div>
-            <div class="col-sm-4 col-md-4" id="gotoFood2">
-              <h1>Food1</h1>
-              <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-              </p>
-            </div>
-            <div class="col-sm-4 col-md-4" id="gotoFood3">
-              <h1>Search</h1>
-              <span class="glyphicon glyphicon-search" style="font-size: 50px;"></span>
-              <h3>Find the recipe you want.</h3>
-              <div class="row">
-                <form>
-                  <div class="form-group">
-                    <div class="col-sm-12 col-md-12">
-                      <input class="form-control search-bar" type="text" placeholder="검색">
-                    </div>
-                    <div class="col-sm-12 col-md-12" style="margin-top: 30px;">
-                      <button class="btn button-52">Search</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid recipe-area">
-      <h1>Food1</h1>
-      <hr>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>제육볶음</h3>
-                <button id="제육볶음" class="btn btn-default btn-lg search_recipe trigger" onclick="recipeClick(this)">레시피
-                  보기</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>타이틀</h3>
-                <button id="참치계란밥" class="btn btn-default btn-lg search_recipe trigger" onclick="recipeClick(this)">레시피
-                  보기</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>타이틀</h3>
-                <p>이미지 설명 부분입니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>타이틀</h3>
-                <p>이미지 설명 부분입니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid recipe-area">
-      <h1>Food2</h1>
-      <hr>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>타이틀</h3>
-                <p>이미지 설명 부분입니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>타이틀</h3>
-                <p>이미지 설명 부분입니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>타이틀</h3>
-                <p>이미지 설명 부분입니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>타이틀</h3>
-                <p>이미지 설명 부분입니다.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-
-
-    <div class="modal-wrapper">
-      <div class="modal container">
-        <div class="head">
-          <a class="btn-close trigger" href="#">
-            <i class="fa fa-times" aria-hidden="true" onclick="reset()">X</i>
-          </a>
-        </div>
-        <div class="content">
-          <div class="row">
-            <div class="col-sm-4">
-              <img src="./img/recipe/test1.jpg" class="img-responsive">
-            </div>
-            <div class="col-sm-8">
-              <div class="textbox">
-                <div class="foodText">
-                  <h3 class="title" id="recipetitle"></h3>
+    <div class="page-wraaper">
+        <nav class="navLayout navbar navbar-default ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-                <div class="recipeInfo">
-                  <h2 class="subtitle">재료(Ingredients)</h2>
-                  <p id="recipesubtitle">
-                  </p>
-                  <h2 class="subtitle">조리순서(Steps)</h2>
-                  <ol id="recipesteps">
-                  </ol>
+                <div class="collapse navbar-collapse" id="myNavBar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="navBar-custom" href="../index.html">Home</a></li>
+                        <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
+                        <li><a class="navBar-custom" href="./Map.html">Map</a></li>
+                        <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+                    </ul>
                 </div>
-              </div>
             </div>
-          </div>
+        </nav>
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <h1 id="recipeTitle">Recipes</h1>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-4" id="gotoFood1">
+                            <h1>Food1</h1>
+                            <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu
+                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia
+                                deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div class="col-sm-4 col-md-4" id="gotoFood2">
+                            <h1>Food1</h1>
+                            <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu
+                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia
+                                deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div class="col-sm-4 col-md-4" id="gotoFood3">
+                            <h1>Search</h1>
+                            <span class="glyphicon glyphicon-search" style="font-size: 50px;"></span>
+                            <h3>Find the recipe you want.</h3>
+                            <div class="row">
+                                <form>
+                                    <div class="form-group">
+                                        <div class="col-sm-12 col-md-12">
+                                            <input class="form-control search-bar" type="text" placeholder="검색">
+                                        </div>
+                                        <div class="col-sm-12 col-md-12" style="margin-top: 30px;">
+                                            <button class="btn button-52">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+        <div class="container-fluid recipe-area">
+            <h1>Food1</h1>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>제육볶음</h3>
+                                <button id="제육볶음" class="btn btn-default btn-lg search_recipe trigger"
+                                    onclick="recipeClick(this)">레시피
+                                    보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>타이틀</h3>
+                                <button id="참치계란밥" class="btn btn-default btn-lg search_recipe trigger"
+                                    onclick="recipeClick(this)">레시피
+                                    보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>타이틀</h3>
+                                <p>이미지 설명 부분입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>타이틀</h3>
+                                <p>이미지 설명 부분입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid recipe-area">
+            <h1>Food2</h1>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>타이틀</h3>
+                                <p>이미지 설명 부분입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>타이틀</h3>
+                                <p>이미지 설명 부분입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>타이틀</h3>
+                                <p>이미지 설명 부분입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="box-wrap">
+                        <div class="box">
+                            <div class="img">
+                                <img src="./img/recipe/test1.jpg" class="img-responsive">
+                            </div>
+                            <div class="info">
+                                <h3>타이틀</h3>
+                                <p>이미지 설명 부분입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal-wrapper">
+            <div class="modal container">
+                <div class="head">
+                    <a class="btn-close trigger" href="#">
+                        <i class="fa fa-times" aria-hidden="true">X</i>
+                    </a>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img id="recipeimg" src="./img/recipe/test1.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="textbox">
+                                <div class="foodText">
+                                    <h3 class="title" id="recipetitle"></h3>
+                                </div>
+                                <div class="recipeInfo">
+                                    <h2 class="subtitle">재료(Ingredients)</h2>
+                                    <p id="recipesubtitle">
+                                    </p>
+                                    <h2 class="subtitle">조리순서(Steps)</h2>
+                                    <ol id="recipesteps">
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
