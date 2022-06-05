@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./json/recipe.json"></script>
   <script>
     $(document).ready(function () {
       $('.trigger').on('click', function () {
@@ -47,7 +48,7 @@
     * {
       font-family: "suseongB"
     }
-    
+
 
     .button-52 {
       font-size: 16px;
@@ -95,7 +96,7 @@
 
     .recipe-area img {
       border: 7px solid #ffffff;
-      box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     .recipe-area {
@@ -280,8 +281,7 @@
       padding-bottom: 50px;
     }
 
-    #recipeTitle::first-letter
-    {
+    #recipeTitle::first-letter {
       font-size: 1.6em;
     }
 
@@ -298,13 +298,64 @@
     #gotoFood1 {
       background-color: #dddddd;
     }
-
-    
   </style>
   <title>Document</title>
 </head>
 
 <body>
+  <script>
+    function recipeClick(element) {
+      var id = element.id.trim();
+      var data = JSON.parse(JSON.stringify(Recipeyo));
+      var num;
+      
+      //name==id인 레시피 찾기
+      //처음 찾는게 그게 아니면 
+      for (var i = 1; i < 4; i++) {
+        var recipename=data[i].name.trim();
+        console.log(recipename);
+        console.log(id);
+        if (id == recipename)
+          num = i;
+
+        break;
+      }
+      
+    
+      console.log(data[num].name);
+      
+      //recipe 재료 찾기
+      var recipesubtitle = "";
+      //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
+      for (var i = 0; i < data[num].base.length; i++) {
+        recipesubtitle = recipesubtitle + ' ' + data[num].base[i];
+      }
+
+      document.getElementById("recipetitle").innerHTML = id;
+      document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
+
+      var lilist = new Array;
+      for (var i = 0; i < data[num].recipe.length; i++) {
+        lilist[i] = document.createElement("li");
+        lilist[i].innerHTML = data[num].recipe[i];
+        document.getElementById("recipesteps").appendChild(lilist[i]);
+
+      }
+      
+
+      //모두 0으로만들기
+      function reset(){
+        document.getElementById("recipetitle").innerHTML = id;
+      document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
+      document.getElementById("recipesteps").appendChild(lilist[i]);
+
+      }
+    }
+  </script>
+
+
+
+
   <div class="page-wraaper">
     <nav class="navLayout navbar navbar-default ">
       <div class="container-fluid">
@@ -387,7 +438,8 @@
               </div>
               <div class="info">
                 <h3>제육볶음</h3>
-                <button class="btn btn-default btn-lg search_recipe trigger">레시피 보기</button>
+                <button id="제육볶음" class="btn btn-default btn-lg search_recipe trigger" onclick="recipeClick(this)">레시피
+                  보기</button>
               </div>
             </div>
           </div>
@@ -400,7 +452,8 @@
               </div>
               <div class="info">
                 <h3>타이틀</h3>
-                <p>이미지 설명 부분입니다.</p>
+                <button id="참치계란밥" class="btn btn-default btn-lg search_recipe trigger" onclick="recipeClick(this)">레시피
+                  보기</button>
               </div>
             </div>
           </div>
@@ -498,7 +551,7 @@
       <div class="modal container">
         <div class="head">
           <a class="btn-close trigger" href="#">
-            <i class="fa fa-times" aria-hidden="true">X</i>
+            <i class="fa fa-times" aria-hidden="true" onclick="reset()">X</i>
           </a>
         </div>
         <div class="content">
@@ -509,20 +562,14 @@
             <div class="col-sm-8">
               <div class="textbox">
                 <div class="foodText">
-                  <h3 class="title" id="닭볶음탕">닭볶음탕</h3>
+                  <h3 class="title" id="recipetitle"></h3>
                 </div>
                 <div class="recipeInfo">
                   <h2 class="subtitle">재료(Ingredients)</h2>
-                  <p>돼지고기 600g, 양파 1개, 청양고추 2개, 대파 1뿌리, 설탕 2스푼, 고추장 2스푼, 간장 2스푼, 고춧가루 2스푼, 다진마늘 1스푼, 굴소스 1스푼, 올리고당
-                    1스푼
+                  <p id="recipesubtitle">
                   </p>
                   <h2 class="subtitle">조리순서(Steps)</h2>
-                  <ol>
-                    <li>재료는 먹기 좋은 크기로 썰어서 준비하기</li>
-                    <li>고추장 2스푼, 간장 2스푼, 고춧가루 2스푼, 다진마늘 1스푼, 굴소스 1스푼, 올리고당 1스푼 넣어 양념장 만들기</li>
-                    <li>고기가 익어갈 때 설탕을 넣고 더 구워주기</li>
-                    <li>손질해둔 야채와 양념장을 넣고 볶기</li>
-                    <li>모든 재료가 다 익으면 제육볶음 완성</li>
+                  <ol id="recipesteps">
                   </ol>
                 </div>
               </div>
