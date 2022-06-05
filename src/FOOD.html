@@ -1,439 +1,78 @@
 <!DOCTYPE html>
-   <meta charset="UTF-8">
-   <title>자취생 레시피</title>
-   <script src="js/func.js"></script>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   <style>
-      @font-face {
+<meta charset="UTF-8">
+<title>자취생 레시피</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+   html {
+      scroll-behavior: smooth;
+   }
 
-         src: url("./font/SangSangFlowerRoad.otf");
-         font-family: "flower"
-      }
-      @font-face {
+   @font-face {
 
-         src: url("./font/BMYEONSUNG_ttf.ttf");
-            font-family: "jua"
-      }
+      src: url("./font/SangSangFlowerRoad.otf");
+      font-family: "flower"
+   }
 
-      .foodcontent {
-         padding-left: 70px;
-         padding-right: 70px;
-      }
+   @font-face {
 
-      .card {
-         margin-top: 10px;
-         margin-bottom: 30px;
-      }
+      src: url("./font/BMYEONSUNG_ttf.ttf");
+      font-family: "jua"
+   }
 
-      .btn-group {
-         margin-top: 70px;
-      }
+   .foodcontent {
+      padding-left: 70px;
+      padding-right: 70px;
+   }
 
-      #result {
-         margin-top: 50px;
-      }
+   .card {
+      margin-top: 10px;
+      margin-bottom: 30px;
+   }
 
-      p
-       {
-         font-family: flower;
-         font-size: 30px;
-      }
-      .card:hover{
-         box-shadow: 0px 0px 5px black;
-      }
-      li{
-         font-family: jua;
-      }
-   </style>
-         
-         <!--<script type="text/javascript" src="./json/food.json"></script>    -->
-         <!---
-         <script> 
+   .btn-group {
+      margin-top: 70px;
+   }
 
-            const pork = 
-         {
-            "name": "돼지고기",
-            "id": "pork",
-            "src": "./img/food/pork.jpg",
-            "alt": "돼지고기",
-            "selected": "false"
+   #result {
+      margin-top: 50px;
+   }
+
+   p {
+      font-family: flower;
+      font-size: 30px;
+   }
+
+   .card:hover {
+      box-shadow: 0px 0px 5px black;
+   }
+
+   li {
+      font-family: jua;
+   }
+</style>
+
+<script>
+   window.onload = function () {
+      var keys = Object.keys(localStorage);
+      keys.forEach(key => {
+         var temp = localStorage.getItem(key);
+         var showSelected = JSON.parse(temp);
+         if (showSelected.selected == "true") {
+            resultCard(showSelected);
          }
-    
-         const chicken = 
-         {
-            "name":"닭고기",
-            "id":"chicken",
-            "src":"./img/food/chicken.jfif",
-            "alt":"닭고기",
-            "selected":"false"
-         }
-         
-         const beef = {
-            "name":"소고기",
-            "id":"beef",
-            "src":"./img/food/beef.jfif",
-            "alt":"소고기",
-            "selected":"false"
-         }
-
-        const greenOnion = {
-            "name":"대파",
-            "id":"greenOnion",
-            "src":"./img/food/greenOnion.jfif",
-            "alt":"대파",
-            "selected":"false"
-        }
-
-        const onion = {
-            "name":"양파",
-            "id":"onion",
-            "src":"./img/food/onion.jfif",
-            "alt":"양파",
-            "selected":"false"
-        }
-
-        const garlic = {
-            "name":"마늘",
-            "id":"garlic",
-            "src":"./img/food/garlic.jpg",
-            "alt":"마늘",
-            "selected":"false"
-        }
-
-        const carrot = {
-            "name":"당근",
-            "id":"carrot",
-            "src":"./img/food/carrot.jpg",
-            "alt":"당근",
-            "selected":"false"
-        }
-
-        const potato = {
-            "name":"감자",
-            "id":"potato",
-            "src":"./img/food/potato.jpg",
-            "alt":"감자",
-            "selected":"false"
-        }
-
-        const cabbage = {
-            "name":"배추",
-            "id":"cabbage",
-            "src":"./img/food/cabbage.jpg",
-            "alt":"배추",
-            "selected":"false"
-        }
-
-        const lettuce = {
-            "name":"상추",
-            "id":"lettuce",
-            "src":"./img/food/lettuce.jpg",
-            "alt":"상추",
-            "selected":"false"
-        }
-
-        const cabbage2 = {
-            "name":"양배추",
-            "id":"cabbage2",
-            "src":"./img/food/cabbage2.jpg",
-            "alt":"양배추",
-            "selected":"false"
-        }
-
-        const mushroom = {
-            "name":"버섯",
-            "id":"mushroom",
-            "src":"./img/food/mushroom.jpg",
-            "alt":"버섯",
-            "selected":"false"
-        }
-
-        const egg = {
-            "name":"달걀",
-            "id":"egg",
-            "src":"./img/food/egg.jpg",
-            "alt":"달걀",
-            "selected":"false"
-        }
-
-        const cheese = {
-            "name":"치즈",
-            "id":"cheese",
-            "src":"./img/food/cheese.jpg",
-            "alt":"치즈",
-            "selected":"false"
-        }
-
-        const tofu = {
-            "name":"두부",
-            "id":"tofu",
-            "src":"./img/food/tofu.jpg",
-            "alt":"두부",
-            "selected":"false"
-        }
-
-        const shrimp = {
-            "name":"새우",
-            "id":"shrimp",
-            "src":"./img/food/shrimp.jpg",
-            "alt":"새우",
-            "selected":"false"
-        }
-
-        //선택목록에 선택된 재료 나오나 확인하는 함수
-        function check(){
-               var keys = Object.keys(localStorage);
-               keys.forEach(key=>{
-                  var temp =localStorage.getItem(key);
-                  var showSelected = JSON.parse(temp);
-                        if(showSelected.selected=="true"){
-                           console.log(showSelected.name);
-                        } 
-                  })
-            }
-
-            //json은 객체를 문자열로 표현한 방식
-            localStorage.setItem('pork',JSON.stringify(pork));
-            localStorage.setItem('chicken',JSON.stringify(chicken));
-            localStorage.setItem('beef',JSON.stringify(beef));
-            localStorage.setItem('greenOnion',JSON.stringify(greenOnion));
-            localStorage.setItem('onion',JSON.stringify(onion));
-            localStorage.setItem('garlic',JSON.stringify(garlic));
-            localStorage.setItem('carrot',JSON.stringify(carrot));
-            localStorage.setItem('potato',JSON.stringify(potato));
-            localStorage.setItem('cabbage',JSON.stringify(cabbage));
-            localStorage.setItem('lettuce',JSON.stringify(lettuce));
-            localStorage.setItem('cabbage2',JSON.stringify(cabbage2));
-            localStorage.setItem('mushroom',JSON.stringify(mushroom));
-            localStorage.setItem('egg',JSON.stringify(egg));
-            localStorage.setItem('cheese',JSON.stringify(cheese));
-            localStorage.setItem('tofu',JSON.stringify(tofu));
-            localStorage.setItem('shrimp',JSON.stringify(shrimp));
-
-
-            function selectFood1(){
-               var getData = JSON.parse(localStorage.getItem('pork'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("pork", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("pork", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-            
-            function selectFood2(){
-               var getData = JSON.parse(localStorage.getItem('chicken'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("chicken", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("chicken", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood3(){
-               var getData = JSON.parse(localStorage.getItem('beef'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("beef", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("beef", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood4(){
-               var getData = JSON.parse(localStorage.getItem('greenOnion'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("greenOnion", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("greenOnion", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood5(){
-               var getData = JSON.parse(localStorage.getItem('onion'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("onion", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("onion", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood6(){
-               var getData = JSON.parse(localStorage.getItem('garlic'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("garlic", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("garlic", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood7(){
-               var getData = JSON.parse(localStorage.getItem('carrot'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("carrot", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("carrot", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood8(){
-               var getData = JSON.parse(localStorage.getItem('potato'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("potato", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("potato", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood9(){
-               var getData = JSON.parse(localStorage.getItem('cabbage'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("cabbage", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("cabbage", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood10(){
-               var getData = JSON.parse(localStorage.getItem('lettuce'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("lettuce", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("lettuce", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood11(){
-               var getData = JSON.parse(localStorage.getItem('cabbage2'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("cabbage2", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("cabbage2", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood12(){
-               var getData = JSON.parse(localStorage.getItem('mushroom'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("mushroom", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("mushroom", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood13(){
-               var getData = JSON.parse(localStorage.getItem('egg'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("egg", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("egg", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood14(){
-               var getData = JSON.parse(localStorage.getItem('cheese'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("cheese", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("cheese", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood15(){
-               var getData = JSON.parse(localStorage.getItem('tofu'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("tofu", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("tofu", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-            function selectFood16(){
-               var getData = JSON.parse(localStorage.getItem('shrimp'));
-               if(getData.selected == "false"){
-                  getData.selected = "true";
-                  localStorage.setItem("shrimp", JSON.stringify(getData));
-               }
-               else if(getData.selected == "true"){
-                  getData.selected="false";
-                  localStorage.setItem("shrimp", JSON.stringify(getData));
-               }
-               console.log(getData);
-            }
-
-         
-         </script>
-      -->
-      
+      })
+   }
+</script>
 </head>
 
 
 <body>
    <div class="container-fluid foodcontent">
       <div class="row">
-         <div class="col-sm-8">
             <div id="foodlist">
                <div id="start">
                   <div class="row">
@@ -595,11 +234,11 @@
                </div>
 
             </div>
-         </div>
-
+      
+         
+         
       </div>
    </div>
 </body>
 
 </html>
-
