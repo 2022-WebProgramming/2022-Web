@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,27 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;1,200&family=Noto+Sans+KR:wght@100;300;500&display=swap');
+=======
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./json/recipe.json"></script>
+  <script>
+    $(document).ready(function () {
+      $('.trigger').on('click', function () {
+        $('.modal-wrapper').toggleClass('open');
+        $('.page-wrapper').toggleClass('blur-it');
+        return false;
+      });
+    });
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;1,200&family=Noto+Sans+KR:wght@100;300;500&display=swap');
+>>>>>>> kang
 
         @font-face {
 
@@ -45,11 +67,19 @@
             font-family: "suseongD"
         }
 
+<<<<<<< HEAD
         * {
             font-family: "suseongB"
         }
+=======
+    * {
+      font-family: "suseongB"
+    }
+
+>>>>>>> kang
 
 
+<<<<<<< HEAD
         .button-52 {
             font-size: 16px;
             font-weight: 200;
@@ -64,6 +94,21 @@
             -webkit-user-select: none;
             touch-action: manipulation;
         }
+=======
+
+
+    .button-52:after {
+      content: "";
+      background-color: #ffe54c !important;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 7px;
+      left: 7px;
+      transition: 0.2s;
+    }
+>>>>>>> kang
 
         .button-52:after {
             content: "";
@@ -82,6 +127,7 @@
             left: 0px;
         }
 
+<<<<<<< HEAD
         .navLayout {
             margin-bottom: 0px;
             background-color: #FFE361 !important;
@@ -98,6 +144,22 @@
             border: 7px solid #ffffff;
             box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
         }
+=======
+    .navBar-custom {
+      color: black !important;
+      font-weight: bold;
+    }
+
+    .recipe-area img {
+      border: 7px solid #ffffff;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .recipe-area {
+      border: 7px solid #ffffff;
+      margin-top: 10vh;
+    }
+>>>>>>> kang
 
         .recipe-area {
             border: 7px solid #ffffff;
@@ -143,6 +205,7 @@
             transition: all 0.35s ease;
         }
 
+<<<<<<< HEAD
         .box .info {
             position: absolute;
             left: 0;
@@ -163,6 +226,23 @@
             text-overflow: ellipsis;
             padding-bottom: 3px;
         }
+=======
+    .box .info h3 {
+      font-size: 2em;
+      line-height: 40px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-bottom: 3px;
+    }
+
+    .box .info p {
+      font-size: 1.5rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+>>>>>>> kang
 
         .box .info p {
             font-size: 16px;
@@ -175,6 +255,7 @@
             opacity: 1;
         }
 
+<<<<<<< HEAD
         .box:hover img {
             opacity: 0.2;
         }
@@ -182,16 +263,42 @@
         .box:hover:before {
             width: 5vw;
         }
+=======
+    .box:hover:before {
+      width: 7em;
+    }
+
+    .box:hover:after {
+      height: 7em;
+    }
+>>>>>>> kang
 
         .box:hover:after {
             height: 5vh;
         }
 
+<<<<<<< HEAD
         .search-bar {
             border-radius: 50px;
             box-shadow: 0px 0px 6px #FFE361;
             font-family: suseongB;
         }
+=======
+    .search_recipe {
+      font-size: 16px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      padding: 13px 20px 13px;
+      outline: 0;
+      border: 1px solid black;
+      cursor: pointer;
+      position: relative;
+      background-color: #fdd835;
+      color:black;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+>>>>>>> kang
 
         .search_recipe {
             color: white;
@@ -270,6 +377,7 @@
             color: #1d202d;
         }
 
+<<<<<<< HEAD
         #recipeTitle {
             font-size: 6em;
             font-weight: 600;
@@ -280,6 +388,11 @@
             padding-top: 50px;
             padding-bottom: 50px;
         }
+=======
+    #recipeTitle::first-letter {
+      font-size: 1.6em;
+    }
+>>>>>>> kang
 
         #recipeTitle::first-letter {
             font-size: 1.6em;
@@ -290,6 +403,7 @@
             color: white;
         }
 
+<<<<<<< HEAD
         #gotoFood2 {
             background-color: #fff59d;
             color: #fdd835;
@@ -307,6 +421,14 @@
         }
     </style>
     <title>Document</title>
+=======
+    #gotoFood1 {
+      background-color: #dddddd;
+    }
+  </style>
+  <title>Document</title>
+
+>>>>>>> kang
 </head>
 
 <body>
@@ -333,8 +455,12 @@
             }
 
 
+<<<<<<< HEAD
             console.log(data[num].name);
 
+=======
+        
+>>>>>>> kang
             //recipe 재료 찾기
             var recipesubtitle = "";
             //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
@@ -436,6 +562,7 @@
                                 </form>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </div>
                 </div>
             </div>
@@ -500,8 +627,16 @@
                         </div>
                     </div>
                 </div>
+=======
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+>>>>>>> kang
             </div>
         </div>
+<<<<<<< HEAD
         <div class="container-fluid recipe-area">
             <h1>Food2</h1>
             <hr>
@@ -558,11 +693,133 @@
                         </div>
                     </div>
                 </div>
+=======
+      </div>
+    </div>
+    <div class="container-fluid recipe-area">
+      <h1>Food1</h1>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>제육볶음</h3>
+                <button  id="제육볶음" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+              </div>
+>>>>>>> kang
             </div>
         </div>
+<<<<<<< HEAD
 
 
 
+=======
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>타이틀</h3>
+                <p>이미지 설명 부분입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>타이틀</h3>
+                <p>이미지 설명 부분입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>타이틀</h3>
+                <p>이미지 설명 부분입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid recipe-area">
+      <h1>Food2</h1>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>타이틀</h3>
+                <p>이미지 설명 부분입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>타이틀</h3>
+                <p>이미지 설명 부분입니다.</p>
+              </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>타이틀</h3>
+                <p>이미지 설명 부분입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box-wrap">
+            <div class="box">
+              <div class="img">
+                <img src="./img/recipe/test1.jpg" class="img-responsive">
+              </div>
+              <div class="info">
+                <h3>타이틀</h3>
+                <p>이미지 설명 부분입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+
+
+>>>>>>> kang
         <div class="modal-wrapper">
             <div class="modal container">
                 <div class="head">

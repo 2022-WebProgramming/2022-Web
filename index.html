@@ -84,11 +84,6 @@
       font-weight: 500;
     }
 
-    a:hover {
-      color: #ffe361;
-      text-decoration: none;
-    }
-
     .navLayout {
       margin-bottom: 0px;
       background-color: #FFE361;
@@ -152,6 +147,16 @@
       top: 0px;
       left: 0px;
     }
+
+    a.navBar-custom:hover {
+      text-shadow: 0px 0px 1px !important;
+    }
+
+    a.members:hover {
+      text-shadow: 0px 0px 1px black;
+      color: black;
+      text-decoration: none !important;
+    }
   </style>
 </head>
 
@@ -190,8 +195,8 @@
           </h2>
         </div>
         <div class="col-sm-12">
-          <button class=" btn-custom button-52" onclick="location.href='./src/main.html';"
-            style="padding-left: 10vw; padding-right: 10vw; font-size: 30px; margin-bottom: 3vh;">Start</button>
+          <button class="btn btn-custom button-52" onclick="location.href='./src/main.html';"
+            style="padding-left: 10vw; padding-right: 10vw; font-size: 30px; margin-bottom: 3vh; font-family: suseongB;">Start</button>
         </div>
         <div class="col-sm-12">
           <div class="col-sm-6" style="background-color: #eeeeee;">
@@ -291,18 +296,19 @@
             <div>
               <span class="members">노민성</span> <span class="members">|</span><a class="members"
                 href="https://github.com/maatanyy">Github</a> <span class="members">|</span><span class="members"
-                target="_blank">Email : iingy123@naver.com</span>
+                target="_blank">Email : maatanyy@naver.com</span>
             </div>
             <p></p>
             <p></p>
             <div>
               <span class="members">김강민</span> <span class="members">|</span><a class="members"
                 href="https://github.com/KkangKkang1202">Github</a class="Email"> <span class="members">|</span><span
-                class="members" target="_blank">Email : iingy123@naver.com</span>
+                class="members" target="_blank">Email : kkm9814@naver.com</span>
             </div>
             <br>
             <br>
-            <h2 class="paragraph" style="font-size: 20px;"><b>If you have any improvements or questions,<br>Please contact us by email or fill out the form.</b></h2>
+            <h2 class="paragraph" style="font-size: 20px;"><b>If you have any improvements or questions,<br>Please
+                contact us by email or fill out the form.</b></h2>
           </div>
         </div>
       </div>
@@ -310,16 +316,16 @@
         <form style="font-family: suseongB;">
           <div class="form-group" style="padding-top: 100px;">
             <div class="col-sm-6">
-              <input class ="form-control" type="text" placeholder="Name" required>
+              <input class="form-control" type="text" placeholder="Name" required>
             </div>
             <div class="col-sm-6">
-              <input class = "form-control" type="text" placeholder="Email" required>
+              <input class="form-control" type="text" placeholder="Email" required>
             </div>
             <div class="col-sm-12" style="margin-top:30px;">
               <textarea class="form-control" style="height: 130px;" placeholder="Comment"></textarea>
             </div>
             <div class="col-sm-12 text-right" style="margin-top:30px;">
-              <button class="button-52" >Send</button>
+              <button class="btn button-52">Send</button>
             </div>
           </div>
         </form>
