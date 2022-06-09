@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
@@ -47,7 +47,7 @@
     * {
       font-family: "suseongB"
     }
-    
+
 
     .button-52 {
       font-size: 16px;
@@ -63,6 +63,8 @@
       -webkit-user-select: none;
       touch-action: manipulation;
     }
+
+
 
     .button-52:after {
       content: "";
@@ -89,18 +91,18 @@
     }
 
     .navBar-custom {
-      color: white !important;
+      color: black !important;
       font-weight: bold;
     }
 
     .recipe-area img {
       border: 7px solid #ffffff;
-      box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     .recipe-area {
       border: 7px solid #ffffff;
-      margin-top: 6vh;
+      margin-top: 10vh;
     }
 
     .box-wrap {
@@ -155,7 +157,7 @@
     }
 
     .box .info h3 {
-      font-size: 2vw;
+      font-size: 2em;
       line-height: 40px;
       overflow: hidden;
       white-space: nowrap;
@@ -164,7 +166,7 @@
     }
 
     .box .info p {
-      font-size: 16px;
+      font-size: 1.5rem;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -179,11 +181,11 @@
     }
 
     .box:hover:before {
-      width: 5vw;
+      width: 7em;
     }
 
     .box:hover:after {
-      height: 5vh;
+      height: 7em;
     }
 
     .search-bar {
@@ -193,15 +195,19 @@
     }
 
     .search_recipe {
-      color: white;
-      font-size: 2vh;
-      width: 3vw;
-      background: #BE93C5;
-      /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #7BC6CC, #BE93C5);
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      font-size: 16px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      padding: 13px 20px 13px;
+      outline: 0;
+      border: 1px solid black;
+      cursor: pointer;
+      position: relative;
+      background-color: #fdd835;
+      color:black;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
 
     }
 
@@ -280,8 +286,7 @@
       padding-bottom: 50px;
     }
 
-    #recipeTitle::first-letter
-    {
+    #recipeTitle::first-letter {
       font-size: 1.6em;
     }
 
@@ -298,8 +303,6 @@
     #gotoFood1 {
       background-color: #dddddd;
     }
-
-    
   </style>
   <title>Document</title>
 </head>
@@ -387,7 +390,7 @@
               </div>
               <div class="info">
                 <h3>제육볶음</h3>
-                <button class="btn btn-default btn-lg search_recipe trigger">레시피 보기</button>
+                <button class="btn search_recipe trigger">레시피 보기</button>
               </div>
             </div>
           </div>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자취생 레시피</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="js/map.js"></script>
+</head>
+<style>
+  /*Header, Footer*/
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @font-face {
+
+    src: url("./font/BMYEONSUNG_ttf.ttf");
+    font-family: "jua"
+  }
+
+  @font-face {
+
+    src: url("./font/SuseongBatang.ttf");
+    font-family: "suseongB"
+  }
+
+  @font-face {
+
+    src: url("./font/SuseongDotum.ttf");
+    font-family: "suseongD"
+  }
+
+  * {
+    font-family: suseongB;
+  }
+
+  #Contact {
+    font-family: flower;
+  }
+
+  #Contact {
+
+    padding-left: 70px;
+  }
+
+  .title {
+    font-family: jua;
+    margin-bottom: 30px;
+    margin-left: 140px;
+  }
+
+  .paragraph {
+    font-family: suseongB;
+  }
+
+  .members {
+    font-family: jua;
+    font-size: 30px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+  }
+
+  .contactTitle {
+    font-family: jua;
+    font-weight: 500;
+  }
+
+
+  .navLayout {
+    margin-bottom: 0px;
+    background-color: #FFE361;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #Rfs {
+    font-size: 50px;
+    margin-left: 3vw;
+  }
+
+  .navBar-custom {
+    color: black !important;
+    font-family: suseongB;
+  }
+
+  .btn-custom:hover {
+    box-shadow: 0px 0px 10px #1d202d;
+  }
+
+  /*Section*/
+  #map {
+    margin: auto;
+  }
+
+  #title {
+    font-size: 6em;
+    font-weight: 600;
+    background-image: linear-gradient(to right, #FFE361, #FFE361);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: suseongB;
+  }
+
+  #title::first-letter {
+    font-size: 1.6em;
+  }
+
+  #gotoMap {
+    background-color: #fff59d;
+    color: #fdd835;
+    font-family: suseongB;
+  }
+
+  .search-bar {
+    border-radius: 50px;
+    box-shadow: 0px 0px 6px #FFE361;
+    font-family: suseongB;
+  }
+
+  .button-52 {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-52:after {
+    content: "";
+    background-color: #ffe54c !important;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+
+  .button-52:hover:after {
+    top: 0px;
+    left: 0px;
+  }
+
+  #map {
+    border: 10px outset #fdd835;
+  }
+
+  td:hover
+  {
+    background-color: #eeeeee;
+  }
+</style>
+
+<body>
+  <nav class="navLayout navbar navbar-default ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavBar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="navBar-custom" href="../index.html">Home</a></li>
+          <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
+          <li><a class="navBar-custom" href="./Main.html">Food</a></li>
+          <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 id="title">Map</h1>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-6" id="gotoMap" style="padding-bottom: 45px;">
+            <h1 style="font-family: suseongB;">Map1</h1>
+            <span class="glyphicon glyphicon-picture" style="font-size: 50px;"></span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div class="col-sm-6" style="font-family: suseongB;">
+            <h1>Search</h1>
+            <span class="glyphicon glyphicon-search" style="font-size: 50px;"></span>
+            <h3>Search more places on Google Maps</h3>
+            <div class="row">
+              <form>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <input class="form-control search-bar" id="search" type="text" placeholder="검색">
+                  </div>
+                  <div class="col-sm-12" style="margin-top: 30px;">
+                    <button id="searchButton" class="btn button-52" onclick="googleMapSearch();">Search</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center" style="margin-top:10vh;">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 style="font-family: suseongB;">지도</h1>
+        <hr>
+        <div id="map" style="width:45vw; height: 70vh"></div>
+      </div>
+      <div class="col-sm-6">
+        <h1>마트 목록</h1>
+        <hr>
+        <h3>마트(텍스트)를 클릭하면 지도에 표시되고, 아래에 주소가 표시됩니다.</h3>
+        <br>
+        <h4 id="address"></h4>
+        <table class="table table-striped" style="margin-top:50px;">
+          <tr>
+            <td>
+              <h3 onclick="showMap(this);">월드마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">사창식자재마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">다다유마트</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 onclick="showMap(this);">나들가게삼익마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">365고마운할인마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">1004마트</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 onclick="showMap(this);">나눔할인마트유통</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">무심천유통할인마트사창점</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">모노마트청주점</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 onclick="showMap(this);">진유통나들가게</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">열린마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">그린마트</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 onclick="showMap(this);">마이크로마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">월드유통</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">나들가게늘푸른마트</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 onclick="showMap(this);">나들가게코사마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">나들가게민영마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">굿모닝마트</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 onclick="showMap(this);">다산마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">고마운할인마트</h3>
+            </td>
+            <td>
+              <h3 onclick="showMap(this);">나들가게대운마트</h3>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    let mapCanvas;
+    let myCenter;
+    let mapOptions;
+    let map;
+    let path;
+    let info;
+    let isChecked = new Array();
+    let markers = new Array();
+    let infoWindows = new Array();
+    let address;
+    for (let index = 0; index < 21; index++) {
+      isChecked.push(0);
+    }
+
+    function myMap() {
+      mapCanvas = document.getElementById("map");
+      myCenter = new google.maps.LatLng(36.6283, 127.455);
+
+      mapOptions = {
+        center: myCenter,
+        zoom: 14.8
+      };
+      map = new google.maps.Map(mapCanvas, mapOptions);
+
+
+      path = [
+        new google.maps.LatLng(36.6302515, 127.4627805), //월드마트
+        new google.maps.LatLng(36.6335422, 127.4628606), //사창식자재마트
+        new google.maps.LatLng(36.63281614, 127.46273986), //다다유마트
+        new google.maps.LatLng(36.6283078, 127.4648323), //나들가게삼익마트
+        new google.maps.LatLng(36.6261122, 127.4665682), //365고마운할인마트
+        new google.maps.LatLng(36.6246594, 127.4665492), //1004마트
+        new google.maps.LatLng(36.6323262, 127.4614031), //나눔할인마트유통
+        new google.maps.LatLng(36.6343818, 127.4564273), //무심천유통할인마트사창점
+        new google.maps.LatLng(36.6349347, 127.456741), //모노마트청주점
+        new google.maps.LatLng(36.633077, 127.4535102), //진유통나들가게
+        new google.maps.LatLng(36.634045, 127.4523561), //열린마트
+        new google.maps.LatLng(36.6300434, 127.4499581), //그린마트
+        new google.maps.LatLng(36.6339361, 127.4502301), //마이크로마트
+        new google.maps.LatLng(36.63312484, 127.45100741), //월드유통
+        new google.maps.LatLng(36.63170238, 127.45115587), //나들가게늘푸른마트
+        new google.maps.LatLng(36.6324454, 127.4482693), //나들가게코사마트
+        new google.maps.LatLng(36.6280618, 127.4486271), //나들가게민영마트
+        new google.maps.LatLng(36.6248356, 127.4500074), //굿모닝마트
+        new google.maps.LatLng(36.6212556, 127.4512928), //다산마트
+        new google.maps.LatLng(36.62134914, 127.45053185), //고마운할인마트
+        new google.maps.LatLng(36.6269707, 127.4482804), //나들가게대운마트
+      ]
+
+      info = [
+        '월드마트',
+        '사창식자재마트',
+        '다다유마트',
+        '나들가게삼익마트',
+        '365고마운할인마트',
+        '1004마트',
+        '나눔할인마트유통',
+        '무심천유통할인마트사창점',
+        '모노마트청주점',
+        '진유통나들가게',
+        '열린마트',
+        '그린마트',
+        '마이크로마트',
+        '월드유통',
+        '나들가게늘푸른마트',
+        '나들가게코사마트',
+        '나들가게민영마트',
+        '굿모닝마트',
+        '다산마트',
+        '고마운할인마트',
+        '나들가게대운마트'
+      ]
+
+      address = [
+        '충북 청주시 서원구 1순환로709번길 16',
+        '충북 청주시 서원구 사직대로144번길 34',
+        '충북 청주시 서원구 사직대로144번길 42 대원칸타빌상가 101호',
+        '충북 청주시 서원구 창직로12번길 65',
+        '충북 청주시 서원구 예체로7번길 45',
+        '충북 청주시 서원구 모충로26번길 2',
+        '충북 청주시 서원구 1순환로 689',
+        '충북 청주시 서원구 사직대로 82',
+        '충북 청주시 서원구 사직대로 83 1층',
+        '충북 청주시 흥덕구 내수동로55번길 9',
+        '충북 청주시 흥덕구 사직대로 42-1',
+        '충북 청주시 흥덕구 성봉로279번길 3',
+        '충북 청주시 흥덕구 사직대로 26',
+        '충북 청주시 흥덕구 사직대로 45-1',
+        '충북 청주시 흥덕구 내수동로34번길 21',
+        '충북 청주시 흥덕구 신율로 174',
+        '충북 청주시 흥덕구 풍산로170번길 5',
+        '충북 청주시 서원구 성봉로 220',
+        '충북 청주시 서원구 성봉로 178',
+        '충북 청주시 서원구 경신로 66 상가동 101호 102호',
+        '충북 청주시 흥덕구 신율로90번길 29'
+      ]
+
+
+      init();
+    }
+
+    function init() {
+      for (i = 0; i < path.length; i++) {
+        markers[i] = new google.maps.Marker({
+          position: path[i],
+          map: map
+        });
+        markers[i].setMap(null);
+
+
+        let infowindow = new google.maps.InfoWindow({
+          content: info[i]
+        });
+        infoWindows[i] = infowindow;
+      }
+
+    }
+
+    function showMap(mart) {
+      let martString = mart.innerHTML;
+      let position = 0;
+
+      for (let index = 0; index < info.length; index++) {
+        if (martString === info[index]) {
+          position = index;
+          break;
+        }
+      }
+
+      if (isChecked[position] === 0) {
+        markers[position].setMap(map);
+        infoWindows[position].open(map, markers[position]);
+        document.getElementById("address").innerHTML = martString + " : &lt;<b>" + address[position] + "</b>&gt;";
+        isChecked[position] = 1;
+      }
+      else {
+        markers[position].setMap(null);
+        infoWindows[position].close();
+        isChecked[position] = 0;
+      }
+
+    }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG8r6dEEaxjluNTsspnX6FkH7fCQ3ca4c&callback=myMap"></script>
+</body>
+
+</html>
