@@ -66,102 +66,134 @@
 
         #Contact {
             font-family: flower;
+          }
+      
+          #Contact {
+      
             padding-left: 70px;
-        }
-
-        .title {
-            font-family: jua;
-            margin-bottom: 30px;
-            margin-left: 140px;
-        }
-
-        .paragraph {
+          }
+      
+          .title {
             font-family: suseongB;
-        }
-
-        .members {
-            font-family: jua;
-            font-size: 30px;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-bottom: 30px;
+          }
+      
+          .paragraph {
+            font-family: suseongB;
+          }
+      
+          .members {
+            font-family: suseongB;
+            font-size: 20px;
+            margin-left: 5px;
             text-decoration: none;
-            color: white;
-        }
-
-        .contactTitle {
+            color: black;
+          }
+      
+          .contactTitle {
             font-family: jua;
             font-weight: 500;
-        }
-
-        a:hover {
-            color: yellow !important;
-            text-decoration: none !important;
-        }
-
-        .navLayout {
+          }
+      
+          .navLayout {
             margin-bottom: 0px;
-            background-color: #1d202d !important;
+            background-color: #FFE361 !important;
             padding: 15px;
+            font-weight: bold;
             font-size: 20px;
-        }
-
-        #Rfs {
+          }
+      
+          #Rfs {
             font-size: 50px;
             margin-left: 3vw;
-        }
-
-        .navBar-custom {
-            color: white !important;
+            background-image: linear-gradient(to right, #FFE361, #FFE361);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            font-weight: 600;
+          }
+      
+          #Rfs::first-letter {
+            font-size: 10rem;
+          }
+      
+      
+          .navBar-custom {
+            color: black !important;
             font-family: suseongB;
-        }
+          }
+      
+          .btn-custom:hover {
+            box-shadow: 0px 0px 10px #ffe54c;
+          }
+      
+          .button-52 {
+            font-size: 16px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            padding: 13px 20px 13px;
+            outline: 0;
+            border: 1px solid black;
+            cursor: pointer;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+          }
+      
+          .button-52:after {
+            content: "";
+            background-color: #ffe54c !important;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            top: 7px;
+            left: 7px;
+            transition: 0.2s;
+          }
+      
+          .button-52:hover:after {
+            top: 0px;
+            left: 0px;
+          }
+      
+          a.navBar-custom:hover {
+            text-shadow: 0px 0px 1px !important;
+          }
+      
+          a.members:hover {
+            text-shadow: 0px 0px 1px black;
+            color: black;
+            text-decoration: none !important;
+          }
 
-        .btn-custom:hover {
-            box-shadow: 0px 0px 10px #1d202d;
-        }
-
-        .Email {
-            font-size: 30px;
-        }
-
-        #top {
-            display: scroll;
-            position: fixed;
-            bottom: 150px;
-            left: 80%;
-        }
-        section{
-            margin-left:50px;
-        }
-        #resultTable{
-            margin-left:50px;
-            overflow: scroll;
-            height:750px;
-        }
     </style>
 
 
 </head>
 
 <body>
-    <nav class="navLayout navbar navbar-default ">
+    <nav class="navLayout navbar navbar-default navBar-custom">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavBar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="navBar-custom" href="../index.html">Home</a></li>
-                    <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
-                    <li><a class="navBar-custom" href="./Map.html">Map</a></li>
-                    <li><a class="navBar-custom" href="#Contact">Contact</a></li>
-                </ul>
-            </div>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavBar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="navBar-custom" href="../index.html">Home</a></li>
+              <li><a class="navBar-custom" href="./Recipe.html">Recipe</a></li>
+              <li><a class="navBar-custom" href="./Map.html">Map</a></li>
+              <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
     <div class="row buttong">
         <div class="col-sm-7">
             <div class="col-sm-1"></div>
@@ -180,7 +212,6 @@
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-4 " id="result">
-            <button onclick="check();">선택목록 체크용</button>
             <h1 class="title">선택 목록</h1>
         </div>
     </div>
@@ -235,27 +266,60 @@
 
 </div>
 </div>
-    <div id="Contact" class="container-fluid"
-        style="margin-top:100px; background-color: #1d202d; color:white; padding-top:40px; padding-bottom: 40px;">
-        <h1 class="contactTitle">Team TAG</h1>
-        <br>
-        <div>
-            <span class="members">이인규</span> <span class="members">|</span> <a class="members"
+<div id="Contact" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="title" style="font-size: 40px; font-weight:bold; letter-spacing: 5px;">Contact Us</h1>
+          </div>
+          <div class="col-sm-12" style="border-left: 7px solid #ffe361;">
+            <div>
+              <span class="members">이인규</span> <span class="members">|</span> <a class="members"
                 href="https://github.com/Evergyu">Github</a> <span class="members">|</span><span class="members"
                 target="_blank">Email : iingy123@naver.com</span>
-        </div>
-        <div>
-            <span class="members">노민성</span> <span class="members">|</span><a class="members"
+            </div>
+            <p></p>
+            <p></p>
+            <div>
+              <span class="members">노민성</span> <span class="members">|</span><a class="members"
                 href="https://github.com/maatanyy">Github</a> <span class="members">|</span><span class="members"
-                target="_blank">Email : iingy123@naver.com</span>
-        </div>
-        <div>
-            <span class="members">김강민</span> <span class="members">|</span><a class="members"
+                target="_blank">Email : maatanyy@naver.com</span>
+            </div>
+            <p></p>
+            <p></p>
+            <div>
+              <span class="members">김강민</span> <span class="members">|</span><a class="members"
                 href="https://github.com/KkangKkang1202">Github</a class="Email"> <span class="members">|</span><span
-                class="members" target="_blank">Email : iingy123@naver.com</span>
+                class="members" target="_blank">Email : kkm9814@naver.com</span>
+            </div>
+            <br>
+            <br>
+            <h2 class="paragraph" style="font-size: 20px;"><b>If you have any improvements or questions,<br>Please
+                contact us by email or fill out the form.</b></h2>
+          </div>
         </div>
+      </div>
+      <div class="col-sm-7">
+        <form style="font-family: suseongB;">
+          <div class="form-group" style="padding-top: 100px;">
+            <div class="col-sm-6">
+              <input class="form-control" type="text" placeholder="Name" required>
+            </div>
+            <div class="col-sm-6">
+              <input class="form-control" type="text" placeholder="Email" required>
+            </div>
+            <div class="col-sm-12" style="margin-top:30px;">
+              <textarea class="form-control" style="height: 130px;" placeholder="Comment"></textarea>
+            </div>
+            <div class="col-sm-12 text-right" style="margin-top:30px;">
+              <button class="btn button-52">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-
+  </div>
 </body>
 
 </html>
