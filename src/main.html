@@ -17,15 +17,19 @@
   <script>
     function gotoRecipe() {
       var datas = JSON.parse(JSON.stringify(Recipeyo));
-      var divs = document.getElementById("resultTable").getElementsByTagName("div");
-      document.getElementById("resultTable").innerHTML=""
+      var imgs = document.getElementById("resultTable").getElementsByTagName("img");
+
       //지우는거 됨
 
-      var getData = JSON.parse(localStorage.getItem(id));
-      getData.selected = "false";
-      localStorage.setItem("mushroom", JSON.stringify(getData));
+      var id = Array();
+      for (var i = 0; i < imgs.length; i++) {
+        var getData = JSON.parse(localStorage.getItem(imgs[i].id));
+        getData.selected = "false";
+        localStorage.setItem(imgs[i].id, JSON.stringify(getData));
+      }
 
 
+      document.getElementById("resultTable").innerHTML = ""
 
       for (var i = 0; i < 4; i++) {     //레시피 개수에 따라 바꿔줘야함
         var count = 0;            //count 0으로 선언
@@ -43,7 +47,6 @@
         })
         if ((count / datas[i].base.length) * 100 >= 50) {
           recipeCount++;
-          console.log(datas[i].name);
           //document.getElementById("result").innerHTML="";
         };
 
