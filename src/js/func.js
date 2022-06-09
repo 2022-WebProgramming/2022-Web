@@ -35,6 +35,7 @@ function resultCard(element) {
          //button
          let btn = document.createElement('button');
          btn.innerHTML = "Remove";
+         btn.classList.add("removeButton");
          btn.onclick = function () {
             card.parentNode.removeChild(card);
             var id = element.id;

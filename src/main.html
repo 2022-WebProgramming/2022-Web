@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자취생 레시피</title>
   <script src="js/init.js"></script>
   <script src="js/func.js"></script>
@@ -46,10 +49,14 @@
 
           console.log(datas[i].name);
           var A = document.createElement("a");
+          var br = document.createElement("br");
+
           A.innerHTML = datas[i].name;
           A.href = "./Recipe.html#" + datas[i].name;
+          A.classList.add("members");
 
           document.getElementById("resultTable").appendChild(A);
+          document.getElementById("resultTable").appendChild(br);
         };
 
         //console.log(count); //count 동작 확인용
@@ -88,13 +95,22 @@
       font-family: "suseongD"
     }
 
+    *
+    {
+      font-family: suseongB;
+    }
     #Contact {
-      font-family: flower;
+      font-family: suseongB;
     }
 
     #Contact {
 
       padding-left: 70px;
+    }
+
+    #content
+    {
+      border: 10px solid #FFE361;
     }
 
     .title {
@@ -118,9 +134,12 @@
       font-family: jua;
       font-weight: 500;
     }
-
-    .navLayout {
+    nav 
+    {
       margin-bottom: 0px;
+    }
+    .navLayout {
+      margin-bottom: 0px !important;
       background-color: #FFE361 !important;
       padding: 15px;
       font-weight: bold;
@@ -192,8 +211,96 @@
       color: black;
       text-decoration: none !important;
     }
-  </style>
+    #title {
+    font-size: 6em;
+    font-weight: 600;
+    background-image: linear-gradient(to right, #FFE361, #FFE361);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: suseongB;
+  }
 
+  #title::first-letter {
+    font-size: 1.6em;
+  }
+
+  #resultTable
+  {
+    height: 791px;
+    overflow: scroll;
+    border:10px solid #d2d2d3;
+  }
+
+  #resultTable::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    #resultTable::-webkit-scrollbar-thumb {
+      background-color: #1d202d;
+      border-radius: 10px;
+    }
+
+    #resultTable::-webkit-scrollbar-track {
+      background-color: lightgrey;
+      border-radius: 10px;
+      box-shadow: inset 0px 0px 5px white;
+    }
+
+    #foodText
+    {
+      background-color: #d2d2d3;
+      color: white;
+      padding-bottom: 50px;
+    }
+
+    #condimentText
+    {
+      background-color: #fff59d;
+      color: #fdd835;
+      padding-bottom: 50px;
+    }
+
+    .buttonStyleFood
+    {
+      color:#1d202d !important;
+      background-color: #fdd835 !important;
+      border: 1px solid #fdd835 !important;
+      font-size: 25px !important;
+      width: 100px;
+      height: 50px;
+    }
+
+    .buttonStyleCondiment
+    {
+      color:black !important;
+      background-color: #d2d2d3 !important;
+      border: 1px solid #d2d2d3 !important;
+      font-size: 25px !important;
+      width: 150px;
+      height: 50px;
+    }
+
+    .gotoRecipe
+    {
+      color:#1d202d !important;
+      background-color: white !important;
+      border: 1px solid #1d202d !important;
+      font-size: 25px !important;
+      width: 120px;
+      height: 50px;
+    }
+
+    .removeButton
+    {
+      color:#1d202d !important;
+      background-color: #fdd835 !important;
+      border: 1px solid #fff59d;
+      border-radius: 10px;
+    }
+  </style>
 
 </head>
 
@@ -217,27 +324,67 @@
       </div>
     </div>
   </nav>
-  <div class="row buttong">
-    <div class="col-sm-7">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-4">
-        <div class="btn-group">
-          <button type="button" id="gotoFood" class="btn btn-danger  btn-outline-light">Food</button>
-          <button type="button" id="gotoCondiment" class="btn btn-success btn-outline-light">Condiment</button>
-        </div>
-
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 id="title">Food/<br>Condiment</h1>
       </div>
-      <div class="col-sm-6"></div>
-      <div class="col-sm-1 btn-group">
-        <button type="button" class="btn btn-success  btn-outline-light" onclick="gotoRecipe();">결과보기</button>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-6" id = "foodText">
+            <h1>Food</h1>
+            <span class="glyphicon glyphicon-circle-arrow-left" style="font-size: 50px;"></span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip
+              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia
+              deserunt mollit anim id est laborum.
+          </p>
+          </div>
+          <div class="col-sm-6" id = "condimentText">
+            <h1>Condiment</h1>
+            <span class="glyphicon glyphicon-circle-arrow-right" style="font-size: 50px;"></span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip
+              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia
+              deserunt mollit anim id est laborum.
+          </p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-4 ">
-      <h1 class="title">선택 목록</h1>
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+          <div class="btn-group" style="margin-bottom: 50px;">
+            <button type="button" id="gotoFood" class="buttonStyleFood btn btn-danger  btn-outline-light">Food</button>
+            <button type="button" id="gotoCondiment" class="buttonStyleCondiment btn btn-success btn-outline-light">Condiment</button>
+          </div>
+        </div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-1 btn-group">
+          <button type="button" class="gotoRecipe btn btn-success  btn-outline-light" onclick="gotoRecipe();">결과보기</button>
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-4 ">
+        
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="container-fluid">
     <div class="col-sm-8">
       <section>
         <div id="content">
@@ -284,62 +431,8 @@
         </div>
       </section>
     </div>
-    <div id="resultTable" class="col-sm-2">
-
-    </div>
-  </div>
-  <div id="Contact" class="container-fluid">
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1 class="title" style="font-size: 40px; font-weight:bold; letter-spacing: 5px;">Contact Us</h1>
-          </div>
-          <div class="col-sm-12" style="border-left: 7px solid #ffe361;">
-            <div>
-              <span class="members">이인규</span> <span class="members">|</span> <a class="members"
-                href="https://github.com/Evergyu">Github</a> <span class="members">|</span><span class="members"
-                target="_blank">Email : iingy123@naver.com</span>
-            </div>
-            <p></p>
-            <p></p>
-            <div>
-              <span class="members">노민성</span> <span class="members">|</span><a class="members"
-                href="https://github.com/maatanyy">Github</a> <span class="members">|</span><span class="members"
-                target="_blank">Email : maatanyy@naver.com</span>
-            </div>
-            <p></p>
-            <p></p>
-            <div>
-              <span class="members">김강민</span> <span class="members">|</span><a class="members"
-                href="https://github.com/KkangKkang1202">Github</a class="Email"> <span class="members">|</span><span
-                class="members" target="_blank">Email : kkm9814@naver.com</span>
-            </div>
-            <br>
-            <br>
-            <h2 class="paragraph" style="font-size: 20px;"><b>If you have any improvements or questions,<br>Please
-                contact us by email or fill out the form.</b></h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-7">
-        <form style="font-family: suseongB;">
-          <div class="form-group" style="padding-top: 100px;">
-            <div class="col-sm-6">
-              <input class="form-control" type="text" placeholder="Name" required>
-            </div>
-            <div class="col-sm-6">
-              <input class="form-control" type="text" placeholder="Email" required>
-            </div>
-            <div class="col-sm-12" style="margin-top:30px;">
-              <textarea class="form-control" style="height: 130px;" placeholder="Comment"></textarea>
-            </div>
-            <div class="col-sm-12 text-right" style="margin-top:30px;">
-              <button class="btn button-52">Send</button>
-            </div>
-          </div>
-        </form>
-      </div>
+    <div id="resultTable" class="col-sm-4">
+      <h1 class="title">선택 목록</h1>
     </div>
   </div>
 </body>
