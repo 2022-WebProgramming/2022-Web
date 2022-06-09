@@ -18,16 +18,13 @@
     function gotoRecipe() {
       var datas = JSON.parse(JSON.stringify(Recipeyo));
       var imgs = document.getElementById("resultTable").getElementsByTagName("img");
+      var number = imgs.length;
+      var ids = Array;
 
-      //지우는거 됨
-
-      var id = Array();
-      for (var i = 0; i < imgs.length; i++) {
-        var getData = JSON.parse(localStorage.getItem(imgs[i].id));
-        getData.selected = "false";
-        localStorage.setItem(imgs[i].id, JSON.stringify(getData));
+      for (var i = 0; i < number; i++) {
+        ids[i] = imgs[i].id;
       }
-
+      //지우는거 안됨
 
       document.getElementById("resultTable").innerHTML = ""
 
@@ -43,16 +40,28 @@
                 count++;
               }
             }
-          };
+          }
         })
         if ((count / datas[i].base.length) * 100 >= 50) {
-          recipeCount++;
-          //document.getElementById("result").innerHTML="";
+
+          console.log(datas[i].name);
+          var A = document.createElement("a");
+          A.innerHTML = datas[i].name;
+          A.href = "./Recipe.html#" + datas[i].name;
+
+          document.getElementById("resultTable").appendChild(A);
         };
 
         //console.log(count); //count 동작 확인용
-      }
 
+      }
+      for (var i = 0; i < number; i++) {
+
+        var getData = JSON.parse(localStorage.getItem(ids[i]));
+        getData.selected = "false";
+        localStorage.setItem(ids[i], JSON.stringify(getData));
+
+      }
     }
   </script>
 

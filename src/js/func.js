@@ -217,6 +217,7 @@ function selectFood12() {
    resultCard(getData);
 }
 
+
 function selectFood13() {
    var getData = JSON.parse(localStorage.getItem('egg'));
    if (getData.selected == "false") {
