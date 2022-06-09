@@ -2,271 +2,281 @@
 <html>
 
 <head>
-    <title>자취생 레시피</title>
-    <script src="js/init.js"></script>
-    <script src="js/func.js"></script>
-    <script type="text/javascript" src="./json/recipe.json">
-        var data = JSON.parse(JSON.stringify(Recipeyo));
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>자취생 레시피</title>
+  <script src="js/init.js"></script>
+  <script src="js/func.js"></script>
+  <script type="text/javascript" src="./json/recipe.json">
+    var data = JSON.parse(JSON.stringify(Recipeyo));
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <script>
-        function gotoRecipe() {
-            var datas = JSON.parse(JSON.stringify(Recipeyo));   
+  <script>
+    function gotoRecipe() {
+      var datas = JSON.parse(JSON.stringify(Recipeyo));
+      var divs = document.getElementById("resultTable").getElementsByTagName("div");
+      document.getElementById("resultTable").innerHTML=""
+      //지우는거 됨
 
-            for(var i = 0; i<4; i++){     //레시피 개수에 따라 바꿔줘야함
-                var count = 0;            //count 0으로 선언
-                var keys = Object.keys(localStorage);    
-                keys.forEach(key =>{
-                    var temp = localStorage.getItem(key);
-                    var showSelected = JSON.parse(temp);
-                    if(showSelected.selected=="true"){
-                    for(var j =0; j<datas[i].base.length;j++){
-                        if(datas[i].base[j]==showSelected.name){
-                            count ++;
-                        }
-                    }
-                };
-               })
-                if((count/datas[i].base.length)*100 > 70){
-                    console.log(datas[i].name);
-                };
-            //console.log(count); //count 동작 확인용
-           }
+      var getData = JSON.parse(localStorage.getItem(id));
+      getData.selected = "false";
+      localStorage.setItem("mushroom", JSON.stringify(getData));
 
-        }
-    </script>
 
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
 
-        @font-face {
+      for (var i = 0; i < 4; i++) {     //레시피 개수에 따라 바꿔줘야함
+        var count = 0;            //count 0으로 선언
+        var keys = Object.keys(localStorage);
+        keys.forEach(key => {
+          var temp = localStorage.getItem(key);
+          var showSelected = JSON.parse(temp);
+          if (showSelected.selected == "true") {
+            for (var j = 0; j < datas[i].base.length; j++) {
+              if (datas[i].base[j] == showSelected.name) {
+                count++;
+              }
+            }
+          };
+        })
+        if ((count / datas[i].base.length) * 100 >= 50) {
+          recipeCount++;
+          console.log(datas[i].name);
+          //document.getElementById("result").innerHTML="";
+        };
 
-            src: url("./font/BMYEONSUNG_ttf.ttf");
-            font-family: "jua"
-        }
+        //console.log(count); //count 동작 확인용
+      }
 
-        @font-face {
+    }
+  </script>
 
-            src: url("./font/SuseongBatang.ttf");
-            font-family: "suseongB"
-        }
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        @font-face {
+    @font-face {
 
-            src: url("./src/font/SuseongDotum.ttf");
-            font-family: "suseongD"
-        }
+      src: url("./font/BMYEONSUNG_ttf.ttf");
+      font-family: "jua"
+    }
 
-        #Contact {
-            font-family: flower;
-          }
-      
-          #Contact {
-      
-            padding-left: 70px;
-          }
-      
-          .title {
-            font-family: suseongB;
-            margin-bottom: 30px;
-          }
-      
-          .paragraph {
-            font-family: suseongB;
-          }
-      
-          .members {
-            font-family: suseongB;
-            font-size: 20px;
-            margin-left: 5px;
-            text-decoration: none;
-            color: black;
-          }
-      
-          .contactTitle {
-            font-family: jua;
-            font-weight: 500;
-          }
-      
-          .navLayout {
-            margin-bottom: 0px;
-            background-color: #FFE361 !important;
-            padding: 15px;
-            font-weight: bold;
-            font-size: 20px;
-          }
-      
-          #Rfs {
-            font-size: 50px;
-            margin-left: 3vw;
-            background-image: linear-gradient(to right, #FFE361, #FFE361);
-            color: transparent;
-            background-clip: text;
-            -webkit-background-clip: text;
-            font-weight: 600;
-          }
-      
-          #Rfs::first-letter {
-            font-size: 10rem;
-          }
-      
-      
-          .navBar-custom {
-            color: black !important;
-            font-family: suseongB;
-          }
-      
-          .btn-custom:hover {
-            box-shadow: 0px 0px 10px #ffe54c;
-          }
-      
-          .button-52 {
-            font-size: 16px;
-            font-weight: 200;
-            letter-spacing: 1px;
-            padding: 13px 20px 13px;
-            outline: 0;
-            border: 1px solid black;
-            cursor: pointer;
-            position: relative;
-            background-color: rgba(0, 0, 0, 0);
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-          }
-      
-          .button-52:after {
-            content: "";
-            background-color: #ffe54c !important;
-            width: 100%;
-            z-index: -1;
-            position: absolute;
-            height: 100%;
-            top: 7px;
-            left: 7px;
-            transition: 0.2s;
-          }
-      
-          .button-52:hover:after {
-            top: 0px;
-            left: 0px;
-          }
-      
-          a.navBar-custom:hover {
-            text-shadow: 0px 0px 1px !important;
-          }
-      
-          a.members:hover {
-            text-shadow: 0px 0px 1px black;
-            color: black;
-            text-decoration: none !important;
-          }
+    @font-face {
 
-    </style>
+      src: url("./font/SuseongBatang.ttf");
+      font-family: "suseongB"
+    }
+
+    @font-face {
+
+      src: url("./src/font/SuseongDotum.ttf");
+      font-family: "suseongD"
+    }
+
+    #Contact {
+      font-family: flower;
+    }
+
+    #Contact {
+
+      padding-left: 70px;
+    }
+
+    .title {
+      font-family: suseongB;
+      margin-bottom: 30px;
+    }
+
+    .paragraph {
+      font-family: suseongB;
+    }
+
+    .members {
+      font-family: suseongB;
+      font-size: 20px;
+      margin-left: 5px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .contactTitle {
+      font-family: jua;
+      font-weight: 500;
+    }
+
+    .navLayout {
+      margin-bottom: 0px;
+      background-color: #FFE361 !important;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    #Rfs {
+      font-size: 50px;
+      margin-left: 3vw;
+      background-image: linear-gradient(to right, #FFE361, #FFE361);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-weight: 600;
+    }
+
+    #Rfs::first-letter {
+      font-size: 10rem;
+    }
+
+
+    .navBar-custom {
+      color: black !important;
+      font-family: suseongB;
+    }
+
+    .btn-custom:hover {
+      box-shadow: 0px 0px 10px #ffe54c;
+    }
+
+    .button-52 {
+      font-size: 16px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      padding: 13px 20px 13px;
+      outline: 0;
+      border: 1px solid black;
+      cursor: pointer;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-52:after {
+      content: "";
+      background-color: #ffe54c !important;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 7px;
+      left: 7px;
+      transition: 0.2s;
+    }
+
+    .button-52:hover:after {
+      top: 0px;
+      left: 0px;
+    }
+
+    a.navBar-custom:hover {
+      text-shadow: 0px 0px 1px !important;
+    }
+
+    a.members:hover {
+      text-shadow: 0px 0px 1px black;
+      color: black;
+      text-decoration: none !important;
+    }
+  </style>
 
 
 </head>
 
 <body>
-    <nav class="navLayout navbar navbar-default navBar-custom">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavBar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a class="navBar-custom" href="../index.html">Home</a></li>
-              <li><a class="navBar-custom" href="./Recipe.html">Recipe</a></li>
-              <li><a class="navBar-custom" href="./Map.html">Map</a></li>
-              <li><a class="navBar-custom" href="#Contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <div class="row buttong">
-        <div class="col-sm-7">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4">
-                <div class="btn-group">
-                    <button type="button" id="gotoFood" class="btn btn-danger  btn-outline-light">Food</button>
-                    <button type="button" id="gotoCondiment"
-                        class="btn btn-success btn-outline-light">Condiment</button>
-                </div>
-
-            </div>
-            <div class="col-sm-6"></div>
-            <div class="col-sm-1 btn-group">
-                <button type="button" class="btn btn-success  btn-outline-light" onclick="gotoRecipe();">결과보기</button>
-            </div>
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-4 " id="result">
-            <h1 class="title">선택 목록</h1>
-        </div>
+  <nav class="navLayout navbar navbar-default navBar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavBar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="navBar-custom" href="../index.html">Home</a></li>
+          <li><a class="navBar-custom" href="./Recipe.html">Recipe</a></li>
+          <li><a class="navBar-custom" href="./Map.html">Map</a></li>
+          <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="row">
+  </nav>
+  <div class="row buttong">
+    <div class="col-sm-7">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-4">
+        <div class="btn-group">
+          <button type="button" id="gotoFood" class="btn btn-danger  btn-outline-light">Food</button>
+          <button type="button" id="gotoCondiment" class="btn btn-success btn-outline-light">Condiment</button>
+        </div>
+
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-1 btn-group">
+        <button type="button" class="btn btn-success  btn-outline-light" onclick="gotoRecipe();">결과보기</button>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4 ">
+      <h1 class="title">선택 목록</h1>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-sm-8">
-    <section>
+      <section>
         <div id="content">
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 
-            </script>
-            <script>
-                function check() {
-                    var keys = Object.keys(localStorage);
-                    keys.forEach(key => {
-                        var temp = localStorage.getItem(key);
-                        var showSelected = JSON.parse(temp);
-                        if (showSelected.selected == "true") {
-                            resultCard(showSelected);
-                        }
-                    })
+          </script>
+          <script>
+            function check() {
+              var keys = Object.keys(localStorage);
+              keys.forEach(key => {
+                var temp = localStorage.getItem(key);
+                var showSelected = JSON.parse(temp);
+                if (showSelected.selected == "true") {
+                  resultCard(showSelected);
                 }
+              })
+            }
 
-                $(document).ready(function () {
-                    $("#content").load("./FOOD.html");
-                });
+            $(document).ready(function () {
+              $("#content").load("./FOOD.html");
+            });
 
-                $(document).ready(function () {
-                    $("#gotoFood").click(function () {
-                        $("#content").load("./FOOD.html")
-                    });
-                });
+            $(document).ready(function () {
+              $("#gotoFood").click(function () {
+                $("#content").load("./FOOD.html")
+              });
+            });
 
-                $(document).ready(function () {
-                    $("#gotoCondiment").click(function () {
-                        $("#content").load("./CONDIMENT.html")
-                    });
-                });
+            $(document).ready(function () {
+              $("#gotoCondiment").click(function () {
+                $("#content").load("./CONDIMENT.html")
+              });
+            });
 
-                $(document).ready(function () {
-                    $("#gotoRecipe").click(function () {
-                        $("#content").load("./Recipe.html")
-                    });
-                });
+            $(document).ready(function () {
+              $("#gotoRecipe").click(function () {
+                $("#content").load("./Recipe.html")
+              });
+            });
 
-            </script>
+          </script>
 
         </div>
-    </section>
-</div>
-<div id="resultTable" class="col-sm-2">
+      </section>
+    </div>
+    <div id="resultTable" class="col-sm-2">
 
-</div>
-</div>
-<div id="Contact" class="container-fluid">
+    </div>
+  </div>
+  <div id="Contact" class="container-fluid">
     <div class="row">
       <div class="col-sm-5">
         <div class="row">
