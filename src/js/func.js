@@ -271,6 +271,103 @@ function selectFood16() {
    resultCard(getData);
 }
 
+function selectFood17() {
+   var getData = JSON.parse(localStorage.getItem('국수'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("국수", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("국수", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectFood18() {
+   var getData = JSON.parse(localStorage.getItem('쪽파'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("쪽파", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("쪽파", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+function selectFood19() {
+   var getData = JSON.parse(localStorage.getItem('깻잎'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("깻잎", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("깻잎", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+function selectFood20() {
+   var getData = JSON.parse(localStorage.getItem('떡'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("떡", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("떡", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+function selectFood21() {
+   var getData = JSON.parse(localStorage.getItem('미역'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("미역", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("미역", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+function selectFood22() {
+   var getData = JSON.parse(localStorage.getItem('애호박'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("애호박", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("애호박", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+function selectFood23() {
+   var getData = JSON.parse(localStorage.getItem('조개'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("조개", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("조개", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+function selectFood24() {
+   var getData = JSON.parse(localStorage.getItem('콩나물'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("콩나물", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("콩나물", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
 
 
 //Condiment
@@ -478,6 +575,110 @@ function selectCondiment16() {
    else if (getData.selected == "true") {
       getData.selected = "false";
       localStorage.setItem("anchovy", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment17() {
+   var getData = JSON.parse(localStorage.getItem('깨'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("깨", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("깨", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment18() {
+   var getData = JSON.parse(localStorage.getItem('꿀'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("꿀", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("꿀", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment19() {
+   var getData = JSON.parse(localStorage.getItem('다시마'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("다시마", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("다시마", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment20() {
+   var getData = JSON.parse(localStorage.getItem('맛술'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("맛술", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("맛술", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment21() {
+   var getData = JSON.parse(localStorage.getItem('미림'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("미림", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("미림", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment22() {
+   var getData = JSON.parse(localStorage.getItem('올리고당'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("올리고당", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("올리고당", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment23() {
+   var getData = JSON.parse(localStorage.getItem('와사비'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("와사비", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("와사비", JSON.stringify(getData));
+   }
+   resultCard(getData);
+}
+
+function selectCondiment24() {
+   var getData = JSON.parse(localStorage.getItem('고추'));
+   if (getData.selected == "false") {
+      getData.selected = "true";
+      localStorage.setItem("고추", JSON.stringify(getData));
+   }
+   else if (getData.selected == "true") {
+      getData.selected = "false";
+      localStorage.setItem("고추", JSON.stringify(getData));
    }
    resultCard(getData);
 }

@@ -128,6 +128,69 @@ const shrimp = {
    "selected":"false"
 }
 
+const 국수 = {
+   "name":"국수",
+   "id":"국수",
+   "src":"./img/food/국수.jpg",
+   "alt":"국수",
+   "selected":"false"
+}
+
+const 쪽파 = {
+   "name":"쪽파",
+   "id":"쪽파",
+   "src":"./img/food/쪽파.jpg",
+   "alt":"쪽파",
+   "selected":"false"
+}
+
+const 깻잎 = {
+   "name":"깻잎",
+   "id":"깻잎",
+   "src":"./img/food/깻잎.jpg",
+   "alt":"깻잎",
+   "selected":"false"
+}
+
+const 떡 = {
+   "name":"떡",
+   "id":"떡",
+   "src":"./img/food/떡.jpg",
+   "alt":"떡",
+   "selected":"false"
+}
+
+const 미역 = {
+   "name":"미역",
+   "id":"미역",
+   "src":"./img/food/미역.jpg",
+   "alt":"미역",
+   "selected":"false"
+}
+
+const 애호박 = {
+   "name":"애호박",
+   "id":"애호박",
+   "src":"./img/food/애호박.jpg",
+   "alt":"애호박",
+   "selected":"false"
+}
+
+const 조개 = {
+   "name":"조개",
+   "id":"조개",
+   "src":"./img/food/조개.jpg",
+   "alt":"조개",
+   "selected":"false"
+}
+
+const 콩나물 = {
+   "name":"콩나물",
+   "id":"콩나물",
+   "src":"./img/food/콩나물.jpg",
+   "alt":"콩나물",
+   "selected":"false"
+}
 
 
    //json은 객체를 문자열로 표현한 방식
@@ -147,6 +210,14 @@ const shrimp = {
    localStorage.setItem('cheese',JSON.stringify(cheese));
    localStorage.setItem('tofu',JSON.stringify(tofu));
    localStorage.setItem('shrimp',JSON.stringify(shrimp));
+   localStorage.setItem('국수',JSON.stringify(국수));
+   localStorage.setItem('쪽파',JSON.stringify(쪽파));
+   localStorage.setItem('깻잎',JSON.stringify(깻잎));
+   localStorage.setItem('떡',JSON.stringify(떡));
+   localStorage.setItem('미역',JSON.stringify(미역));
+   localStorage.setItem('애호박',JSON.stringify(애호박));
+   localStorage.setItem('조개',JSON.stringify(조개));
+   localStorage.setItem('콩나물',JSON.stringify(콩나물));
 
    const salt =
       {
@@ -277,65 +348,72 @@ const shrimp = {
          "alt": "멸치액젓",
          "selected": "false"
       }
-      
 
-      /*
-      const recipe1 = {
-
-         "name": "제육볶음",
-         "src": "./img/recipe/test1.jpg",
-         "base": ["돼지고기","양파","고추","대파","설탕","고추장","간장"],
-         "recipe":["재료는 먹기 좋은 크기로 썰어서 준비하기.",
-                  "고추장 2스푼, 간장 2스푼, 고춧가루 2스푼, 다진마늘 1스푼, 굴소스 1스푼, 올리고당 1스푼 넣어서 양념장 만들기.",
-                  "고기가 익어갈 때 설탕을 넣고 더 구워주기.",
-                  "손질해둔 야채와 양념장을 넣고 볶기.",
-                  "모든 재료가 다 익으면 제육볶음 완성."
-               ]
+      const 깨 = {
+         "name": "깨",
+         "id": "anchovy",
+         "src": "./img/condiment/깨.jpg",
+         "alt": "깨",
+         "selected": "false"
       }
 
-      const recipe2 = {
-
-         "name": "참치계란밥",
-         "src": "./img/recipe/test1.jpg",    //수정해야함!!
-         "base": ["달걀","캐찹","참치","소금","버터"],
-         "recipe": ["달걀 3개를 깨서 소금 한꼬집을 넣고 풀기.",
-                     "참치캔을 따서 기름은 쪽 빼고 달걀에 넣기.",
-                     "달군팬에 버터를 넣기.",
-                     "밥 볶기.",
-                     "참치 달걀물 넣기.",
-                     "뒤적뒤적 골고루 볶은 후 통깨로 마무리."
-               ]  
+      const 꿀 = {
+         "name": "꿀",
+         "id": "꿀",
+         "src": "./img/condiment/꿀.jpg",
+         "alt": "꿀",
+         "selected": "false"
       }
 
-      const recipe3 = {
-
-         "name": "닭가슴살 볶음밥",
-         "src": "./img/recipe/test1.jpg",
-         "base": ["닭고기","마늘","대파","양파","달걀","굴소스","간장","후추","참기름"],
-         "recipe": ["닭가슴살, 양파는 큼직하게 다지고 대파, 마늘은 송송 썰어 준비하기.",
-                     "예열된 팬에 기름을 넉넉히 두르고 대파, 마늘을 볶기.",
-                     "마늘이 노릇해 지면 양파, 닭가슴살을넣고 후추를 넣어 볶기.",
-                     "굴소스와 간장을 넣어 섞기.",
-                     "재료가 고루 섞인 후 밥을 넣어 볶기.",
-                     "볶음밥을 한쪽으로 밀고 달걀로 스크램블을 해서 섞기.",
-                     "불을 끄고 참기름과 참깨를 넣어 완성하기."
-               ]  
-
+      const 다시마 = {
+         "name": "다시마",
+         "id": "다시마",
+         "src": "./img/condiment/다시마.jpg",
+         "alt": "다시마",
+         "selected": "false"
       }
 
-      const recipe4 = {
-
-         "name": "돼지고기 김치 볶음밥",
-         "src": "./img/recipe/test1.jpg",
-         "base":["김치","돼지고기","굴소스","고추장","맛술","참기름","후추"],
-         "recipe":["양념을 분량대로 섞기.",
-                     "김치도 꺼내고 돼지고기도 먹기 좋은 크기로 썰기.",
-                     "달궈진 팬에 기름을 살짝만 둘러 돼지고기를 넣고 먼저 튀겨내듯 볶기.",
-                     "기름 1작은술을 더 두른 후 김치를 넣어 중불에서 달달 볶기.",
-                     "김치가 투명해지기 시작하면 밥을 넣은 후 미리 만들어두었던 비법양념장을 넣어 골고루 섞어가며 볶기."
-               ]  
+      const 맛술 = {
+         "name": "맛술",
+         "id": "맛술",
+         "src": "./img/condiment/맛술.jpg",
+         "alt": "맛술",
+         "selected": "false"
       }
-      */
+
+      const 미림 = {
+         "name": "미림",
+         "id": "미림",
+         "src": "./img/condiment/미림.jpg",
+         "alt": "미림",
+         "selected": "false"
+      }
+
+      const 올리고당 = {
+         "name": "올리고당",
+         "id": "올리고당",
+         "src": "./img/condiment/올리고당.jpg",
+         "alt": "올리고당",
+         "selected": "false"
+      }
+
+      const 와사비 = {
+         "name": "와사비",
+         "id": "와사비",
+         "src": "./img/condiment/와사비.jpg",
+         "alt": "와사비",
+         "selected": "false"
+      }
+      const 고추 = {
+         "name": "고추",
+         "id": "고추",
+         "src": "./img/condiment/고추.jpg",
+         "alt": "고추",
+         "selected": "false"
+      }
+
+
+
      
 
       localStorage.setItem('salt', JSON.stringify(salt));
@@ -354,12 +432,12 @@ const shrimp = {
       localStorage.setItem('starchsyrup', JSON.stringify(starchsyrup));
       localStorage.setItem('pepper', JSON.stringify(pepper));
       localStorage.setItem('anchovy', JSON.stringify(anchovy));
+      localStorage.setItem('깨', JSON.stringify(깨));
+      localStorage.setItem('꿀', JSON.stringify(꿀));
+      localStorage.setItem('다시마', JSON.stringify(다시마));
+      localStorage.setItem('맛술', JSON.stringify(맛술));
+      localStorage.setItem('미림', JSON.stringify(미림));
+      localStorage.setItem('올리고당', JSON.stringify(올리고당));
+      localStorage.setItem('와사비', JSON.stringify(와사비));
+      localStorage.setItem('고추', JSON.stringify(고추));
 
-      //Recipe 추가
-      //localStorage.setItem('recipe1', JSON.stringify(recipe1));
-      //localStorage.setItem('recipe2', JSON.stringify(recipe2));
-      //localStorage.setItem('recipe3', JSON.stringify(recipe3));
-      //localStorage.setItem('recipe4', JSON.stringify(recipe4));
-
-
-      

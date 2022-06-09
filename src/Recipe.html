@@ -10,7 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="./json/recipe.json"></script>
-    
+
   <script>
     $(document).ready(function () {
       $('.trigger').on('click', function () {
@@ -206,7 +206,7 @@
       cursor: pointer;
       position: relative;
       background-color: #fdd835;
-      color:black;
+      color: black;
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
@@ -305,204 +305,484 @@
     #gotoFood1 {
       background-color: #dddddd;
     }
+    .row{
+      margin-bottom:20px;
+    }
+    #gotoFood1 p,#gotoFood2 p{
+      padding-bottom:180px;
+    }
+    a.navBar-custom:hover {
+      text-shadow: 0px 0px 1px !important;
+    }
   </style>
   <title>Document</title>
 
 </head>
 
 <body>
-    <script>
-        function recipeClick(element) {
-            document.getElementById("recipetitle").innerHTML = "";
-            document.getElementById("recipesubtitle").innerHTML = "";
-            document.getElementById("recipesteps").innerHTML = "";
+  <script>
+    function recipeClick(element) {
+      document.getElementById("recipetitle").innerHTML = "";
+      document.getElementById("recipesubtitle").innerHTML = "";
+      document.getElementById("recipesteps").innerHTML = "";
 
 
-            var id = element.id.trim();
-            var data = JSON.parse(JSON.stringify(Recipeyo));
-            var num;
+      var id = element.id.trim();
+      var data = JSON.parse(JSON.stringify(Recipeyo));
+      var num;
 
-            //name==id인 레시피 찾기
-            //처음 찾는게 그게 아니면 
-            for (var i = 0; i < 4; i++) {
-                var recipename = data[i].name.trim();
-                console.log(recipename);
-                console.log(id);
-                if (id == recipename) {
-                    num = i;
-                }
-            }
-
-
-            console.log(data[num].name);
-
-            //recipe 재료 찾기
-            var recipesubtitle = "";
-            //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
-            for (var i = 0; i < data[num].base.length; i++) {
-                recipesubtitle = recipesubtitle + ' ' + data[num].base[i];
-            }
-
-            document.getElementById("recipetitle").innerHTML = id;
-            document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
-
-            var lilist = new Array;
-            for (var i = 0; i < data[num].recipe.length; i++) {
-                lilist[i] = document.createElement("li");
-                lilist[i].innerHTML = data[num].recipe[i];
-                document.getElementById("recipesteps").appendChild(lilist[i]);
-
-            }
-
-            document.getElementById("recipeimg").src=data[num].src;
-
-
+      //name==id인 레시피 찾기
+      //처음 찾는게 그게 아니면 
+      for (var i = 0; i < 20; i++) {
+        var recipename = data[i].name.trim();
+        console.log(recipename);
+        console.log(id);
+        if (id == recipename) {
+          num = i;
         }
-    </script>
+      }
+
+
+      console.log(data[num].name);
+
+      //recipe 재료 찾기
+      var recipesubtitle = "";
+      //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
+      for (var i = 0; i < data[num].base.length; i++) {
+        recipesubtitle = recipesubtitle + ' ' + data[num].base[i];
+      }
+
+      document.getElementById("recipetitle").innerHTML = id;
+      document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
+
+      var lilist = new Array;
+      for (var i = 0; i < data[num].recipe.length; i++) {
+        lilist[i] = document.createElement("li");
+        lilist[i].innerHTML = data[num].recipe[i];
+        document.getElementById("recipesteps").appendChild(lilist[i]);
+
+      }
+
+      document.getElementById("recipeimg").src = data[num].src;
+
+
+    }
+  </script>
 
 
 
 
-    <div class="page-wraaper">
-        <nav class="navLayout navbar navbar-default ">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavBar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="navBar-custom" href="../index.html">Home</a></li>
-                        <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
-                        <li><a class="navBar-custom" href="./Map.html">Map</a></li>
-                        <li><a class="navBar-custom" href="#Contact">Contact</a></li>
-                    </ul>
-                </div>
+  <div class="page-wraaper">
+    <nav class="navLayout navbar navbar-default ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavBar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="navBar-custom" href="../index.html">Home</a></li>
+            <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
+            <li><a class="navBar-custom" href="./Map.html">Map</a></li>
+            <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <h1 id="recipeTitle">Recipes</h1>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+            <div class="col-sm-4 col-md-4" id="gotoFood1">
+              <h1>자취생</h1>
+              <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
+              <p>
+                
+              </p>
             </div>
-        </nav>
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-6 col-md-6">
-                    <h1 id="recipeTitle">Recipes</h1>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                    <div class="row">
-                        <div class="col-sm-4 col-md-4" id="gotoFood1">
-                            <h1>Food1</h1>
-                            <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip
-                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu
-                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia
-                                deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                        <div class="col-sm-4 col-md-4" id="gotoFood2">
-                            <h1>Food1</h1>
-                            <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip
-                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu
-                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia
-                                deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                        <div class="col-sm-4 col-md-4" id="gotoFood3">
-                            <h1>Search</h1>
-                            <span class="glyphicon glyphicon-search" style="font-size: 50px;"></span>
-                            <h3>Find the recipe you want.</h3>
-                            <div class="row">
-                                <form>
-                                    <div class="form-group">
-                                        <div class="col-sm-12 col-md-12">
-                                            <input class="form-control search-bar" type="text" placeholder="검색">
-                                        </div>
-                                        <div class="col-sm-12 col-md-12" style="margin-top: 30px;">
-                                            <button class="btn button-52">Search</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+            <div class="col-sm-4 col-md-4" id="gotoFood2">
+              <h1>레시피</h1>
+              <span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span>
+              <p>
+                
+              </p>
+            </div>
+            <div class="col-sm-4 col-md-4" id="gotoFood3">
+              <h1>Search</h1>
+              <span class="glyphicon glyphicon-search" style="font-size: 50px;"></span>
+              <h3>Find the recipe you want.</h3>
+              <div class="row">
+                <form>
+                  <div class="form-group">
+                    <div class="col-sm-12 col-md-12">
+                      <input class="form-control search-bar" type="text" placeholder="검색">
                     </div>
-
+                    <div class="col-sm-12 col-md-12" style="margin-top: 30px;">
+                      <button class="btn button-52">Search</button>
+                    </div>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="container-fluid recipe-area">
+    <hr>
+
+    <div class="row">
+      <!-- 여기부터-->
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/제육볶음.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>제육볶음</h3>
+              <button id="제육볶음" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/닭가슴살볶음밥.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>닭가슴살 볶음밥</h3>
+              <button id="닭가슴살 볶음밥" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/돼지고기김치볶음밥.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>돼지고기 김치 볶음밥</h3>
+              <button id="돼지고기 김치 볶음밥" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/떡볶이.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>떡볶이</h3>
+              <button id="떡볶이" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </div><!-- ROW-->
+<div class="row">
+      <!-- 여기부터-->
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/비빔국수.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>비빔국수</h3>
+              <button id="비빔국수" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/된장찌개.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>된장찌개</h3>
+              <button id="된장찌개" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/콩나물무침.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>콩나물무침</h3>
+              <button id="콩나물무침" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/콩나물국.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>콩나물국</h3>
+              <button id="콩나물국" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+    </div><!-- ROW-->
+
+    <div class="row">
+      <!-- 여기부터-->
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/부대찌개.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>부대찌개</h3>
+              <button id="부대찌개" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/미역국.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>미역국</h3>
+              <button id="미역국" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/홍합탕.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>홍합탕</h3>
+              <button id="홍합탕" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/참치계란밥.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>참치계란밥</h3>
+              <button id="참치계란밥" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+    </div><!-- ROW-->
+
+    <div class="row">
+      <!-- 여기부터-->
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/장조림.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>장조림</h3>
+              <button id="장조림" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/소불고기.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>소불고기</h3>
+              <button id="소불고기" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/두부조림.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>두부조림</h3>
+              <button id="두부조림" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/계란찜.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>계란찜</h3>
+              <button id="계란찜" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+    </div><!-- ROW-->
+
+    <div class="row">
+      <!-- 여기부터-->
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/계란말이.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>계란말이</h3>
+              <button id="계란말이" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/김치볶음밥.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>김치볶음밥</h3>
+              <button id="김치볶음밥" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/간장계란밥.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>간장계란밥</h3>
+              <button id="간장계란밥" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="box-wrap">
+          <div class="box">
+            <div class="img">
+              <img src="./img/recipe/계란새우볶음밥.jpg" class="img-responsive">
+            </div>
+            <div class="info">
+              <h3>계란 새우볶음밥</h3>
+              <button id="계란새우볶음밥" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+    </div><!-- ROW-->
+
+    <div class="modal-wrapper">
+      <div class="modal container">
+        <div class="head">
+          <a class="btn-close trigger" href="#">
+            <i class="fa fa-times" aria-hidden="true">X</i>
+          </a>
+        </div>
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-4">
+              <img id="recipeimg" src="./img/recipe/test1.jpg" class="img-responsive">
+            </div>
+            <div class="col-sm-8">
+              <div class="textbox">
+                <div class="foodText">
+                  <h3 class="title" id="recipetitle"></h3>
+                </div>
+                <div class="recipeInfo">
+                  <h2 class="subtitle">재료(Ingredients)</h2>
+                  <p id="recipesubtitle">
+                  </p>
+                  <h2 class="subtitle">조리순서(Steps)</h2>
+                  <ol id="recipesteps">
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid recipe-area">
-      <h1>Food1</h1>
-      <hr>
-      <div class="row">
-        <!-- 여기부터-->
-        <div class="col-sm-3">
-          <div class="box-wrap">
-            <div class="box">
-              <div class="img">
-                <img src="./img/recipe/test1.jpg" class="img-responsive">
-              </div>
-              <div class="info">
-                <h3>제육볶음</h3>
-                <button id="제육볶음" class="btn search_recipe trigger" onclick="recipeClick(this)">레시피 보기</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 여기까지-->
-        
-        </div>
-      
-
-
-
-        <div class="modal-wrapper">
-            <div class="modal container">
-                <div class="head">
-                    <a class="btn-close trigger" href="#">
-                        <i class="fa fa-times" aria-hidden="true">X</i>
-                    </a>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <img id="recipeimg" src="./img/recipe/test1.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="textbox">
-                                <div class="foodText">
-                                    <h3 class="title" id="recipetitle"></h3>
-                                </div>
-                                <div class="recipeInfo">
-                                    <h2 class="subtitle">재료(Ingredients)</h2>
-                                    <p id="recipesubtitle">
-                                    </p>
-                                    <h2 class="subtitle">조리순서(Steps)</h2>
-                                    <ol id="recipesteps">
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 </body>
 
 </html>

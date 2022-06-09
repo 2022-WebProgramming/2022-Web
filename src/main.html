@@ -31,7 +31,7 @@
 
       document.getElementById("resultTable").innerHTML = ""
 
-      for (var i = 0; i < 4; i++) {     //레시피 개수에 따라 바꿔줘야함
+      for (var i = 0; i < 10; i++) {     //레시피 개수에 따라 바꿔줘야함
         var count = 0;            //count 0으로 선언
         var keys = Object.keys(localStorage);
         keys.forEach(key => {
@@ -45,7 +45,7 @@
             }
           }
         })
-        if ((count / datas[i].base.length) * 100 >= 50) {
+        if ((count / datas[i].base.length) * 100 >= 30) {
 
           console.log(datas[i].name);
           var A = document.createElement("a");
@@ -300,6 +300,10 @@
       border: 1px solid #fff59d;
       border-radius: 10px;
     }
+    #condimentText p,#foodText p{
+      font-size:30px;
+      padding-bottom: 120px;
+    }
   </style>
 
 </head>
@@ -335,30 +339,14 @@
             <h1>Food</h1>
             <span class="glyphicon glyphicon-circle-arrow-left" style="font-size: 50px;"></span>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia
-              deserunt mollit anim id est laborum.
+              Select Food you have!
           </p>
           </div>
           <div class="col-sm-6" id = "condimentText">
             <h1>Condiment</h1>
             <span class="glyphicon glyphicon-circle-arrow-right" style="font-size: 50px;"></span>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia
-              deserunt mollit anim id est laborum.
+             Select Condiment you have!
           </p>
           </div>
         </div>
