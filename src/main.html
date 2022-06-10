@@ -31,7 +31,7 @@
 
       document.getElementById("resultTable").innerHTML = ""
 
-      for (var i = 0; i < 10; i++) {     //레시피 개수에 따라 바꿔줘야함
+      for (var i = 0; i < 20; i++) {     //레시피 개수에 따라 바꿔줘야함
         var count = 0;            //count 0으로 선언
         var keys = Object.keys(localStorage);
         keys.forEach(key => {
@@ -47,19 +47,25 @@
         })
         if ((count / datas[i].base.length) * 100 >= 30) {
 
-          console.log(datas[i].name);
           var A = document.createElement("a");
           var br = document.createElement("br");
 
           A.innerHTML = datas[i].name;
-          A.href = "./Recipe.html#" + datas[i].name;
+          var link="./Recipe.html#"+datas[i].name;
+          A.href = link;
           A.classList.add("members");
 
+          
+
+
+          console.log(A);
           document.getElementById("resultTable").appendChild(A);
           document.getElementById("resultTable").appendChild(br);
         };
 
         //console.log(count); //count 동작 확인용
+        shareID=datas[i].name;
+
 
       }
       for (var i = 0; i < number; i++) {
@@ -249,6 +255,25 @@
       box-shadow: inset 0px 0px 5px white;
     }
 
+    #content
+    {
+      height: 791px;
+      overflow: scroll;
+    }
+    #content::-webkit-scrollbar {
+      width: 10px;
+    }
+    #content::-webkit-scrollbar-thumb {
+      background-color: #1d202d;
+      border-radius: 10px;
+    }
+
+    #content::-webkit-scrollbar-track {
+      background-color: lightgrey;
+      border-radius: 10px;
+      box-shadow: inset 0px 0px 5px white;
+    }
+
     #foodText
     {
       background-color: #d2d2d3;
@@ -304,6 +329,9 @@
       font-size:30px;
       padding-bottom: 120px;
     }
+    .Foodssss{
+      padding:0px;
+    }
   </style>
 
 </head>
@@ -329,29 +357,6 @@
     </div>
   </nav>
   <div class="container-fluid text-center">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1 id="title">Food/<br>Condiment</h1>
-      </div>
-      <div class="col-sm-6">
-        <div class="row">
-          <div class="col-sm-6" id = "foodText">
-            <h1>Food</h1>
-            <span class="glyphicon glyphicon-circle-arrow-left" style="font-size: 50px;"></span>
-            <p>
-              Select Food you have!
-          </p>
-          </div>
-          <div class="col-sm-6" id = "condimentText">
-            <h1>Condiment</h1>
-            <span class="glyphicon glyphicon-circle-arrow-right" style="font-size: 50px;"></span>
-            <p>
-             Select Condiment you have!
-          </p>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="row">
       <div class="col-sm-7">
         <div class="col-sm-1"></div>

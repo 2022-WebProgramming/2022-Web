@@ -1,3 +1,5 @@
+var shareID;
+
 function resultCard(element) {
    //중복이 있는지 확인
    var search = false;
