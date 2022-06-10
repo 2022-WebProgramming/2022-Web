@@ -86,27 +86,20 @@
 
     .navLayout {
       margin-bottom: 0px;
-      background-color: #FFE361;
+      background-color: white;
       padding: 15px;
       font-weight: bold;
       font-size: 20px;
+      border:none !important;
     }
 
     #Rfs {
       color:black;
-      font-size: 50px;
-      margin-left: 3vw;
-      background-image: linear-gradient(to right, black, #FFE361);
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      font-weight: 600;
+      
+      
     }
 
-    #Rfs::first-letter {
-      font-size: 10rem;
-    }
-
+    
 
     .navBar-custom {
       color: black !important;
@@ -165,6 +158,7 @@
   <nav class="navLayout navbar navbar-default navBar-custom">
     <div class="container-fluid">
       <div class="navbar-header">
+        <h1 class="title" id="Rfs" style="font-family: suseongD; font-weight: bolder;">Recipes for Students</h1>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -173,15 +167,14 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavBar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="navBar-custom" href="#Introduction">Introduction</a></li>
-          <li><a class="navBar-custom" href="#Functionalities">Functionalities</a></li>
-          <li><a class="navBar-custom" href="#Team">Team</a></li>
-          <li><a class="navBar-custom" href="#Contact">Contact</a></li>
+          <li style="margin-top: 20px;"><a class="navBar-custom" href="#Introduction">Introduction</a></li>
+          <li style="margin-top: 20px;"><a class="navBar-custom" href="#Functionalities">Functionalities</a></li>
+          <li style="margin-top: 20px;"><a class="navBar-custom" href="#Team">Team</a></li>
+          <li style="margin-top: 20px;"><a class="navBar-custom" href="#Contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <h1 class="title" id="Rfs">Recipes for Students</h1>
   <div id="image-container" class="container-fluid text-center" style="padding:50px;">
     <div class="row">
       <div class="col-sm-8 cycle-slideshow" style="box-shadow: 0px 0px 30px #1d202d; border: 1px solid #1d202d;">
