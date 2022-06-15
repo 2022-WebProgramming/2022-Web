@@ -17,16 +17,20 @@ function resultCard(element) {
          var table = document.getElementById("resultTable");
          //바깥 div card
          let card = document.createElement('div');
-         card.classList.add("card")
+       
          card.classList.add("col-sm-6");
+        
          //img
          let img = document.createElement('img');
          img.classList.add("img-circle");
+         img.classList.add("cardcss");
+         
          img.id = element.id;
          img.src = element.src;
          img.width = 100;
          img.height = 100;
          img.alt = element.alt;
+         
 
          //안쪽 div
          let innerdiv = document.createElement('div');
@@ -34,11 +38,12 @@ function resultCard(element) {
 
          let p = document.createElement('p')
          p.innerHTML = element.alt;
+         p.classList.add("ptext");
 
          //button
          let btn = document.createElement('button');
          btn.innerHTML = "Remove";
-         btn.classList.add("removeButton");
+         btn.classList.add("button-31");
          btn.onclick = function () {
             card.parentNode.removeChild(card);
             var id = element.id;
