@@ -32,8 +32,9 @@
       document.getElementById("resultTable").innerHTML = ""
 
       var H1=document.createElement("h1");
-      H1.classList.add("title");
       H1.innerHTML="CHOICE";
+      H1.classList.add("text-center");
+      H1.classList.add("choiceLink");
       document.getElementById("resultTable").appendChild(H1);
 
       for (var i = 0; i < 20; i++) {     //레시피 개수에 따라 바꿔줘야함
@@ -60,7 +61,8 @@
           A.href = link;
           A.classList.add("members");
           A.classList.add("choiceLink");
-          
+          A.classList.add("text-center");
+          A.classList.add("col-sm-6");
 
 
           console.log(A);
@@ -341,6 +343,7 @@
     .choiceLink{
       font-size: 30px;
       font-weight:700;
+      text-align: center;
     }
   </style>
 
@@ -435,8 +438,8 @@
         </div>
       </section>
     </div>
-    <div id="resultTable" class="col-sm-4">
-      <h1 class="title">CHOICE</h1>
+    <div id="resultTable" class="col-sm-4 text-center">
+      <h1 class="choiceLink">CHOICE</h1>
     </div>
   </div>
 

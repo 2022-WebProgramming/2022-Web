@@ -18,6 +18,7 @@ function resultCard(element) {
          //바깥 div card
          let card = document.createElement('div');
          card.classList.add("card")
+         card.classList.add("col-sm-6");
          //img
          let img = document.createElement('img');
          img.classList.add("img-circle");
