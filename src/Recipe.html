@@ -333,6 +333,9 @@
     #Contact{
       padding-left :55px !important;
     }
+    .limargin{
+      margin-left:-25px;
+    }
   </style>
   <title>Document</title>
 
@@ -376,6 +379,7 @@
       for (var i = 0; i < data[num].recipe.length; i++) {
         lilist[i] = document.createElement("li");
         lilist[i].innerHTML = data[num].recipe[i];
+        lilist[i].classList.add("limargin");
         document.getElementById("recipesteps").appendChild(lilist[i]);
 
       }
@@ -402,7 +406,7 @@
         <div class="collapse navbar-collapse" id="myNavBar">
           <ul class="nav navbar-nav navbar-right">
             <li><a class="navBar-custom" href="../index.html">Home</a></li>
-            <li><a class="navBar-custom" href="./Recipe.html">Recipes</a></li>
+            <li><a class="navBar-custom" href="./main.html">Food</a></li>
             <li><a class="navBar-custom" href="./Map.html">Map</a></li>
             <li><a class="navBar-custom" href="#Contact">Contact</a></li>
           </ul>

@@ -31,6 +31,11 @@
 
       document.getElementById("resultTable").innerHTML = ""
 
+      var H1=document.createElement("h1");
+      H1.classList.add("title");
+      H1.innerHTML="CHOICE";
+      document.getElementById("resultTable").appendChild(H1);
+
       for (var i = 0; i < 20; i++) {     //레시피 개수에 따라 바꿔줘야함
         var count = 0;            //count 0으로 선언
         var keys = Object.keys(localStorage);
@@ -54,7 +59,7 @@
           var link="./Recipe.html#"+datas[i].name;
           A.href = link;
           A.classList.add("members");
-
+          A.classList.add("choiceLink");
           
 
 
@@ -333,6 +338,10 @@
     .Foodssss{
       padding:0px;
     }
+    .choiceLink{
+      font-size: 30px;
+      font-weight:700;
+    }
   </style>
 
 </head>
@@ -427,7 +436,7 @@
       </section>
     </div>
     <div id="resultTable" class="col-sm-4">
-      <h1 class="title">선택 목록</h1>
+      <h1 class="title">CHOICE</h1>
     </div>
   </div>
 
