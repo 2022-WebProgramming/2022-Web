@@ -102,43 +102,6 @@
       color: black !important;
       font-family: suseongB;
     }
-
-    .btn-custom:hover {
-      box-shadow: 0px 0px 10px #ffe54c;
-    }
-
-    .button-52 {
-      font-size: 16px;
-      font-weight: 200;
-      letter-spacing: 1px;
-      padding: 13px 20px 13px;
-      outline: 0;
-      border: 1px solid black;
-      cursor: pointer;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0);
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
-
-    .button-52:after {
-      content: "";
-      background-color: #ffe54c !important;
-      width: 100%;
-      z-index: -1;
-      position: absolute;
-      height: 100%;
-      top: 7px;
-      left: 7px;
-      transition: 0.2s;
-    }
-
-    .button-52:hover:after {
-      top: 0px;
-      left: 0px;
-    }
-
     a.navBar-custom:hover {
       text-shadow: 0px 0px 1px !important;
     }
@@ -152,7 +115,6 @@
       max-width: 50% !important;
       height:auto;
     }
-/* CSS */
 .button-31 {
   background-color: #222;
   border-radius: 4px;
@@ -178,9 +140,10 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100%;
 }
-
+.send-btn{
+  margin-bottom:20px;
+}
 .button-31:hover,
 .button-31:focus {
   opacity: .75;
@@ -344,7 +307,7 @@
               <textarea class="form-control" style="height: 130px;" placeholder="Comment"></textarea>
             </div>
             <div class="col-sm-12 text-right" style="margin-top:30px;">
-              <button class="btn button-52">Send</button>
+              <button class="button-31 send-btn">Send</button>
             </div>
           </div>
         </form>
