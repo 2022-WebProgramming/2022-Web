@@ -18,13 +18,35 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <script>
-    $(document).ready(function () {
-      $('.trigger').on('click', function () {
-        $('.modal-wrapper').toggleClass('open');
-        $('.page-wrapper').toggleClass('blur-it');
-        return false;
-      });
-    });
+    function recipeClick(elementid) {
+      document.getElementById("recipesteps").innerHTML = "";
+
+      var id = elementid.trim();
+      var data = JSON.parse(JSON.stringify(Recipeyo));
+      var num;
+
+      //name==id인 레시피 찾기
+      //처음 찾는게 그게 아니면 
+      for (var i = 0; i < 20; i++) {
+        var recipename = data[i].name.trim();
+        if (id == recipename) {
+          num = i;
+        }
+      }
+
+      var lilist = new Array;
+      for (var i = 0; i < data[num].recipe.length; i++) {
+        lilist[i] = document.createElement("li");
+        lilist[i].innerHTML = data[num].recipe[i];
+        lilist[i].classList.add("limargin");
+        document.getElementById("recipesteps").appendChild(lilist[i]);
+
+      }
+
+      document.getElementById("recipeimg").src = data[num].src;
+
+    }
+
 
     function gotoRecipe() {
       var datas = JSON.parse(JSON.stringify(Recipeyo));
@@ -61,18 +83,40 @@
         })
         if ((count / datas[i].base.length) * 100 >= 30) {
 
+          //바깥div
+          var divA=document.createElement("div");
+          divA.classList=datas[i].name;
+
+          //버튼
           var A = document.createElement("button");
           var br = document.createElement("br");
 
           A.innerHTML = datas[i].name;
+
           A.id = datas[i].name.trim();
-          A.setAttribute('onclick',"recipeClick(this.id)");
-          console.log(A);
+          A.setAttribute('onclick', "recipeClick(this.id)");
 
           A.classList.add("members");
           A.classList.add("choiceLink");
           A.classList.add("text-center");
+          A.classList.add("trigger");
+        
+          //레시피 내용 div
+          var divB=document.createElement("div");
+          var recipeimg=document.createElement("img");
+          recipeimg.id="recipeimg";
+          recipeimg.classList.add("img-responsive");
+          
+          var recipeSteps=document.createElement("ol");
+          recipeSteps.id="recipesteps";
+          recipeSteps.classList.add("olli");
 
+          divA.appendChild(divB);
+          divB.appendChild(recipeimg);
+          divB.appendChild(recipeSteps);
+          console.log(divA);
+          
+          document.getElementById("resultTable").appendChild(divA);
           document.getElementById("resultTable").appendChild(A);
           document.getElementById("resultTable").appendChild(br);
         };
@@ -91,51 +135,16 @@
       }
     }
 
-    function recipeClick(elementid) {
-      document.getElementById("recipetitle").innerHTML = "";
-      document.getElementById("recipesubtitle").innerHTML = "";
-      document.getElementById("recipesteps").innerHTML = "";
-
-      console.log(elementid);
-      var id = elementid.trim();
-      var data = JSON.parse(JSON.stringify(Recipeyo));
-      var num;
-
-      //name==id인 레시피 찾기
-      //처음 찾는게 그게 아니면 
-      for (var i = 0; i < 20; i++) {
-        var recipename = data[i].name.trim();
-        if (id == recipename) {
-          num = i;
-        }
-      }
-
-      //recipe 재료 찾기
-      var recipesubtitle = "";
-      //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
-      for (var i = 0; i < data[num].base.length; i++) {
-        recipesubtitle = recipesubtitle + ' ' + data[num].base[i];
-      }
-
-      document.getElementById("recipetitle").innerHTML = id;
-      document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
-
-      var lilist = new Array;
-      for (var i = 0; i < data[num].recipe.length; i++) {
-        lilist[i] = document.createElement("li");
-        lilist[i].innerHTML = data[num].recipe[i];
-        lilist[i].classList.add("limargin");
-        document.getElementById("recipesteps").appendChild(lilist[i]);
-
-      }
-
-      document.getElementById("recipeimg").src = data[num].src;
-
-    }
-    
+   
   </script>
 
   <style>
+   .olli{
+    margin-top:10px;
+    margin-left:-25px;
+    font-family:suseongB;
+    font-size:15px;
+   }
     html {
       scroll-behavior: smooth;
     }
@@ -361,6 +370,9 @@
       font-size: 30px;
       font-weight: 700;
       text-align: center;
+      border: none;
+      background-color: white;
+      ;
     }
 
     .button-31 {
@@ -371,7 +383,7 @@
       color: #222;
       cursor: pointer;
       display: inline-block;
-      font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+      font-family: "suseongB";
       font-size: 16px;
       font-weight: 700;
       line-height: 1.5;
@@ -433,181 +445,220 @@
       background-color: #222;
       color: white;
     }
+
+    .blur-it {
+      filter: blur(4px);
+    }
+
+    .modal-wrapper {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(53, 56, 56, 0.8);
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.25s ease-in-out;
+    }
+
+    .modal-wrapper.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      display: block;
+      overflow: scroll;
+      position: relative;
+      height: 40vh;
+      border-radius: 10px;
+      margin: 15% auto;
+      background: #fff;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .modal::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .modal::-webkit-scrollbar-thumb {
+      background-color: #1d202d;
+      border-radius: 10px;
+    }
+
+    .modal::-webkit-scrollbar-track {
+      background-color: lightgrey;
+      border-radius: 10px;
+      box-shadow: inset 0px 0px 5px white;
+    }
+
+    .modal-wrapper.open .modal {
+
+      opacity: 1;
+    }
+
+    .head {
+      overflow: hidden;
+    }
+
+    .btn-close {
+      font-size: 28px;
+      display: block;
+      float: right;
+      color: #1d202d;
+    }
+    .resultBtn{
+      margin-left:-28px;
+    }
   </style>
 
 </head>
 
 <body>
-  <div class="modal-wrapper">
-    <div class="modal container">
-      <div class="head">
-        <a class="btn-close trigger" href="#">
-          <i class="fa fa-times" aria-hidden="true">X</i>
-        </a>
+   <nav class="navLayout navbar navbar-default navBar-custom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1 style="font-family: suseongD !important; font-weight: bolder;">Food/Condiment</h1>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavBar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="navBar-custom" style="margin-top:20px;" href="../index.html">Home</a></li>
+            <li><a class="navBar-custom" style="margin-top:20px;" href="./Recipe.html">Recipe</a></li>
+            <li><a class="navBar-custom" style="margin-top:20px;" href="./Map.html">Map</a></li>
+            <li><a class="navBar-custom" style="margin-top:20px;" href="#Contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="content">
+    </nav>
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-sm-7" style="margin-left:30px;">
+          <button type="button" id="gotoFood" class="button-31">Food</button>
+          <button type="button" id="gotoCondiment" class="button-31">Condiment</button>
+        </div>
+        <div class="col-sm-2" style="margin-left:77px;">
+
+          <button type="button" class="button-31 resultBtn" onclick="gotoRecipe() ">결과보기</button>
+        </div>
+
+      </div>
+
+
+      <div class="container-fluid">
+        <div class="col-sm-8">
+          <section>
+            <div id="content">
+
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
+              </script>
+              <script>
+                function check() {
+                  var keys = Object.keys(localStorage);
+                  keys.forEach(key => {
+                    var temp = localStorage.getItem(key);
+                    var showSelected = JSON.parse(temp);
+                    if (showSelected.selected == "true") {
+                      resultCard(showSelected);
+                    }
+                  })
+                }
+
+                $(document).ready(function () {
+                  $("#content").load("./FOOD.html");
+                });
+
+                $(document).ready(function () {
+                  $("#gotoFood").click(function () {
+                    $("#content").load("./FOOD.html")
+                  });
+                });
+
+                $(document).ready(function () {
+                  $("#gotoCondiment").click(function () {
+                    $("#content").load("./CONDIMENT.html")
+                  });
+                });
+
+                $(document).ready(function () {
+                  $("#gotoRecipe").click(function () {
+                    $("#content").load("./Recipe.html")
+                  });
+                });
+
+              </script>
+
+            </div>
+          </section>
+        </div>
+        <div id="resultTable" class="col-sm-4">
+          <h1 class="choiceLink">CHOICE</h1>
+        </div>
+      </div>
+
+      <div id="Contact" class="container-fluid">
         <div class="row">
-          <div class="col-sm-4">
-            <img id="recipeimg" src="./img/recipe/test1.jpg" class="img-responsive">
-          </div>
-          <div class="col-sm-8">
-            <div class="textbox">
-              <div class="foodText">
-                <h3 class="title" id="recipetitle"></h3>
+          <div class="col-sm-5">
+            <div class="row">
+              <div class="col-sm-12">
+                <h1 class="title" style="font-size: 40px; font-weight:bold; letter-spacing: 5px;">Contact Us</h1>
               </div>
-              <div class="recipeInfo">
-                <h2 class="subtitle">재료(Ingredients)</h2>
-                <p id="recipesubtitle">
-                </p>
-                <h2 class="subtitle">조리순서(Steps)</h2>
-                <ol id="recipesteps">
-                </ol>
+              <div class="col-sm-12" style="border-left: 7px solid #ffe361;">
+                <div>
+                  <span class="members">이인규</span> <span class="members">|</span> <a class="members"
+                    href="https://github.com/Evergyu">Github</a> <span class="members">|</span><span class="members"
+                    target="_blank">Email : iingy123@naver.com</span>
+                </div>
+                <p></p>
+                <p></p>
+                <div>
+                  <span class="members">노민성</span> <span class="members">|</span><a class="members"
+                    href="https://github.com/maatanyy">Github</a> <span class="members">|</span><span class="members"
+                    target="_blank">Email : maatanyy@naver.com</span>
+                </div>
+                <p></p>
+                <p></p>
+                <div>
+                  <span class="members">김강민</span> <span class="members">|</span><a class="members"
+                    href="https://github.com/KkangKkang1202">Github</a class="Email"> <span
+                    class="members">|</span><span class="members" target="_blank">Email : kkm9814@naver.com</span>
+                </div>
+                <br>
+                <br>
+                <h2 class="paragraph" style="font-size: 20px;"><b>If you have any improvements or questions,<br>Please
+                    contact us by email or fill out the form.</b></h2>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <nav class="navLayout navbar navbar-default navBar-custom">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <h1 style="font-family: suseongD !important; font-weight: bolder;">Food/Condiment</h1>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavBar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="navBar-custom" style="margin-top:20px;" href="../index.html">Home</a></li>
-          <li><a class="navBar-custom" style="margin-top:20px;" href="./Recipe.html">Recipe</a></li>
-          <li><a class="navBar-custom" style="margin-top:20px;" href="./Map.html">Map</a></li>
-          <li><a class="navBar-custom" style="margin-top:20px;" href="#Contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container-fluid">
-    <div class="row ">
-      <div class="col-sm-7" style="margin-left:30px;">
-        <button type="button" id="gotoFood" class="button-31">Food</button>
-        <button type="button" id="gotoCondiment" class="button-31">Condiment</button>
-      </div>
-      <div class="col-sm-2" style="margin-left:77px;">
-
-        <button type="button" class="button-31" onclick="gotoRecipe() ">결과보기</button>
-      </div>
-
-    </div>
-    <div class="container-fluid">
-      <div class="col-sm-8">
-        <section>
-          <div id="content">
-
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-
-            </script>
-            <script>
-              function check() {
-                var keys = Object.keys(localStorage);
-                keys.forEach(key => {
-                  var temp = localStorage.getItem(key);
-                  var showSelected = JSON.parse(temp);
-                  if (showSelected.selected == "true") {
-                    resultCard(showSelected);
-                  }
-                })
-              }
-
-              $(document).ready(function () {
-                $("#content").load("./FOOD.html");
-              });
-
-              $(document).ready(function () {
-                $("#gotoFood").click(function () {
-                  $("#content").load("./FOOD.html")
-                });
-              });
-
-              $(document).ready(function () {
-                $("#gotoCondiment").click(function () {
-                  $("#content").load("./CONDIMENT.html")
-                });
-              });
-
-              $(document).ready(function () {
-                $("#gotoRecipe").click(function () {
-                  $("#content").load("./Recipe.html")
-                });
-              });
-
-            </script>
-
-          </div>
-        </section>
-      </div>
-      <div id="resultTable" class="col-sm-4 text-center">
-        <h1 class="choiceLink">CHOICE</h1>
-      </div>
-    </div>
-
-    <div id="Contact" class="container-fluid">
-      <div class="row">
-        <div class="col-sm-5">
-          <div class="row">
-            <div class="col-sm-12">
-              <h1 class="title" style="font-size: 40px; font-weight:bold; letter-spacing: 5px;">Contact Us</h1>
-            </div>
-            <div class="col-sm-12" style="border-left: 7px solid #ffe361;">
-              <div>
-                <span class="members">이인규</span> <span class="members">|</span> <a class="members"
-                  href="https://github.com/Evergyu">Github</a> <span class="members">|</span><span class="members"
-                  target="_blank">Email : iingy123@naver.com</span>
+          <div class="col-sm-7">
+            <form style="font-family: suseongB;">
+              <div class="form-group" style="padding-top: 100px;">
+                <div class="col-sm-6">
+                  <input class="form-control" type="text" placeholder="Name" required>
+                </div>
+                <div class="col-sm-6">
+                  <input class="form-control" type="text" placeholder="Email" required>
+                </div>
+                <div class="col-sm-12" style="margin-top:30px;">
+                  <textarea class="form-control" style="height: 130px;" placeholder="Comment"></textarea>
+                </div>
+                <div class="col-sm-12 text-right" style="margin-top:30px;">
+                  <button class="button-32">Send</button>
+                </div>
               </div>
-              <p></p>
-              <p></p>
-              <div>
-                <span class="members">노민성</span> <span class="members">|</span><a class="members"
-                  href="https://github.com/maatanyy">Github</a> <span class="members">|</span><span class="members"
-                  target="_blank">Email : maatanyy@naver.com</span>
-              </div>
-              <p></p>
-              <p></p>
-              <div>
-                <span class="members">김강민</span> <span class="members">|</span><a class="members"
-                  href="https://github.com/KkangKkang1202">Github</a class="Email"> <span class="members">|</span><span
-                  class="members" target="_blank">Email : kkm9814@naver.com</span>
-              </div>
-              <br>
-              <br>
-              <h2 class="paragraph" style="font-size: 20px;"><b>If you have any improvements or questions,<br>Please
-                  contact us by email or fill out the form.</b></h2>
-            </div>
+            </form>
           </div>
         </div>
-        <div class="col-sm-7">
-          <form style="font-family: suseongB;">
-            <div class="form-group" style="padding-top: 100px;">
-              <div class="col-sm-6">
-                <input class="form-control" type="text" placeholder="Name" required>
-              </div>
-              <div class="col-sm-6">
-                <input class="form-control" type="text" placeholder="Email" required>
-              </div>
-              <div class="col-sm-12" style="margin-top:30px;">
-                <textarea class="form-control" style="height: 130px;" placeholder="Comment"></textarea>
-              </div>
-              <div class="col-sm-12 text-right" style="margin-top:30px;">
-                <button class="button-32">Send</button>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
+
   </div>
 </body>
 
