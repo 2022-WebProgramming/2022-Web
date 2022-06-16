@@ -18,6 +18,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <script>
+    $(document).ready(function () {
+      $('.trigger').on('click', function () {
+        $('.modal-wrapper').toggleClass('open');
+        $('.page-wrapper').toggleClass('blur-it');
+        return false;
+      });
+    });
+
     function gotoRecipe() {
       var datas = JSON.parse(JSON.stringify(Recipeyo));
       var imgs = document.getElementById("resultTable").getElementsByTagName("img");
@@ -53,19 +61,18 @@
         })
         if ((count / datas[i].base.length) * 100 >= 30) {
 
-          var A = document.createElement("a");
+          var A = document.createElement("button");
           var br = document.createElement("br");
 
           A.innerHTML = datas[i].name;
-          var link = "./Recipe.html#" + datas[i].name;
-          A.href = link;
+          A.id = datas[i].name.trim();
+          A.setAttribute('onclick',"recipeClick(this.id)");
+          console.log(A);
+
           A.classList.add("members");
           A.classList.add("choiceLink");
           A.classList.add("text-center");
 
-
-
-          console.log(A);
           document.getElementById("resultTable").appendChild(A);
           document.getElementById("resultTable").appendChild(br);
         };
@@ -83,6 +90,49 @@
 
       }
     }
+
+    function recipeClick(elementid) {
+      document.getElementById("recipetitle").innerHTML = "";
+      document.getElementById("recipesubtitle").innerHTML = "";
+      document.getElementById("recipesteps").innerHTML = "";
+
+      console.log(elementid);
+      var id = elementid.trim();
+      var data = JSON.parse(JSON.stringify(Recipeyo));
+      var num;
+
+      //name==id인 레시피 찾기
+      //처음 찾는게 그게 아니면 
+      for (var i = 0; i < 20; i++) {
+        var recipename = data[i].name.trim();
+        if (id == recipename) {
+          num = i;
+        }
+      }
+
+      //recipe 재료 찾기
+      var recipesubtitle = "";
+      //찾은 json key 값의 base 길이만큼 반복문을 돌려 재료 추가
+      for (var i = 0; i < data[num].base.length; i++) {
+        recipesubtitle = recipesubtitle + ' ' + data[num].base[i];
+      }
+
+      document.getElementById("recipetitle").innerHTML = id;
+      document.getElementById("recipesubtitle").innerHTML = recipesubtitle;
+
+      var lilist = new Array;
+      for (var i = 0; i < data[num].recipe.length; i++) {
+        lilist[i] = document.createElement("li");
+        lilist[i].innerHTML = data[num].recipe[i];
+        lilist[i].classList.add("limargin");
+        document.getElementById("recipesteps").appendChild(lilist[i]);
+
+      }
+
+      document.getElementById("recipeimg").src = data[num].src;
+
+    }
+    
   </script>
 
   <style>
@@ -338,15 +388,16 @@
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
-      margin-bottom:20px;
+      margin-bottom: 20px;
     }
+
     .button-31:hover,
     .button-31:focus {
       opacity: .75;
       background-color: #222;
-      color:white;
+      color: white;
     }
- 
+
     .button-32 {
       background-color: #222;
       border-radius: 4px;
@@ -372,7 +423,7 @@
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
-      margin-bottom:20px;
+      margin-bottom: 20px;
     }
 
 
@@ -380,14 +431,45 @@
     .button-32:focus {
       opacity: .75;
       background-color: #222;
-      color:white;
+      color: white;
     }
-
   </style>
 
 </head>
 
 <body>
+  <div class="modal-wrapper">
+    <div class="modal container">
+      <div class="head">
+        <a class="btn-close trigger" href="#">
+          <i class="fa fa-times" aria-hidden="true">X</i>
+        </a>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-sm-4">
+            <img id="recipeimg" src="./img/recipe/test1.jpg" class="img-responsive">
+          </div>
+          <div class="col-sm-8">
+            <div class="textbox">
+              <div class="foodText">
+                <h3 class="title" id="recipetitle"></h3>
+              </div>
+              <div class="recipeInfo">
+                <h2 class="subtitle">재료(Ingredients)</h2>
+                <p id="recipesubtitle">
+                </p>
+                <h2 class="subtitle">조리순서(Steps)</h2>
+                <ol id="recipesteps">
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <nav class="navLayout navbar navbar-default navBar-custom">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -411,15 +493,15 @@
   <div class="container-fluid">
     <div class="row ">
       <div class="col-sm-7" style="margin-left:30px;">
-          <button type="button" id="gotoFood" class="button-31">Food</button>
-          <button type="button" id="gotoCondiment" class="button-31">Condiment</button>
-        </div>
-        <div class="col-sm-2" style="margin-left:77px;" >
-          
-          <button type="button" class="button-31" onclick="gotoRecipe() ">결과보기</button>
-        </div>     
-   
-        </div>     
+        <button type="button" id="gotoFood" class="button-31">Food</button>
+        <button type="button" id="gotoCondiment" class="button-31">Condiment</button>
+      </div>
+      <div class="col-sm-2" style="margin-left:77px;">
+
+        <button type="button" class="button-31" onclick="gotoRecipe() ">결과보기</button>
+      </div>
+
+    </div>
     <div class="container-fluid">
       <div class="col-sm-8">
         <section>
@@ -526,6 +608,7 @@
         </div>
       </div>
     </div>
+  </div>
 </body>
 
 </html>
