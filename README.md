@@ -1,24 +1,30 @@
-2. 결과창에서 음식을 고른 후 확인버튼을 누르면 레시피의 target id로 이동하는 기능 만들기
+# Team TAG 
+## 개발일정 :triangular_flag_on_post:
+<b>2022년 4월 28일 ~ 2022 6월 15일</b>
+## 자취생을 위한 레시피 조회 웹사이트
+## 팀원 소개
+<details markdown="1">
+<summary><strong>팀원</strong></summary>
 
-3. Food.html 에서 카드를 누르면 사이드 결과창에서 이미지가 뜨게하기, side에서의 이미지를 클릭하면 목록에서 사라지기
+* 팀장 이인규(Evergyu) [Github](https://github.com/Evergyu) <br> 
+    * Javascript 를 이용해 Food/Condiment 에서의 레시피보기 함수 구현
+    * Javascript 를 이용해 Food/Condiment 에서의 식재료 카드 클릭 시 선택목록에 보이도록 하는 함수 구현
+* 팀원 노민성(maatanyy) [Github](https://github.com/maatanyy) <br>
+    * localstorage를 이용해 데이터 연동함수 구현
+* 팀원 김강민(KkangKkang1202) [Github](https://github.com/KkangKkang1202) <br>
+    * Bootstrap, Css를 이용해 전체적인 페이지 디자인 구현
+    * Map 탭의 기능 구현
 
-4. 
+</details>
 
-5. 레시피 따서 json파일로 만들기
+## [프로젝트 웹사이트](https://2022-webprogramming.github.io/2022-Web/)
 
-6. 데이터 형식 : 
-   ex) 제육볶음 : {
-            "음식" : {"돼지고기", "대파", "양파"}
-            "조미료" : {"고추장", "간장", "설탕"}
-   }
+## 프로젝트 이유
+자취를 할 때 가장 걱정됐던 것이 식사 메뉴였다.<br>
+그런데 매 끼마다 배달음식을 먹기에는 학생이라 비용이 너무 컸다.<br>
+그래서 집에 있는 재료를 이용해 맛있는 식사를 할 수 있도록 하고 싶어서 만들게 되었다.
 
-   1. food condiment recipe 누르면 이동 + condiment 페이지 만들기 (민성)
-
-   2. 재료 선택시 result에 취소 시 다시 사라지게  (인규)
-
-   3. recipe 페이지 띄우기 카드로 하고 누르면 보이게 (사진 오른쪽엔 레시피  / 한줄에 2개)  (강민)
-
-
-
-   <공통>
-   5. 조합  -> 데이터 읽어오기 + 음식 조합 
+## :closed_book: 이용 방법
+ <h3>1. 집에 있는 식재료 선택 후 결과보기를 하면 만들 수 있을만한 음식의 레시피가 나타난다.</h3>
+ <h3>2. Recipe 탭에서 해보고 싶은 음식의 "레시피 보기" 버튼을 클릭하면 레시피가 나온다.</h3>
+ <h3>3. MAP 탭에서 마트 이름을 클릭하면 지도에 Marker가 나오게 된다.</h3>
